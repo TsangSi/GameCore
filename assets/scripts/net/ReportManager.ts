@@ -1,5 +1,5 @@
 import { sys } from 'cc';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import { ServerMonitor } from '../common/ServerMonitor';
 import GlobalConfig from '../config/GlobalConfig';
 import LoginManager from '../ui/login/LoginManager';

@@ -3,7 +3,7 @@
 /*
  * @Author: your name
  * @Date: 2020-05-20 11:51:43
- * @LastEditTime: 2020-06-30 15:25:18
+ * @LastEditTime: 2023-02-14 21:15:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \RPG_Cocos\assets\script\m\cfg\GlobalConfig.js
@@ -22,7 +22,7 @@ import {
 } from '../global/GConst';
 import Utils from '../utils/Utils';
 import CfgIndexer from './CfgIndexer';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import UtilsTime from '../utils/UtilsTime';
 // 所有任务结构
 export class CfgTask {

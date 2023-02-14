@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable max-len */
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventManager';
 import { ServerMonitor } from '../../common/ServerMonitor';
 import UtilsPlatform from '../../utils/UtilsPlatform';
 import UtilsStorage from '../../utils/UtilsStorage';

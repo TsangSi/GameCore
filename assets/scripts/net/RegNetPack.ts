@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import { PlayerN } from '../action/PlayerN';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventM';
 import { SceneN } from '../map/SceneN';
 
 export class RegNetPack {

@@ -6,7 +6,7 @@ import { DEBUG } from 'cc/env';
 import ActionConfig from '../../../scripts/action/ActionConfig';
 import { FightEntity } from '../../../scripts/action/FightEntity';
 import { EffectManager } from '../../../scripts/common/EffectManager';
-import { Executor } from '../../../scripts/common/Executor';
+import { Executor } from '../../../scripts/core/executor/Executor';
 import { PlayerInfo } from '../../../scripts/common/PlayerInfo';
 import { ResManager } from '../../../scripts/common/ResManager';
 import { Config } from '../../../scripts/config/Config';

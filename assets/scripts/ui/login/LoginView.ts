@@ -4,7 +4,7 @@ import {
     Component, AnimationClip, Sprite, SpriteAtlas, SpriteFrame, utils, _decorator, ProgressBar, Label, resources, assetManager, Asset, TextAsset,
 } from 'cc';
 import { EffectManager } from '../../common/EffectManager';
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventM';
 import { ServerMonitor } from '../../common/ServerMonitor';
 import CfgManager from '../../config/CfgManager';
 import GlobalConfig from '../../config/GlobalConfig';

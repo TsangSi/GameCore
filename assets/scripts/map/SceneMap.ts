@@ -4,7 +4,7 @@ import {
 } from 'cc';
 import Actor from '../action/Actor';
 import MapAvatar from '../action/MapAvatar';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import { winSize } from '../global/GConst';
 import EntityLayer from '../layer/EntityLayer';
 import MapLayer from '../layer/MapLayer';

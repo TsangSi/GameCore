@@ -12,7 +12,7 @@ import BundleManager from '../ui/BundleManager';
 import {
  AssetType, BundleType, MPQ_FILE_INFO,
 } from '../global/GConst';
-import { Executor } from './Executor';
+import { Executor } from '../core/executor/Executor';
 
 const { ccclass } = _decorator;
 

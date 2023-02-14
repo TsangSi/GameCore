@@ -1,4 +1,4 @@
-import { EventM } from '../../../../scripts/common/EventManager';
+import { EventM } from '../../../../scripts/core/event/EventManager';
 import { UI_NAME } from '../../../../scripts/ui/UIConfig';
 import UIManager from '../../../../scripts/ui/UIManager';
 

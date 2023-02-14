@@ -3,7 +3,7 @@ import { AnimationClip, js, Label, Node, Tween, tween, v2, v3, _decorator } from
 import ActionBase from '../../../scripts/action/ActionBase';
 import ActionConfig, { ACTION_DIRECT, ACTION_RES_TYPE, ACTION_TYPE } from '../../../scripts/action/ActionConfig';
 import { FightEntity } from '../../../scripts/action/FightEntity';
-import { EventM } from '../../../scripts/common/EventManager';
+import { EventM } from '../../../scripts/core/event/EventM';
 import { Config } from '../../../scripts/config/Config';
 import { CLIENT_SHOW_TYPE, TURN_ATK_TYPE } from '../../../scripts/global/GConst';
 import EntityManager from '../../../scripts/map/EntityManager';

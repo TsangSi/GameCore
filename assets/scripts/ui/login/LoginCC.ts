@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { Asset, resources } from 'cc';
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventM';
 import { ServerMonitor } from '../../common/ServerMonitor';
 import UtilsPlatform from '../../utils/UtilsPlatform';
 import UtilsStorage from '../../utils/UtilsStorage';

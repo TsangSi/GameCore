@@ -3,7 +3,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { resources, sys } from 'cc';
 import * as $protobuf from 'protobufjs';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import MsgToast from '../ui/Toast/MsgToast';
 import UtilsPlatform from '../utils/UtilsPlatform';
 import UtilsString from '../utils/UtilsString';

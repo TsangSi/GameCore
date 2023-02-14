@@ -1,6 +1,6 @@
 import { _decorator, __private } from 'cc';
 import GameProto from '../net/GameProto';
-import { ExecutorList } from './ExecutorList';
+import { ExecutorList } from '../core/executor/ExecutorList';
 import UtilsPlatform from '../utils/UtilsPlatform';
 
 const { ccclass } = _decorator;

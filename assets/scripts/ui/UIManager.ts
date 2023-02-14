@@ -1,5 +1,5 @@
 import { Node, Sprite } from 'cc';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import { ResManager } from '../common/ResManager';
 import { BundleType } from '../global/GConst';
 // import { Win } from './base/Win';

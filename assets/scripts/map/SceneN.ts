@@ -1,5 +1,5 @@
 import { BattleManager } from '../../gamelogic/scripts/battle/BattleManager';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import { ServerMonitor } from '../common/ServerMonitor';
 import { UI_NAME } from '../ui/UIConfig';
 import UIManager from '../ui/UIManager';

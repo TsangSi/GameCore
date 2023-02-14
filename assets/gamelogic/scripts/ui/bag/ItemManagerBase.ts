@@ -1,5 +1,5 @@
 import { js } from "cc";
-import { Executor } from "../../../../scripts/common/Executor";
+import { Executor } from "../../../../scripts/core/executor/Executor";
 import { ItemTypeView } from "../../../../scripts/global/GConst";
 import Utils from "../../../../scripts/utils/Utils";
 import { ItemDataEx } from "./ItemDataEx";

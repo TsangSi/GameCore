@@ -2,8 +2,8 @@ import {
  AnimationClip, assetManager, Component, find, js, _decorator,
 } from 'cc';
 import { EffectManager } from '../../../scripts/common/EffectManager';
-import { EventM } from '../../../scripts/common/EventManager';
-import { Executor } from '../../../scripts/common/Executor';
+import { EventM } from '../../../scripts/core/event/EventM';
+import { Executor } from '../../../scripts/core/executor/Executor';
 import { PAGE_NAME, UI_NAME } from '../../../scripts/ui/UIConfig';
 import UIManager from '../../../scripts/ui/UIManager';
 import UtilsCC from '../../../scripts/utils/UtilsCC';

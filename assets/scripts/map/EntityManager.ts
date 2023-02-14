@@ -6,7 +6,7 @@ import Entity from '../action/Entity';
 import MapAvatar from '../action/MapAvatar';
 import Monster from '../action/Monster';
 import PlayerAvatar from '../action/PlayerAvatar';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventM';
 import { EntityType } from '../global/GConst';
 import EntityLayer from '../layer/EntityLayer';
 import { UI_NAME } from '../ui/UIConfig';

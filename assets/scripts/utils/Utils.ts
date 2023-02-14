@@ -1,7 +1,7 @@
 import {
  Color, Label, LabelOutline, Node, sys,
 } from 'cc';
-import { Executor } from '../common/Executor';
+import { Executor } from '../core/executor/Executor';
 import { QualityType } from '../global/GConst';
 import { LowerBound } from './LowerBound';
 import { ColorStyleType, UtilsColor } from './UtilsColor';

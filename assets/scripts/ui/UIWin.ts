@@ -1,7 +1,7 @@
 import {
  instantiate, js, Node, Prefab, UIOpacity, UITransform,
 } from 'cc';
-import { Executor } from '../common/Executor';
+import { Executor } from '../core/executor/Executor';
 import { ResManager } from '../common/ResManager';
 import AutoResolution from '../utils/AutoResolution';
 import UtilsCC from '../utils/UtilsCC';

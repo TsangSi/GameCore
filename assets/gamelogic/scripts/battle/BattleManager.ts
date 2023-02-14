@@ -1,3 +1,9 @@
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
 /* eslint-disable max-len */
 import { AnimationClip, error, js, Node, tween, v2, v3, Vec2, Vec3 } from 'cc';
 import ActionBase from '../../../scripts/action/ActionBase';
@@ -12,7 +18,7 @@ import EntityManager from '../../../scripts/map/EntityManager';
 import UIManager from '../../../scripts/ui/UIManager';
 import { UI_NAME } from '../../../scripts/ui/UIConfig';
 import { FightEntity } from '../../../scripts/action/FightEntity';
-import { EventM } from '../../../scripts/common/EventManager';
+import { EventM } from '../../../scripts/core/event/EventManager';
 
 interface MonsterAnimIdInfo {
     AnimId: number;

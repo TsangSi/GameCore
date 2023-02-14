@@ -1,6 +1,6 @@
 import { assetManager, js } from 'cc';
 import { AIState } from '../action/ActionConfig';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventM';
 import EntityManager from './EntityManager';
 import SceneMapManager from './SceneMapManager';
 import { SceneN } from './SceneN';

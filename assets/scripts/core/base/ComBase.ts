@@ -1,6 +1,12 @@
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
 import { Component, js, _decorator } from 'cc';
-import { EventM, IEventM } from '../../common/EventManager';
-import { Executor } from '../../common/Executor';
+import { EventM, IEventM } from '../event/EventM';
+import { Executor } from '../executor/Executor';
 import { TFunc } from '../../global/GConst';
 
 const { ccclass, property } = _decorator;

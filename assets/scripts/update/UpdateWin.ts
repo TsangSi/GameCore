@@ -1,7 +1,7 @@
 import {
     _decorator, Component, Node, Asset, sys, instantiate, game,
 } from 'cc';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventM';
 import LoginManager from '../ui/login/LoginManager';
 import { UI_NAME } from '../ui/UIConfig';
 import UIManager from '../ui/UIManager';

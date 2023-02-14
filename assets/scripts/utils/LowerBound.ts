@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Executor } from '../common/Executor';
+import { Executor } from '../core/executor/Executor';
 import { BinarySearcher } from './BinarySearcher';
 
 export class LowerBound {

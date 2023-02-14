@@ -2,7 +2,7 @@ import {
  _decorator, Component, Node, js,
 } from 'cc';
 import { Type } from '../global/GConst';
-import { ExecutorList } from './ExecutorList';
+import { ExecutorList } from '../core/executor/ExecutorList';
 
 const { ccclass, property } = _decorator;
 

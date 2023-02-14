@@ -2,7 +2,7 @@
 import {
  assetManager, Button, Component, instantiate, Node, _decorator,
 } from 'cc';
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventM';
 import { ServerMonitor } from '../../common/ServerMonitor';
 import GlobalConfig from '../../config/GlobalConfig';
 import HttpManager from '../../net/HttpManager';

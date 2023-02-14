@@ -1,4 +1,10 @@
-import { Executor } from '../common/Executor';
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
+import { Executor } from '../core/executor/Executor';
 
 export class BinarySearcher {
     // private loopCondition =  null;

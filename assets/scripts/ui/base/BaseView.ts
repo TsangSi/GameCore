@@ -1,9 +1,15 @@
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
 /* eslint-disable max-len */
 /* eslint-disable dot-notation */
 import {
  Asset, assetManager, CCBoolean, Component, js, Node, Sprite, SpriteFrame, _decorator, __private,
 } from 'cc';
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventManager';
 import { ResManager } from '../../common/ResManager';
 import { BundleType } from '../../global/GConst';
 import Utils from '../../utils/Utils';

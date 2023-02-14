@@ -3,7 +3,7 @@ import {
 } from 'cc';
 import { DEBUG } from 'cc/env';
 import { EffectManager } from '../../common/EffectManager';
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventM';
 import { ResManager } from '../../common/ResManager';
 import { ServerMonitor } from '../../common/ServerMonitor';
 import List from '../../component/List';

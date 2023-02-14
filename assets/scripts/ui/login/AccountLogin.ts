@@ -1,9 +1,15 @@
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
  Asset, assetManager, EditBox, Node, _decorator,
 } from 'cc';
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventM';
 import { ServerMonitor } from '../../common/ServerMonitor';
 import GlobalConfig from '../../config/GlobalConfig';
 import HttpManager from '../../net/HttpManager';

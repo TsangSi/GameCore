@@ -3,7 +3,7 @@ import {
 } from 'cc';
 import { ACTION_STATUS_TYPE } from '../../../../scripts/action/ActionConfig';
 import { EffectManager } from '../../../../scripts/common/EffectManager';
-import { EventM } from '../../../../scripts/common/EventManager';
+import { EventM } from '../../../../scripts/core/event/EventM';
 import EntityManager from '../../../../scripts/map/EntityManager';
 import MsgToast from '../../../../scripts/ui/Toast/MsgToast';
 import { UI_NAME } from '../../../../scripts/ui/UIConfig';

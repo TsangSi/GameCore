@@ -1,7 +1,7 @@
 import {
  Component, Label, Node, size, Sprite, SpriteFrame, Texture2D, UITransform, _decorator,
 } from 'cc';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import { ResManager } from '../common/ResManager';
 import { AssetType } from '../global/GConst';
 import { MapConst } from '../map/base/MapConst';

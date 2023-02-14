@@ -1,8 +1,14 @@
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
 import {
  _decorator, Component, Node, v2, instantiate,
 } from 'cc';
 // import BuildManager, { CityInfo } from '../../gamelogic/scripts/build/BuildManager';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventM';
 import { BundleType } from '../global/GConst';
 import { BaseView } from '../ui/base/BaseView';
 import UIManager from '../ui/UIManager';

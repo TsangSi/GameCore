@@ -1,7 +1,7 @@
 import {
     _decorator,
 } from 'cc';
-import { EventM } from './common/EventManager';
+import { EventM } from './core/event/EventM';
 import { ComBase } from './core/base/ComBase';
 import SceneMapManager from './map/SceneMapManager';
 import { UI_NAME } from './ui/UIConfig';

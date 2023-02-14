@@ -1,6 +1,6 @@
 
 import { _decorator, Component, Node, Vec2 } from 'cc';
-import { EventM } from '../../../../scripts/common/EventManager';
+import { EventM } from '../../../../scripts/core/event/EventM';
 import SceneMapManager from '../../../../scripts/map/SceneMapManager';
 import UtilsCC from '../../../../scripts/utils/UtilsCC';
 const { ccclass, property } = _decorator;

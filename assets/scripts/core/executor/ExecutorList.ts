@@ -1,6 +1,6 @@
 import { _decorator } from 'cc';
-import { TFunc, Type } from '../global/GConst';
-import Utils from '../utils/Utils';
+import { TFunc, Type } from '../../global/GConst';
+import Utils from '../../utils/Utils';
 import { Executor } from './Executor';
 
 const { ccclass } = _decorator;

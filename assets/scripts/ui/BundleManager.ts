@@ -1,7 +1,13 @@
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
 import {
  AssetManager, assetManager,
 } from 'cc';
-import { ExecutorList } from '../common/ExecutorList';
+import { ExecutorList } from '../core/executor/ExecutorList';
 
 enum LoadStatus {
     Empty,

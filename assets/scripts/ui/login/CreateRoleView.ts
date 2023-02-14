@@ -1,7 +1,13 @@
 /*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
+/*
  * @Author: your name
  * @Date: 2019-10-23 13:41:33
- * @LastEditTime: 2021-05-26 21:56:47
+ * @LastEditTime: 2023-02-14 21:17:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \RPG_Cocos\assets\script1\Login\CreateRoleView.ts
@@ -12,7 +18,7 @@ import {
  AnimationClip, Component, EditBox, instantiate, Label, Node, Prefab, Sprite, SpriteFrame, sys, Toggle, ToggleContainer, v2, _decorator,
 } from 'cc';
 import { EffectManager } from '../../common/EffectManager';
-import { EventM } from '../../common/EventManager';
+import { EventM } from '../../core/event/EventM';
 import { ResManager } from '../../common/ResManager';
 import { ServerMonitor } from '../../common/ServerMonitor';
 import GlobalConfig from '../../config/GlobalConfig';

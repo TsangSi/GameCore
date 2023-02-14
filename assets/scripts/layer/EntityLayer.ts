@@ -1,3 +1,9 @@
+/*
+ * @Author: zs
+ * @Date: 2023-02-14 18:01:15
+ * @Description:
+ *
+ */
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -15,7 +21,7 @@ import Monster from '../action/Monster';
 import EntityManager from '../map/EntityManager';
 import { EntityType } from '../global/GConst';
 import { ACTION_DIRECT, ACTION_RES_TYPE, ACTION_STATUS_TYPE } from '../action/ActionConfig';
-import { EventM } from '../common/EventManager';
+import { EventM } from '../core/event/EventManager';
 import Utils from '../utils/Utils';
 import { UtilsNumber } from '../utils/UtilsNumber';
 import MsgToast from '../ui/Toast/MsgToast';

@@ -1,4 +1,4 @@
-import { EventM } from "../../../scripts/common/EventManager";
+import { EventM } from "../../../scripts/core/event/EventManager";
 import { BagN } from "../ui/bag/BagN";
 
 export default class MainManager {

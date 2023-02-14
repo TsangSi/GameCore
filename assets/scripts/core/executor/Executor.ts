@@ -1,5 +1,5 @@
 import { _decorator } from 'cc';
-import { TFunc, Type } from '../global/GConst';
+import { TFunc, Type } from '../../global/GConst';
 
 const { ccclass } = _decorator;
 
