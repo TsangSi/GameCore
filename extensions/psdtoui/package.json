@@ -1,0 +1,44 @@
+{
+    "name": "psdtoui",
+    "package_version": 2,
+    "version": "1.0.0",
+    "main": "./browser.js",
+    "description": "一份简单的扩展",
+    "author": "Jens",
+    "contributions": {
+        "menu": [{
+            "path": "Tools",
+            "label": "PsdToUi",
+            "message": "psdtoui"
+        }],
+        "messages": {
+            "psdtoui": {
+                "methods": ["psdtoui"]
+            }
+        },
+        "scene": {
+            "script": "./scene.js"
+        }
+    },
+    "panels": {
+        "default": {
+            "title": "psdtoui",
+            "type": "dockable",
+            "main": "./panels/default.js",
+            "icon": "./static/default.png",
+            "size": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "list": {
+            "title": "world list",
+            "type": "simple",
+            "main": "./panels/list.js",
+            "icon": "./static/list.png",
+
+            "flags": {},
+            "size": {}
+        }
+    }
+}

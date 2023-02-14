@@ -1,0 +1,104 @@
+{
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    },
+    "extends": [
+        "airbnb-base",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx",
+                    ".d.ts"
+                ]
+            }
+        }
+    },
+    "globals": {
+        "cc": false,
+        "wx": false,
+        "Editor": false
+    },
+    "rules": {
+        // https://eslint.org/docs/rules/ 
+        // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+        //! 添加任何规则之前，请在注释中解释原因
+
+        /*****     推荐的规则覆盖     *****/
+
+        "camelcase":"off", // 关闭，可以不使用驼峰命名；原因：游戏中有大量自动生成的下划线命名，自定义的变量我们还是建议用驼峰命名
+        "eqeqeq": "warn", // 警告[修]，要求使用 === 和 !==；原因：自带类型比较使('1' === 1)为假。
+        "prefer-rest-params": "off", // 关闭、要求使用剩余参数而不是 arguments；原因：ES5可能需要。
+        "prefer-spread": "off", // 关闭，要求使用扩展运算符而非.apply()；原因：ES5可能需要。
+        "radix": "off", // 关闭，强制在 parseInt("071", 10) 使用进制参数；原因：我们有时不需要传递第二个参数。
+        "no-underscore-dangle": "off", // 关闭，禁止标识符中有悬空下划线；原因：我们仍然在命名约定中广泛使用 pre-dangle 命名，例如私有属性、私有函数、模块范围共享变量等。
+        "quotes": ["warn", "single", { "allowTemplateLiterals": true }], // 警告[修]，强制单引号''，但允许模板文字``；原因：单引号可以直接包含双引号，而模板文字可以直接换行。
+        "no-else-return": "off", // 关闭，禁止 if 语句中 return 语句之后有 else 块；原因：else-return 是一种常见的模式，它清楚地表达了控制流。
+        "no-extra-parens": "warn", // 警告[修]，禁止冗余的括号；原因：可以不用括号的地方就不用。
+
+        /*****     AIRBNB 特定规则覆盖     ****/
+
+        "class-methods-use-this": "off", // 关闭，强制类函数使用 this；原因：让所以空函数可以工作。
+        "guard-for-in": "off", // 关闭，要求 for-in 循环中有一个 if 语句；原因：普通对象可能不需要判断原型链中继承的属性。
+        "import/export": "off", // 关闭，报告任何无效的出口；原因：所以导出声明命名空间可以工作。
+        "import/extensions": "off", // 关闭， 确保在导入路径中一致使用文件扩展名；原因：typescript 不支持这个。
+        "import/no-unresolved": "off", // 关闭，禁止未解析的导入；原因：会误报
+        "import/prefer-default-export": "off", // 关闭，当一个模块只有一个导出时，更喜欢使用默认导出而不是命名导出；原因：更喜欢命名导出。
+        "indent": ["warn", 4, {"SwitchCase": 1}], // 警告，强制使用一致的缩进；原因：我们明确要这个。
+        "lines-between-class-members": "off", // 关闭，要求或禁止类成员之间出现空行；原因：对成员声明更加宽容。
+        "max-classes-per-file": "off", // 关闭，强制每个文件中包含的的类的最大数量；原因：辅助类很常见。
+        "max-len": ["warn", 150], // 警告，强制一行的最大长度 150；原因：对每行的最大长度更宽松。
+        "no-console": "off", // 关闭，禁用 console；原因，有时比较方便, cc."warn" 用起来还是太痛苦了。
+        "no-plusplus": "off", // 关闭，禁用一元操作符 ++ 和 --；原因：我们明确要求这个。
+        "no-continue": "off", // 关闭，禁用 continue 语句；原因：我们明确要求这个。
+        "no-mixed-operators": "off", // 关闭，禁止混合使用不同的操作符；原因：这很麻烦。
+        "no-multi-assign": "off", // 关闭，禁止连续赋值；原因：有时很方便。
+        "no-nested-ternary": "off", // 关闭，禁用嵌套的三元表达式；原因：有时很方便。
+        "no-param-reassign": "off", // 关闭，禁止对 function 的参数进行重新赋值；原因：输出对象一直作为参数传递。
+        "no-restricted-syntax": "off", // 关闭，禁用特定的语法；原因：for-in 是普通对象的有效选择。
+        "no-return-assign": "off", // 关闭，禁止在 return 语句中使用赋值语句；原因：有时很方便。
+        "no-shadow": "off", // 关闭，禁止变量声明与外层作用域的变量同名；原因：这可能会引发误报。
+        "no-sequences": "off", // 关闭，禁用逗号操作符；原因：有时很方便。
+        "no-bitwise": "off", // 关闭，禁用按位运算符；原因：我们广泛使用它。
+        "no-useless-constructor": "off", // 关闭，禁用不必要的构造函数；原因：为具有参数属性的空构造函数给出误报。
+        "one-var-declaration-per-line": "off", // 关闭，要求或禁止在变量声明周围换行；原因：自动修复与 `one-var` 存在顺序问题。
+        "prefer-destructuring": "off", // 关闭，优先使用数组和对象解构；原因：自动修复不够聪明，无法合并不同的实例。
+        "linebreak-style": "off", // 关闭，强制使用一致的换行风格；原因：我们暂时不会在每个人的开发环境中强制执行此操作。
+        "no-use-before-define": "off", // 关闭，不允许在定义变量之前使用它们；原因：有时需要把重要的突出在前面。
+        "consistent-return": "off", // 关闭，函数有返回值的时候会强制写上undefined
+
+        /*****     特定于打字稿的规则覆盖     ****/
+        
+        "@typescript-eslint/no-unsafe-argument": "off", // 关闭，禁止在函数参数中使用unsafe操作；原因：有时候比较便利。
+        "@typescript-eslint/no-unsafe-assignment": "off", // 关闭，不允许将any分配给变量和属性；原因：仍然与一些大量底层函数返回该类型。
+        "@typescript-eslint/explicit-module-boundary-types": "warn", // 关闭，需要导出函数和类的公共类方法的显式返回和参数类型；原因：这工作量太大了。
+        "@typescript-eslint/unbound-method": "off", // 关闭，强制使用预期范围调用未绑定的方法；原因：我们有时会利用原型方法来获得更好的性能。
+        "@typescript-eslint/no-explicit-any": "off", // 关闭，禁止使用该any类型；原因：仍然与一些大量模板化的用法相关。
+        "@typescript-eslint/no-namespace": ["warn", { // 警告，禁止使用自定义 TypeScript 模块和命名空间；原因：我们需要声明静态属性。
+            "allowDeclarations": true,
+            "allowDefinitionFiles": true
+        }],
+        "@typescript-eslint/restrict-template-expressions": ["warn", { // 警告，强制模板文字表达式为字符串类型；原因：不同类型的串联很常见，例如哈希计算
+            "allowNumber": true,
+            "allowBoolean": true
+        }],
+        "@typescript-eslint/explicit-member-accessibility": "warn", // 警告[修]，要求对类属性和方法进行显式可访问性修饰符
+        "@typescript-eslint/no-inferrable-types": "off" // 关闭，不允许对初始化为数字、字符串或布尔值的变量或参数进行显式类型声明；原因：我们明确需要加类型。
+    }
+}

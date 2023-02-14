@@ -1,0 +1,8 @@
+{
+    "name": "simple-1627026987210",
+    "package_version": 2,
+    "version": "1.0.0",
+    "description": "A Simple Extension",
+    "author": "Unknown",
+    "main": "browser.js"
+}

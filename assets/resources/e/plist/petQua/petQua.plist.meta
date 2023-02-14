@@ -1,0 +1,247 @@
+{
+  "ver": "1.0.7",
+  "importer": "sprite-atlas",
+  "imported": true,
+  "uuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {
+    "c9a38": {
+      "importer": "sprite-frame",
+      "uuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0@c9a38",
+      "displayName": "",
+      "id": "c9a38",
+      "name": "petqua_1",
+      "userData": {
+        "atlasUuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0",
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 75,
+        "width": 53,
+        "height": 37,
+        "rawWidth": 55,
+        "rawHeight": 37,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8d5d59b9-7040-4549-a3d9-115effb3353f@6c48a",
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [],
+          "indexes": [],
+          "uv": [],
+          "nuv": [],
+          "minPos": [],
+          "maxPos": []
+        }
+      },
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f308e": {
+      "importer": "sprite-frame",
+      "uuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0@f308e",
+      "displayName": "",
+      "id": "f308e",
+      "name": "petqua_2",
+      "userData": {
+        "atlasUuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0",
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 112,
+        "width": 52,
+        "height": 36,
+        "rawWidth": 54,
+        "rawHeight": 38,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8d5d59b9-7040-4549-a3d9-115effb3353f@6c48a",
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [],
+          "indexes": [],
+          "uv": [],
+          "nuv": [],
+          "minPos": [],
+          "maxPos": []
+        }
+      },
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d1d95": {
+      "importer": "sprite-frame",
+      "uuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0@d1d95",
+      "displayName": "",
+      "id": "d1d95",
+      "name": "petqua_3",
+      "userData": {
+        "atlasUuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0",
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 36,
+        "width": 53,
+        "height": 39,
+        "rawWidth": 53,
+        "rawHeight": 39,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8d5d59b9-7040-4549-a3d9-115effb3353f@6c48a",
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [],
+          "indexes": [],
+          "uv": [],
+          "nuv": [],
+          "minPos": [],
+          "maxPos": []
+        }
+      },
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6dc41": {
+      "importer": "sprite-frame",
+      "uuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0@6dc41",
+      "displayName": "",
+      "id": "6dc41",
+      "name": "petqua_4",
+      "userData": {
+        "atlasUuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0",
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 148,
+        "width": 50,
+        "height": 36,
+        "rawWidth": 50,
+        "rawHeight": 38,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8d5d59b9-7040-4549-a3d9-115effb3353f@6c48a",
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [],
+          "indexes": [],
+          "uv": [],
+          "nuv": [],
+          "minPos": [],
+          "maxPos": []
+        }
+      },
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a3c0f": {
+      "importer": "sprite-frame",
+      "uuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0@a3c0f",
+      "displayName": "",
+      "id": "a3c0f",
+      "name": "petqua_5",
+      "userData": {
+        "atlasUuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0",
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 0,
+        "width": 54,
+        "height": 36,
+        "rawWidth": 54,
+        "rawHeight": 36,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "8d5d59b9-7040-4549-a3d9-115effb3353f@6c48a",
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [],
+          "indexes": [],
+          "uv": [],
+          "nuv": [],
+          "minPos": [],
+          "maxPos": []
+        }
+      },
+      "ver": "1.0.11",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "atlasTextureName": "petQua.png",
+    "format": 2,
+    "textureUuid": "8d5d59b9-7040-4549-a3d9-115effb3353f@6c48a",
+    "uuid": "0d1a63ca-8504-4735-96fa-df2811ffa2c0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "build/": true,
+        "temp/": true,
+        "library/": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/*.meta": true,
+        "library/": true,
+        "local/": true,
+        "temp/": true
+    },
+
+    // import模块使用相对路径
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "typescript.tsdk": "node_modules/typescript/lib",
+
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    // 开启保存时修复
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
