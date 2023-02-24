@@ -1,17 +1,17 @@
 import { _decorator } from 'cc';
-import { TFunc, Type } from '../../global/GConst';
+import { RecordObj, TFunc, Type } from '../../global/GConst';
 
 const { ccclass } = _decorator;
 
 @ccclass('Executor')
 export class Executor {
     private func: TFunc;
-    private this_: unknown = undefined;
+    private this_: RecordObj = undefined;
     private args_: any[] = [];
-    public constructor(func: TFunc, target?: unknown, ...params: any[]) {
+    public constructor(func: TFunc, target?: RecordObj, ...params: any[]) {
         this.func = func;
         this.this_ = target;
-        this.args_ = Array.prototype.slice.call(arguments, 2);
+        this.args_ = params;
     }
 
     /**
@@ -55,7 +55,7 @@ export class Executor {
         return this.func;
     }
 
-    public target(): unknown {
+    public target(): RecordObj {
         return this.this_;
     }
 

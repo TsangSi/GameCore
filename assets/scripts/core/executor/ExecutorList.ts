@@ -1,5 +1,5 @@
 import { _decorator } from 'cc';
-import { TFunc, Type } from '../../global/GConst';
+import { RecordObj, TFunc, Type } from '../../global/GConst';
 import Utils from '../../utils/Utils';
 import { Executor } from './Executor';
 
@@ -43,7 +43,7 @@ export class ExecutorList {
         return false;
     }
 
-    private _push(func: TFunc, target?: object) {
+    private _push(func: TFunc, target?: RecordObj) {
         const executor = new Executor(func, target);
         this.executors_.push(executor);
         return executor;
@@ -54,7 +54,7 @@ export class ExecutorList {
      *
      * 新增唯一的请使用pushUnique
      */
-    public push(func: TFunc, target?: object): Executor {
+    public push(func: TFunc, target?: RecordObj): Executor {
         if (func) {
             return this._push(func, target);
         }
@@ -65,14 +65,14 @@ export class ExecutorList {
      *
      * 有可能重复的请使用push
      */
-    public pushUnique(func: TFunc, target?: object): Executor {
+    public pushUnique(func: TFunc, target?: RecordObj): Executor {
         if (func && this.indexOf(func, target) >= 0) {
             return this._push(func, target);
         }
     }
 
     /** 查询，返回索引，没有返回-1 */
-    public indexOf(func: TFunc, target?: object): number {
+    public indexOf(func: TFunc, target?: RecordObj): number {
         if (!func) {
             return -1;
         }
@@ -155,7 +155,7 @@ export class ExecutorList {
         // return results;
     }
 
-    public remove(func: TFunc, target: object): void {
+    public remove(func: TFunc, target: RecordObj): void {
         if (!func || typeof func !== Type.Function) {
             return;
         }
@@ -169,7 +169,7 @@ export class ExecutorList {
         }
     }
 
-    public removeAllOf(func: TFunc, target: object): void {
+    public removeAllOf(func: TFunc, target: RecordObj): void {
         if (!func || typeof func !== Type.Function) { return; }
 
         const executors = this.executors_;

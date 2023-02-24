@@ -6,6 +6,7 @@
  */
 import { _decorator, js } from 'cc';
 import {
+    RecordObj,
     TFunc, Type,
 } from '../../global/GConst';
 import { EUpdate } from '../../common/EventConst';
@@ -22,7 +23,7 @@ export interface IEventM {
      * @param target 回调的this
      * @returns true 成功，false 失败
      */
-    on: (id: number, func: TFunc, target: object) => Executor
+    on: (id: number, func: TFunc, target: RecordObj) => Executor
     /**
      * 一次性监听事件，一旦触发就会不再监听
      * @param id 事件id
@@ -30,14 +31,14 @@ export interface IEventM {
      * @param target 回调的this
      * @returns true 成功，false 失败
      */
-    once: (id: number, func: TFunc, target: object) => Executor
+    once: (id: number, func: TFunc, target: RecordObj) => Executor
     /**
      * 移除监听事件
      * @param id 事件id
      * @param func 回调
      * @param target 回调的this
      */
-    off: (id: number, func: TFunc, target: object) => void
+    off: (id: number, func: TFunc, target: RecordObj) => void
 }
 
 @ccclass('EventM')
@@ -55,15 +56,15 @@ export class EventM implements IEventM {
     /** 单次事件列表 */
     private onceListeners_: Record<string, ExecutorList> = js ? js.createMap(true) : Object.create(null);
 
-    public on(id: number, func: TFunc, target: object): Executor {
+    public on(id: number, func: TFunc, target: RecordObj): Executor {
         return this.addListener(this.listeners_, id, func, target);
     }
 
-    public once(id: number, func: TFunc, target: object): Executor {
+    public once(id: number, func: TFunc, target: RecordObj): Executor {
         return this.addListener(this.onceListeners_, id, func, target);
     }
 
-    public off(id: number, func: TFunc, target: object): void {
+    public off(id: number, func: TFunc, target: RecordObj): void {
         this.removeListener(id, func, target);
     }
 
@@ -100,7 +101,7 @@ export class EventM implements IEventM {
         }
     }
 
-    private addListener(mapping: Record<string, ExecutorList>, id: number | string, func: TFunc, target?: object) {
+    private addListener(mapping: Record<string, ExecutorList>, id: number | string, func: TFunc, target?: RecordObj) {
         if (!id || !func) {
             console.warn(js.formatStr(
                 'hl.EventM._addListener: invalid param(s). id: %s, func: %s',
@@ -123,7 +124,7 @@ export class EventM implements IEventM {
         }
     }
 
-    private contains(mapping: Record<string, ExecutorList>, id: number | string, func: TFunc, target?: object) {
+    private contains(mapping: Record<string, ExecutorList>, id: number | string, func: TFunc, target?: RecordObj) {
         const executors = mapping[id];
         return executors && executors.indexOf(func, target) >= 0;
     }
@@ -135,7 +136,7 @@ export class EventM implements IEventM {
      * @param {any} target
      * @return {fn.EventM}
      */
-    private removeListener(id: number | string, func: TFunc, target: object) {
+    private removeListener(id: number | string, func: TFunc, target: RecordObj) {
         if (arguments.length === 1) {
             this.clearListener(id);
         } else if (typeof func === Type.Function) {
