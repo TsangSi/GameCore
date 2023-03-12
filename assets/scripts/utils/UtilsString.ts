@@ -124,4 +124,36 @@ export default class UtilsString {
 
     /** 生成随机字符串 */
     static RandomStr = () => `_${Math.random().toString(36).substring(2, 9)}`;
+
+
+    /**
+     * 获取文件名
+     * @param path
+     * @param hasExt 获取的文件名是否带扩展名
+     * @returns 不带后缀的文件名
+     */
+     public static GetFileName(path: string, hasExt?: boolean): string {
+        if (hasExt) {
+            return path.replace(/(.*\/)*([^.]+)/ig, '$2');
+        }
+        return path.replace(/(.*\/)*([^.]+).*/ig, '$2');
+    }
+
+    /**
+     * 目前主要是动画加载用，非通用性接口
+     * @param path 路径
+     * @param expName 额外名字
+     * @returns
+     */
+     public static ReplaceFileNameForAnim(path: string, expName: string): string {
+        const findex = path.lastIndexOf('/');
+        const newPath = path.substring(0, findex + 1);
+
+        const paths: string[] = path.split('/');
+        const len = paths.length;
+        const ids = paths[len - 2];
+        const newName = paths[len - 3] + ids.substring(7, ids.length) + expName;
+
+        return newPath + newName;
+    }
 }

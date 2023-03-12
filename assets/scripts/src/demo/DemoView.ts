@@ -1,6 +1,6 @@
 
 import { _decorator, Component, Node, SpriteFrame, Sprite, Prefab, instantiate, Texture2D } from 'cc';
-import { AssetType, BundleType, ResManager } from '../core/ResManager';
+import { AssetType, BundleType, ResManager } from '../core/ResM';
 const { ccclass, property } = _decorator;
 
 /**

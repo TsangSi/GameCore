@@ -1,3 +1,9 @@
+/*
+ * @Author: zs
+ * @Date: 2023-03-11 14:27:21
+ * @Description:
+ *
+ */
 
 export default function Singleton<T>() {
     class Singleton {
@@ -8,7 +14,7 @@ export default function Singleton<T>() {
             }
             this._instance = new this();
             return this._instance;
-        } 
+        }
 
         protected name: string = 'Singleton';
 

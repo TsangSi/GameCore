@@ -1,6 +1,6 @@
 
 import { _decorator, Component, Node, SpriteFrame, Sprite } from 'cc';
-import { AssetType, ResManager } from '../core/ResManager';
+import { AssetType, ResManager } from '../core/ResM';
 const { ccclass, property } = _decorator;
 
 /**
