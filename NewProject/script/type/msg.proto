@@ -1,0 +1,5466 @@
+syntax = "proto3";
+package msg;
+enum PCK {
+	A_ID = 0;
+	C2SPing_ID = 2;
+	S2CPing_ID = 3;
+	S2SCloseServerReq_ID = 4;
+	S2SCloseServerRep_ID = 5;
+	S2SDistributionRuleServerReq_ID = 6;
+	S2SDistributionRuleServerRep_ID = 7;
+	S2SActorHeart_ID = 8;
+	S2SClearRuleCacheReq_ID = 9;
+	M2SServerInfo_ID = 10;
+	S2SFightServerHeartReq_ID = 11;
+	S2SFightServerHeartRep_ID = 12;
+	S2SFightServerGetReq_ID = 13;
+	S2SFightServerGetRep_ID = 14;
+	S2CErrorRpc_ID = 15;
+	S2CRep_ID = 16;
+	S2SGM_ID = 17;
+	S2SPlayerAttrWatchKeepAlive_ID = 18;
+	S2SPlayerAttrWatchLeaseGrant_ID = 19;
+	S2SPlayerAttrWatchChange_ID = 20;
+	S2SPlayerAttrWatchLeaseRevoke_ID = 21;
+	S2SActiveActor_ID = 22;
+	S2SDeleteFile_ID = 23;
+	S2SRegisterServerInfo_ID = 24;
+	C2SLogin_ID = 25;
+	S2CLogin_ID = 26;
+	C2SReLogin_ID = 27;
+	S2CReLogin_ID = 28;
+	S2SLoginSuccess_ID = 29;
+	C2SUpdateAttr_ID = 30;
+	C2SUpdateOnlineTime_ID = 31;
+	S2CNoticeDebug_ID = 32;
+	S2CRoleInfo_ID = 33;
+	S2SActiveUser_ID = 37;
+	S2SSendPlayerInfoKfkLog_ID = 38;
+	C2SGetAreaOpenDay_ID = 39;
+	S2CGetAreaOpenDay_ID = 40;
+	C2SGetIDCardChargeRMB_ID = 633;
+	S2CGetIDCardChargeRMB_ID = 634;
+	S2AreaPlayerData_ID = 41;
+	C2SNewPlayerGuideAdd_ID = 42;
+	S2CNewPlayerGuidePush_ID = 43;
+	S2SAddDropId_ID = 44;
+	S2SAddItem_ID = 45;
+	S2SChangeUserAttr_ID = 47;
+	S2SRedTypeChange_ID = 48;
+	S2CDayResetPush_ID = 49;
+	S2CWeekResetPush_ID = 50;
+	S2CMonthResetPush_ID = 51;
+	S2SFightRecordCreate_ID = 52;
+	S2SFightRecordAddRefCount_ID = 53;
+	S2SFightRecordRemoveRefCount_ID = 54;
+	S2SFightRecordReq_ID = 55;
+	S2SFightRecordRep_ID = 56;
+	C2SFightRecordWatch_ID = 57;
+	S2CKill_ID = 58;
+	S2SKill_ID = 59;
+	C2SLoginEnd_ID = 60;
+	S2CLoginEnd_ID = 61;
+	C2SSaveClientData_ID = 886;
+	S2CSaveClientData_ID = 895;
+	S2CSendClientData_ID = 896;
+	S2CBagChange_ID = 197;
+	S2CBagInfo_ID = 201;
+	S2CItemFly_ID = 214;
+	C2SExtendEquipBag_ID = 215;
+	S2CExtendEquipBag_ID = 216;
+	C2SExchange_ID = 219;
+	S2CExchange_ID = 220;
+	C2SBatchExchange_ID = 232;
+	S2CBatchExchange_ID = 233;
+	C2SGetBattlePrize_ID = 393;
+	S2CTaskDataPush_ID = 333;
+	C2SChargeMallBuyReq_ID = 202;
+	S2CChargeMallBuyRep_ID = 203;
+	C2SGetChargeMallList_ID = 206;
+	S2CGetChargeMallList_ID = 207;
+	C2SCurrencyExchangeReq_ID = 208;
+	S2CCurrencyExchangeRep_ID = 209;
+	C2SGm_ID = 66;
+	S2CGm_ID = 67;
+	G2SPlayerOnlineState_ID = 68;
+	S2SAddAreaMail_ID = 69;
+	S2SAddPlayerMail_ID = 180;
+	S2SSendPlayerMail_ID = 196;
+	S2SAddMultiPlayerMail_ID = 182;
+	S2SPlayerAddMail_ID = 181;
+	C2SGetMailAttachReq_ID = 183;
+	S2CGetMailAttachRep_ID = 184;
+	C2SReadMailReq_ID = 185;
+	S2CReadMailRep_ID = 186;
+	C2SDelMail_ID = 194;
+	S2CDelMail_ID = 195;
+	S2CAddMail_ID = 191;
+	C2SMailList_ID = 217;
+	S2CMailList_ID = 213;
+	C2SBossPersonalInfo_ID = 245;
+	S2CBossPersonalInfo_ID = 240;
+	C2SBossPersonalFight_ID = 241;
+	S2CBossPersonalFight_ID = 242;
+	C2SBossPersonalSweep_ID = 243;
+	S2CBossPersonalSweep_ID = 244;
+	C2SBossVipInfo_ID = 354;
+	S2CBossVipInfo_ID = 355;
+	C2SBossVipFight_ID = 356;
+	S2CBossVipFight_ID = 357;
+	C2SBossVipSweep_ID = 358;
+	S2CBossVipSweep_ID = 359;
+	C2SMultiBossFight_ID = 635;
+	S2CMultiBossFight_ID = 636;
+	S2SMultiBossFightReq_ID = 1054;
+	S2SMultiBossFightRep_ID = 1055;
+	C2SMultiBossInspire_ID = 651;
+	S2CMultiBossInspire_ID = 652;
+	C2SMultiBossBuyTimes_ID = 637;
+	S2CMultiBossBuyTimes_ID = 638;
+	C2SMultiBossGetRankData_ID = 639;
+	S2CMultiBossGetRankData_ID = 640;
+	S2SMultiBossGetRankData_ID = 669;
+	C2SGetMultiBossData_ID = 654;
+	S2CGetMultiBossData_ID = 655;
+	S2SGetMultiBossData_ID = 656;
+	C2SMultiBossGetPlayerData_ID = 657;
+	S2CMultiBossGetPlayerData_ID = 658;
+	C2SMultiBossGetHp_ID = 666;
+	S2CMultiBossGetHp_ID = 667;
+	S2SMultiBossGetHp_ID = 668;
+	C2SMultiBossFocus_ID = 670;
+	S2SMultiBossFocus_ID = 671;
+	S2CMultiBossFocus_ID = 672;
+	C2SMultiBossGetBossList_ID = 958;
+	S2SMultiBossGetBossList_ID = 959;
+	S2CMultiBossUpdateState_ID = 687;
+	C2SMultiBossGetReliveList_ID = 695;
+	S2CMultiBossGetReliveList_ID = 696;
+	S2SMultiBossGetReliveList_ID = 697;
+	C2SMultiBossRelive_ID = 698;
+	S2CMultiBossRelive_ID = 699;
+	S2SMultiBossReliveReq_ID = 700;
+	S2SMultiBossReliveRep_ID = 701;
+	S2SMultiBossState_ID = 1064;
+	S2SMultiBossUpdateReq_ID = 963;
+	S2SMultiBossUpdateRep_ID = 964;
+	S2CTips_ID = 218;
+	C2SSendChatMsg_ID = 153;
+	S2CSendChatMsg_ID = 409;
+	S2SPushChat_ID = 154;
+	S2SDelChat_ID = 159;
+	S2SDelAllChat_ID = 160;
+	S2CPushChat_ID = 76;
+	S2SJoinChatChannel_ID = 157;
+	S2SQuitChatChannel_ID = 158;
+	C2SGetHistoryChat_ID = 223;
+	S2CGetHistoryChat_ID = 224;
+	S2SGetHistoryChat_ID = 225;
+	C2SBlack_ID = 254;
+	S2CBlack_ID = 255;
+	C2SGetBlackList_ID = 256;
+	S2CGetBlackList_ID = 257;
+	S2CSendNotice_ID = 200;
+	S2SPushNotice_ID = 199;
+	C2SSendPlayWayChatMsg_ID = 548;
+	S2SSendPlayWayChatMsg_ID = 549;
+	C2SShowItem_ID = 274;
+	S2CShowItem_ID = 275;
+	S2SShowItem_ID = 468;
+	C2SGetShowInfo_ID = 276;
+	S2SGetShowInfoA_ID = 570;
+	S2SGetShowInfoB_ID = 571;
+	S2CGetShowInfo_ID = 277;
+	C2SGetRankData_ID = 167;
+	S2CGetRankData_ID = 168;
+	S2SGetRankData_ID = 545;
+	S2SUpdateRank_ID = 171;
+	S2SUpdateRanks_ID = 604;
+	S2SGetRankTailReq_ID = 546;
+	S2SGetRankTailRep_ID = 547;
+	S2SGetRankHeadReq_ID = 980;
+	S2SGetRankHeadRep_ID = 981;
+	S2SGetRankByStartToEndReq_ID = 1289;
+	S2SGetRankByStartToEndRep_ID = 1290;
+	S2SGetRankFirstPlayerDataReq_ID = 582;
+	S2SGetRankFirstPlayerDataRep_ID = 583;
+	S2SUpdateRankTitle_ID = 607;
+	C2SRankWorship_ID = 608;
+	S2CRankWorship_ID = 609;
+	S2SUpdatePlayerOnline_ID = 848;
+	S2SUpdateRankOpenFlag_ID = 902;
+	S2SRankGM_ID = 612;
+	S2SUpdatePlayerOnlineAndFv_ID = 945;
+	S2CMaterialListPush_ID = 394;
+	C2SMaterialChallenge_ID = 398;
+	C2SMaterialSweep_ID = 399;
+	C2SMaterialSweepOneKey_ID = 400;
+	C2SMaterialBuyTimes_ID = 401;
+	C2SMaterialBuyTimesOneKey_ID = 402;
+	S2CGradeListPush_ID = 281;
+	C2SGradeLevelUp_ID = 284;
+	C2SGradeLevelBreak_ID = 285;
+	C2SGradeGetUpGift_ID = 286;
+	C2SGradeGetThreeGift_ID = 287;
+	C2SGradeSkillLevelUp_ID = 288;
+	C2SGradeEquipAutoWear_ID = 289;
+	C2SGradeEquipPosLevelUp_ID = 292;
+	C2SGradeEquipMake_ID = 291;
+	C2SGradeEquipSmelting_ID = 299;
+	C2SGradeBeGoldLevelUp_ID = 293;
+	C2SGradeSoul_ID = 294;
+	C2SGradeGod_ID = 295;
+	C2SGradeSkinActive_ID = 296;
+	C2SGradeSkinLevelUp_ID = 297;
+	C2SGradeSkinUse_ID = 298;
+	C2SGradeSkinOff_ID = 327;
+	S2SAreaActiveTitle_ID = 271;
+	S2SGetActiveTitleRateReq_ID = 272;
+	S2SGetActiveTitleRateRep_ID = 273;
+	S2CTitleListPush_ID = 265;
+	S2SGetPlayerTitleInfoReq_ID = 301;
+	S2SGetPlayerTitleInfoRep_ID = 302;
+	C2STitleActive_ID = 266;
+	C2STitleUpGrade_ID = 267;
+	C2STitleWear_ID = 268;
+	C2STitleOff_ID = 269;
+	C2STitleInfo_ID = 270;
+	S2CTitleInfo_ID = 300;
+	S2CUpdateFightAttr_ID = 313;
+	S2CSendFuncOpenData_ID = 315;
+	S2CUpdateFuncOpen_ID = 316;
+	C2SOpenFuncRed_ID = 970;
+	S2COpenFuncRed_ID = 971;
+	C2SGetFuncPreviewPrize_ID = 1269;
+	S2CGetFuncPreviewPrize_ID = 1270;
+	C2SChangeNick_ID = 555;
+	S2CChangeNick_ID = 556;
+	S2SHeart_ID = 80;
+	S2SHeartRemove_ID = 81;
+	S2SQuestionnaireCallBackReq_ID = 82;
+	S2SAreaGetAllOnlinePlayerReq_ID = 83;
+	S2SAreaGetAllOnlinePlayerRep_ID = 84;
+	S2CNoticeUnitDataChange_ID = 85;
+	S2CNoticePlayerBeAttack_ID = 87;
+	S2CNoticePlayerStopMove_ID = 88;
+	S2CNoticeMonsterLeaveMap_ID = 89;
+	S2CNoticeMapDataChange_ID = 90;
+	S2CNoticePlayerLeaveMap_ID = 91;
+	S2CNoticeMonsterEnterMap_ID = 92;
+	S2CNoticePlayerEnterMap_ID = 93;
+	S2CNoticePlayerMove_ID = 94;
+	S2SPlayerBaseInfoChange_ID = 95;
+	S2SPlayerInfoChange_ID = 96;
+	S2SGetPlayerBaseAttrReq_ID = 97;
+	S2SGetPlayerBaseAttrRep_ID = 98;
+	S2SGetPlayerBaseAttrExReq_ID = 172;
+	S2SGetPlayerBaseAttrExRep_ID = 173;
+	S2SGetRankPlayerBaseAttrReq_ID = 176;
+	S2SGetRankPlayerBaseAttrRep_ID = 177;
+	S2SGetUserOnlineReq_ID = 99;
+	S2SGetUserOnlineRep_ID = 100;
+	S2SSendKfkLog_ID = 101;
+	S2CBattlefieldReport_ID = 212;
+	S2SRoundStartFightReq_ID = 210;
+	S2SRoundStartFightRep_ID = 211;
+	S2SGetFightUnitReq_ID = 105;
+	S2SGetFightUnitRep_ID = 106;
+	S2CPrizeReport_ID = 372;
+	C2SNoticeFightStateReq_ID = 899;
+	S2CNoticeFightStateRep_ID = 900;
+	S2SPlayerEnterMapReq_ID = 107;
+	S2SPlayerEnterMapRep_ID = 108;
+	S2SPlayerLeaveMapReq_ID = 109;
+	S2SPlayerChangeMap_ID = 110;
+	S2SPlayerMove_ID = 111;
+	S2SPlayerStopMove_ID = 112;
+	C2SEnterMap_ID = 113;
+	S2CEnterMap_ID = 198;
+	C2SLeaveMap_ID = 114;
+	C2SStartMove_ID = 115;
+	C2SStopMove_ID = 116;
+	S2CNoticePlayerChangeMap_ID = 117;
+	ZhaoMuLog_ID = 891;
+	C2SPlayerActModelData_ID = 946;
+	S2CPlayerActModelData_ID = 947;
+	S2CActListRedPush_ID = 610;
+	S2CActListPush_ID = 258;
+	S2SActListPush_ID = 280;
+	S2SGetServerActListReq_ID = 854;
+	S2SGetServerActListRep_ID = 855;
+	C2SGetActivityConfig_ID = 605;
+	S2CGetActivityConfig_ID = 606;
+	C2SPlayerSignInUIData_ID = 562;
+	S2CPlayerSignInUIData_ID = 563;
+	C2SPlayerSignIn_ID = 558;
+	S2CPlayerSignIn_ID = 559;
+	C2SPlayerDoubleSignIn_ID = 564;
+	S2CPlayerDoubleSignIn_ID = 565;
+	C2SPlayerRemedySignIn_ID = 566;
+	S2CPlayerRemedySignIn_ID = 567;
+	C2SPlayerSignInNumReward_ID = 560;
+	S2CPlayerSignInNumReward_ID = 561;
+	C2SGetCDKeyReward_ID = 1265;
+	S2CGetCDKeyReward_ID = 1266;
+	S2SGetCDKeyRewardReq_ID = 1267;
+	S2SGetCDKeyRewardRep_ID = 1268;
+	C2SZhaoMuUIData_ID = 822;
+	S2CZhaoMuUIData_ID = 823;
+	C2SZhaoMuLuckyDraw_ID = 824;
+	S2CZhaoMuLuckyDraw_ID = 825;
+	S2SZhaoMuAddTotalNumReq_ID = 876;
+	S2SZhaoMuAddTotalNumRep_ID = 877;
+	S2SZhaoMuCleanTotalNum_ID = 920;
+	C2SZhaoMuGetStageRw_ID = 826;
+	S2CZhaoMuGetStageRw_ID = 827;
+	C2SZhaoMuSetWish_ID = 828;
+	S2CZhaoMuSetWish_ID = 829;
+	C2SZhaoMuOpenLog_ID = 830;
+	S2CZhaoMuOpenLog_ID = 831;
+	S2SZhaoMuOpenLogReq_ID = 860;
+	S2SZhaoMuOpenLogRep_ID = 861;
+	S2SZhaoMuAddLog_ID = 892;
+	C2SZhaoMuBagData_ID = 832;
+	S2CZhaoMuBagData_ID = 833;
+	C2SZhaoMuBagTakeOut_ID = 834;
+	S2CZhaoMuBagTakeOut_ID = 835;
+	C2SGetOnlineAward_ID = 950;
+	S2CGetOnlineAward_ID = 951;
+	C2SGetStageReward_ID = 1100;
+	S2CGetStageReward_ID = 1101;
+	C2SCashCowUIData_ID = 996;
+	S2CCashCowUIData_ID = 997;
+	C2SCashCowShake_ID = 995;
+	S2CCashCowShake_ID = 998;
+	C2SGetAllServerReward_ID = 1121;
+	S2CGetAllServerReward_ID = 1122;
+	C2SGetGeneralPassReward_ID = 1123;
+	S2CGetGeneralPassReward_ID = 1134;
+	S2SGetWelfareChargeNumReq_ID = 1135;
+	S2SGetWelfareChargeNumRep_ID = 1136;
+	S2SWelfareChargeNumUpdateReq_ID = 1137;
+	S2SWelfareChargeNumUpdateRep_ID = 1138;
+	S2SNotifyWelfareChargeNumReq_ID = 1139;
+	S2CPlayWayIcon_ID = 150;
+	S2SPlayWaySession_ID = 482;
+	C2SOpenWorldBossUI_ID = 489;
+	S2COpenWorldBossUI_ID = 490;
+	S2SOpenWorldBossUIReq_ID = 491;
+	S2SOpenWorldBossUIRep_ID = 492;
+	C2SEnterWorldBoss_ID = 469;
+	S2CEnterWorldBoss_ID = 470;
+	S2SEnterWorldBossReq_ID = 487;
+	S2SEnterWorldBossRep_ID = 488;
+	C2SGetWorldBossRank_ID = 493;
+	S2CGetWorldBossRank_ID = 494;
+	S2SGetWorldBossRankReq_ID = 495;
+	S2SGetWorldBossRankRep_ID = 497;
+	C2SChallengeWorldBossPVE_ID = 471;
+	S2CChallengeWorldBossPVE_ID = 472;
+	S2SGetWorldBossPVEDataReq_ID = 500;
+	S2SGetWorldBossPVEDataRep_ID = 501;
+	S2SChallengeWorldBossPVEReq_ID = 498;
+	S2SChallengeWorldBossPVERep_ID = 499;
+	S2CWorldBossShieldNotice_ID = 515;
+	S2CWorldBossShieldOpenNotice_ID = 532;
+	C2SChallengeWorldBossPVP_ID = 473;
+	S2CChallengeWorldBossPVP_ID = 474;
+	S2SGetWorldBossPVPDataReq_ID = 504;
+	S2SGetWorldBossPVPDataRep_ID = 505;
+	S2SChallengeWorldBossPVPReq_ID = 502;
+	S2SChallengeWorldBossPVPRep_ID = 503;
+	C2SWorldBossBuyBuff_ID = 475;
+	S2CWorldBossBuyBuff_ID = 476;
+	S2SGetWorldBossBuffDataReq_ID = 506;
+	S2SGetWorldBossBuffDataRep_ID = 507;
+	S2SWorldBossBuyBuffReq_ID = 508;
+	S2SWorldBossBuyBuffRep_ID = 509;
+	C2SWorldBossRandomDice_ID = 477;
+	S2CWorldBossRandomDice_ID = 478;
+	S2SWorldBossRandomDiceReq_ID = 510;
+	S2SWorldBossRandomDiceRep_ID = 511;
+	S2SWorldBossRandomDiceReward_ID = 512;
+	S2CWorldBossCurMaxDiceNumNotice_ID = 520;
+	S2CWorldBossRandomDiceOpenNotice_ID = 533;
+	S2SWorldBossUserRankReward_ID = 534;
+	S2SWorldBossAreaRankReward_ID = 535;
+	C2SExitWorldBoss_ID = 479;
+	S2CExitWorldBoss_ID = 480;
+	S2SResetActiveTime_ID = 544;
+	C2SOpenBossHomeUI_ID = 613;
+	S2COpenBossHomeUI_ID = 614;
+	S2SOpenBossHomeUIReq_ID = 615;
+	S2SOpenBossHomeUIRep_ID = 616;
+	C2SEnterBossHome_ID = 617;
+	S2CEnterBossHome_ID = 618;
+	S2SEnterBossHomeReq_ID = 619;
+	S2SEnterBossHomeRep_ID = 620;
+	C2SExitBossHome_ID = 664;
+	S2CExitBossHome_ID = 665;
+	S2SExitBossHomeReq_ID = 673;
+	S2SExitBossHomeRep_ID = 674;
+	C2SGetBossHomeRankData_ID = 644;
+	S2CGetBossHomeRankData_ID = 645;
+	S2SGetBossHomeRankDataReq_ID = 646;
+	S2SGetBossHomeRankDataRep_ID = 647;
+	C2SBossHomePVE_ID = 660;
+	S2CBossHomePVE_ID = 661;
+	S2SBossHomePVEReq_ID = 662;
+	S2SBossHomePVERep_ID = 663;
+	S2SBossHomePVEKill_ID = 692;
+	S2SBossHomePVEOwn_ID = 693;
+	S2SBossHomePVEHelp_ID = 694;
+	C2SGetBossHomePlayerPos_ID = 675;
+	S2CGetBossHomePlayerPos_ID = 676;
+	S2SGetBossHomePlayerPosReq_ID = 677;
+	S2SGetBossHomePlayerPosRep_ID = 678;
+	C2SBossHomePVP_ID = 679;
+	S2CBossHomePVP_ID = 680;
+	S2SBossHomePVPReq_ID = 681;
+	S2SBossHomePVPRep_ID = 682;
+	C2SBossHomeOpenBagUI_ID = 714;
+	S2CBossHomeOpenBagUI_ID = 715;
+	S2CBossHomeBagNew_ID = 736;
+	C2SBossHomeBagOneKeyGet_ID = 683;
+	S2CBossHomeBagOneKeyGet_ID = 684;
+	C2SBossHomeBuyBuff_ID = 690;
+	S2CBossHomeBuyBuff_ID = 691;
+	S2SBossHomeSetBuffReq_ID = 702;
+	S2SBossHomeSetBuffRep_ID = 703;
+	C2SBossHomeRelive_ID = 704;
+	S2CBossHomeRelive_ID = 705;
+	S2SBossHomeReliveReq_ID = 706;
+	S2SBossHomeReliveRep_ID = 707;
+	S2SBossHomePlayerDeath_ID = 720;
+	C2SBossHomeBuyEnergy_ID = 708;
+	S2CBossHomeBuyEnergy_ID = 709;
+	C2SBossHomeTreat_ID = 710;
+	S2CBossHomeTreat_ID = 711;
+	S2SBossHomeTreatReq_ID = 712;
+	S2SBossHomeTreatRep_ID = 713;
+	C2SBossHomeGetPlayerHpList_ID = 726;
+	S2CBossHomeGetPlayerHpList_ID = 727;
+	S2SBossHomeGetPlayerHpListReq_ID = 728;
+	S2SBossHomeGetPlayerHpListRep_ID = 729;
+	C2SOpenEscortUI_ID = 1168;
+	S2COpenEscortUI_ID = 1169;
+	S2SOpenEscortUIReq_ID = 1170;
+	S2SOpenEscortUIRep_ID = 1171;
+	C2SEscortRefreshUIData_ID = 1230;
+	S2CEscortRefreshUIData_ID = 1231;
+	S2SEscortRefreshUIDataReq_ID = 1232;
+	S2SEscortRefreshUIDataRep_ID = 1233;
+	C2SEscortRefreshCar_ID = 1172;
+	S2CEscortRefreshCar_ID = 1173;
+	C2SEscortCarStart_ID = 1174;
+	S2CEscortCarStart_ID = 1175;
+	S2SEscortCarStartReq_ID = 1176;
+	S2SEscortCarStartRep_ID = 1177;
+	C2SEscortQuickFinish_ID = 1190;
+	S2CEscortQuickFinish_ID = 1191;
+	S2SEscortQuickFinishReq_ID = 1192;
+	S2SEscortQuickFinishRep_ID = 1193;
+	C2SEscortGetFinishReward_ID = 1209;
+	S2CEscortGetFinishReward_ID = 1210;
+	S2SEscortGetFinishRewardReq_ID = 1211;
+	S2SEscortGetFinishRewardRep_ID = 1212;
+	S2CEscortFinishRewardNotice_ID = 1218;
+	C2SEscortGetCarData_ID = 1178;
+	S2CEscortGetCarData_ID = 1187;
+	S2SEscortGetCarDataReq_ID = 1188;
+	S2SEscortGetCarDataRep_ID = 1189;
+	C2SEscortCarRob_ID = 1179;
+	S2CEscortCarRob_ID = 1180;
+	S2SEscortCarRobReq_ID = 1181;
+	S2SEscortCarRobRep_ID = 1182;
+	S2SEscortCarRobNotice_ID = 1213;
+	S2CEscortCarRobNotice_ID = 1214;
+	C2SEscortOpenRobLog_ID = 1183;
+	S2CEscortOpenRobLog_ID = 1184;
+	C2SEscortRevenge_ID = 1185;
+	S2CEscortRevenge_ID = 1186;
+	C2SGetUserShowInfo_ID = 649;
+	S2CGetUserShowInfo_ID = 650;
+	C2SGetWorldLevel_ID = 513;
+	S2CGetWorldLevel_ID = 514;
+	S2SRankMatchGMNextSession_ID = 1163;
+	S2SRankMatchRankReward_ID = 1164;
+	C2SOpenRankMatchUI_ID = 1076;
+	S2COpenRankMatchUI_ID = 1077;
+	S2SOpenRankMatchUIReq_ID = 1078;
+	S2SOpenRankMatchUIRep_ID = 1079;
+	C2SRankMatchStartMatch_ID = 1080;
+	S2CRankMatchStartMatch_ID = 1081;
+	S2SRankMatchStartMatchReq_ID = 1082;
+	S2SRankMatchStartMatchRep_ID = 1083;
+	C2SRankMatchChallenge_ID = 1084;
+	S2CRankMatchChallenge_ID = 1085;
+	S2SRankMatchChallengeReq_ID = 1086;
+	S2SRankMatchChallengeRep_ID = 1087;
+	C2SRankMatchBuyChallengeNum_ID = 1088;
+	S2CRankMatchBuyChallengeNum_ID = 1089;
+	C2SRankMatchOpenFightLogUI_ID = 1090;
+	S2CRankMatchOpenFightLogUI_ID = 1091;
+	C2SRankMatchPlayFightLog_ID = 1092;
+	S2CRankMatchPlayFightLog_ID = 1093;
+	C2SRankMatchGetDayWinReward_ID = 1094;
+	S2CRankMatchGetDayWinReward_ID = 1095;
+	C2SRankMatchGetSessionWinReward_ID = 1096;
+	S2CRankMatchGetSessionWinReward_ID = 1104;
+	C2SRankMatchGetLevelReward_ID = 1097;
+	S2CRankMatchGetLevelReward_ID = 1105;
+	C2SGetRankMatchRank_ID = 1098;
+	S2CGetRankMatchRank_ID = 1099;
+	S2SGetRankMatchRankReq_ID = 1102;
+	S2SGetRankMatchRankRep_ID = 1103;
+	C2SMeltEquip_ID = 221;
+	S2CMeltEquip_ID = 222;
+	C2SAutoWearEquip_ID = 230;
+	S2CAutoWearEquip_ID = 231;
+	C2SWearOrRemoveEquip_ID = 228;
+	S2CWearOrRemoveEquip_ID = 229;
+	C2SEquipPosInfo_ID = 238;
+	S2CEquipPosInfo_ID = 239;
+	C2SStrengthEquipPos_ID = 236;
+	S2CStrengthEquipPos_ID = 237;
+	C2SAutoStrengthEquipPos_ID = 246;
+	S2CAutoStrengthEquipPos_ID = 247;
+	C2SResonateEquipPos_ID = 252;
+	S2CResonateEquipPos_ID = 253;
+	C2SBuildEquip_ID = 278;
+	S2CBuildEquip_ID = 279;
+	C2SRiseStarEquip_ID = 282;
+	S2CRiseStarEquip_ID = 283;
+	C2SEquipGemInlay_ID = 1115;
+	S2CEquipGemInlay_ID = 1116;
+	C2SEquipGemOneKeyInlay_ID = 1117;
+	S2CEquipGemOneKeyInlay_ID = 1118;
+	C2SEquipGemOneKeyLevelUp_ID = 1119;
+	S2CEquipGemOneKeyLevelUp_ID = 1120;
+	C2SSuitActive_ID = 325;
+	S2CSuitActive_ID = 319;
+	C2SSuitGradeUp_ID = 1007;
+	S2CSuitGradeUp_ID = 1008;
+	C2SSuitInfo_ID = 326;
+	S2CSuitInfo_ID = 320;
+	C2SSuitWearOrRemove_ID = 331;
+	S2CSuitWearOrRemove_ID = 332;
+	C2SRoleSkinInfo_ID = 303;
+	S2CRoleSkinInfo_ID = 304;
+	C2SRoleSkinActive_ID = 305;
+	S2CRoleSkinActive_ID = 306;
+	C2SRoleSkinRiseStar_ID = 307;
+	S2CRoleSkinRiseStar_ID = 308;
+	C2SRoleSkinWearOrRemove_ID = 317;
+	S2CRoleSkinWearOrRemove_ID = 318;
+	C2SRoleSkinSoulLevel_ID = 321;
+	S2CRoleSkinSoulLevel_ID = 322;
+	C2SRoleSkinGodNum_ID = 323;
+	S2CRoleSkinGodNum_ID = 324;
+	S2CItemPop_ID = 314;
+	S2CItemInfoPop_ID = 383;
+	S2CNotice_ID = 1294;
+	S2CRoleSkillList_ID = 330;
+	C2SRoleSkillUp_ID = 328;
+	S2CRoleSkillUp_ID = 329;
+	C2SRoleMartialList_ID = 1046;
+	S2CRoleMartialList_ID = 1039;
+	C2SRoleMartialLevelUp_ID = 1040;
+	S2CRoleMartialLevelUp_ID = 1041;
+	C2SArmyInfo_ID = 342;
+	S2CArmyInfo_ID = 343;
+	C2SArmyUp_ID = 344;
+	S2CArmyUp_ID = 345;
+	C2SArmyUseItem_ID = 346;
+	S2CArmyUseItem_ID = 347;
+	C2SArmyReward_ID = 348;
+	S2CArmyReward_ID = 349;
+	C2SArmySkillActive_ID = 352;
+	S2CArmySkillActive_ID = 353;
+	C2SArenaList_ID = 373;
+	S2CArenaList_ID = 374;
+	S2SArenaList_ID = 386;
+	C2SArenaFight_ID = 375;
+	S2CArenaFight_ID = 376;
+	C2SArenaSweep_ID = 377;
+	S2CArenaSweep_ID = 378;
+	C2SArenaBuyTimes_ID = 381;
+	S2CArenaBuyTimes_ID = 382;
+	C2SGetArenaRankList_ID = 390;
+	S2CGetArenaRankList_ID = 391;
+	S2SGetArenaRankList_ID = 392;
+	S2SSendArenaRank_ID = 384;
+	S2SArenaGm_ID = 405;
+	S2SArenaFightReq_ID = 387;
+	S2SArenaFightRep_ID = 388;
+	S2SArenaSettle_ID = 395;
+	S2SGetSettleData_ID = 403;
+	S2SSendSettleData_ID = 404;
+	C2SChangeLineup_ID = 455;
+	S2CChangeLineup_ID = 456;
+	S2CLineupInfo_ID = 457;
+	S2CAllGeneral_ID = 413;
+	S2CAddGeneral_ID = 414;
+	S2CDelGeneral_ID = 415;
+	C2SGeneralLevelUp_ID = 416;
+	S2CGeneralLevelUp_ID = 417;
+	C2SGeneralQualityUp_ID = 418;
+	S2CGeneralQualityUp_ID = 419;
+	S2CGeneralUpdateAttr_ID = 420;
+	S2CGeneralListUpdateAttr_ID = 421;
+	C2SGeneralLock_ID = 453;
+	S2CGeneralLock_ID = 454;
+	C2SGeneralOneKeyQualityUp_ID = 458;
+	S2CGeneralOneKeyQualityUp_ID = 459;
+	C2SGeneralAwaken_ID = 536;
+	S2CGeneralAwaken_ID = 537;
+	C2SGeneralAwakenSkill_ID = 820;
+	S2CGeneralAwakenSkill_ID = 821;
+	C2SGeneralGradeUp_ID = 538;
+	S2CGeneralGradeUp_ID = 539;
+	C2SGeneralSkinLevelUp_ID = 540;
+	S2CGeneralSkinLevelUp_ID = 541;
+	S2CGeneralSkinUpdate_ID = 554;
+	C2SGeneralWearSkin_ID = 542;
+	S2CGeneralWearSkin_ID = 543;
+	C2SGeneralEquipWear_ID = 716;
+	S2CGeneralEquipWear_ID = 717;
+	C2SGeneralEquipOneKeyWear_ID = 791;
+	S2CGeneralEquipOneKeyWear_ID = 792;
+	C2SGeneralEquipStarUp_ID = 718;
+	S2CGeneralEquipStarUp_ID = 719;
+	C2SGeneralStudySkill_ID = 730;
+	S2CGeneralStudySkill_ID = 731;
+	C2SGeneralSkillLock_ID = 732;
+	S2CGeneralSkillLock_ID = 733;
+	C2SGeneralSkillRecycle_ID = 793;
+	S2CGeneralSkillRecycle_ID = 794;
+	C2SGeneralReturn_ID = 987;
+	S2CGeneralReturn_ID = 988;
+	C2SGeneralReborn_ID = 989;
+	S2CGeneralReborn_ID = 990;
+	C2SGeneralRelease_ID = 991;
+	S2CGeneralRelease_ID = 992;
+	C2SGeneralStick_ID = 999;
+	S2CGeneralStick_ID = 1000;
+	C2SComMaterial_ID = 370;
+	S2CComMaterial_ID = 371;
+	S2CRedDotStateList_ID = 408;
+	C2SVipInfo_ID = 433;
+	S2CVipInfo_ID = 434;
+	C2SVipLevelReward_ID = 439;
+	S2CVipLevelReward_ID = 440;
+	C2SVipDailyReward_ID = 437;
+	S2CVipDailyReward_ID = 438;
+	S2CSecretMallInfo_ID = 467;
+	C2SSecretMallBuy_ID = 463;
+	S2CSecretMallBuy_ID = 464;
+	C2SSecretMallRefresh_ID = 465;
+	S2CSecretMallRefresh_ID = 466;
+	C2SShoppingMallInfo_ID = 483;
+	S2CShoppingMallInfo_ID = 484;
+	C2SShoppingMallBuy_ID = 485;
+	S2CShoppingMallBuy_ID = 486;
+	C2SMainTaskInfo_ID = 516;
+	S2CMainTaskInfo_ID = 517;
+	C2SMainTaskReward_ID = 518;
+	S2CMainTaskReward_ID = 519;
+	C2SAFKInfo_ID = 526;
+	S2CAFKInfo_ID = 527;
+	C2SAFKReward_ID = 528;
+	S2CAFKReward_ID = 529;
+	C2SQuickAFK_ID = 530;
+	S2CQuickAFK_ID = 531;
+	C2SAFKRewardAdd_ID = 642;
+	S2CAFKRewardAdd_ID = 643;
+	C2SWelcome_ID = 557;
+	C2SStageFight_ID = 523;
+	S2CStageFight_ID = 524;
+	C2SStagePassInfo_ID = 550;
+	S2CStagePassInfo_ID = 551;
+	C2SStagePassReward_ID = 552;
+	S2CStagePassReward_ID = 553;
+	C2SOfficeInfo_ID = 580;
+	S2COfficeInfo_ID = 581;
+	C2SOfficeTargetReward_ID = 572;
+	S2COfficeTargetReward_ID = 573;
+	C2SOfficeDailyReward_ID = 574;
+	S2COfficeDailyReward_ID = 575;
+	C2SOfficeTaskReward_ID = 576;
+	S2COfficeTaskReward_ID = 577;
+	C2SOfficeUp_ID = 578;
+	S2COfficeUp_ID = 579;
+	C2SOfficeSignUp_ID = 588;
+	S2COfficeSignUp_ID = 589;
+	C2SOfficeSignAutoUp_ID = 590;
+	S2COfficeSignAutoUp_ID = 591;
+	C2SOfficeSignStar_ID = 592;
+	S2COfficeSignStar_ID = 593;
+	C2SOfficeSignAutoStar_ID = 594;
+	S2COfficeSignAutoStar_ID = 595;
+	C2SOfficeSignBreakStar_ID = 596;
+	S2COfficeSignBreakStar_ID = 597;
+	C2SOfficeSignRefine_ID = 598;
+	S2COfficeSignRefine_ID = 599;
+	C2SOfficeSignRefineBreak_ID = 600;
+	S2COfficeSignRefineBreak_ID = 601;
+	C2SBeautyInfo_ID = 621;
+	S2CBeautyInfo_ID = 622;
+	C2SBeautyActive_ID = 623;
+	S2CBeautyActive_ID = 624;
+	C2SBeautyLevelUp_ID = 625;
+	S2CBeautyLevelUp_ID = 626;
+	C2SBeautyLevelUpAuto_ID = 627;
+	S2CBeautyLevelUpAuto_ID = 628;
+	C2SBeautyStarUp_ID = 629;
+	S2CBeautyStarUp_ID = 630;
+	C2STeamDunInfo_ID = 721;
+	S2CTeamDunInfo_ID = 722;
+	C2SMyTeamInfo_ID = 758;
+	S2CMyTeamInfo_ID = 759;
+	C2STeamDunBuyPassTime_ID = 734;
+	S2CTeamDunBuyPassTime_ID = 735;
+	C2STeamDunSweep_ID = 737;
+	S2CTeamDunSweep_ID = 738;
+	C2STeamDunViewList_ID = 762;
+	S2CTeamDunViewList_ID = 763;
+	C2STeamDunCreate_ID = 741;
+	S2CTeamDunCreate_ID = 742;
+	C2STeamDunJoin_ID = 743;
+	S2STeamDunJoinReq_ID = 859;
+	S2STeamDunJoinRep_ID = 765;
+	S2CTeamDunJoin_ID = 744;
+	C2STeamDunLeaveOrCancel_ID = 766;
+	S2STeamDunLeaveOrCancel_ID = 767;
+	S2STeamDunLeaveOrCancelRep_ID = 768;
+	S2CTeamDunLeaveOrCancel_ID = 769;
+	C2STeamDunKick_ID = 746;
+	S2CTeamDunKick_ID = 747;
+	C2STeamDunStart_ID = 751;
+	S2CTeamDunStart_ID = 750;
+	C2STeamDunMatchPlayer_ID = 752;
+	S2CTeamDunMatchPlayer_ID = 753;
+	C2STeamDunLineupInfo_ID = 786;
+	S2CTeamDunLineupInfo_ID = 787;
+	C2STeamDunChangeLineup_ID = 783;
+	S2CTeamDunChangeLineup_ID = 784;
+	C2STeamDunSetAccept_ID = 811;
+	S2CTeamDunSetAccept_ID = 812;
+	C2STeamDunSetPowerLimit_ID = 798;
+	S2STeamDunSetPowerLimit_ID = 851;
+	S2STeamDunSetPowerLimitRep_ID = 853;
+	S2CTeamDunSetPowerLimit_ID = 799;
+	C2STeamDunInvite_ID = 800;
+	S2CTeamDunInvite_ID = 801;
+	C2STeamDunInviteAuto_ID = 802;
+	S2CTeamDunInviteAuto_ID = 803;
+	S2CTeamDunReceiveInvite_ID = 804;
+	S2STeamDunCheckOpen_ID = 984;
+	S2STeamDunCheckOpenRep_ID = 985;
+	S2STeamDunInviteToPlayer_ID = 805;
+	S2STeamDunMatchPlayer_ID = 788;
+	S2STeamDunList_ID = 757;
+	S2STeamDunCreate_ID = 760;
+	S2STeamDunCreateRep_ID = 761;
+	S2STeamDunKick_ID = 770;
+	S2SMyTeamInfo_ID = 781;
+	S2STeamDunStart_ID = 782;
+	S2STeamDunMatchPlayerByFight_ID = 789;
+	S2STeamDunMatchPlayerByFightRep_ID = 790;
+	S2STeamDunSendPrice_ID = 813;
+	FightReportData_ID = 807;
+	C2STeamDunGetReport_ID = 810;
+	S2STeamDunGetReport_ID = 808;
+	C2STeamDunMatchList_ID = 814;
+	S2STeamDunMatchList_ID = 815;
+	S2STeamDunMatchListRep_ID = 816;
+	S2CTeamDunMatchList_ID = 817;
+	C2STeamDunReject_ID = 873;
+	S2CTeamDunReject_ID = 874;
+	S2CRealNameTimeLimit_ID = 611;
+	C2SSysSettingsInfo_ID = 688;
+	S2CSysSettingsInfo_ID = 689;
+	C2SHeadInfo_ID = 772;
+	S2CHeadInfo_ID = 773;
+	C2SHeadActivate_ID = 774;
+	C2SHeadUpStar_ID = 776;
+	C2SHeadUse_ID = 778;
+	S2CHeadUpdate_ID = 795;
+	C2SRelationInfo_ID = 836;
+	S2CRelationInfo_ID = 847;
+	S2SRelationInfoReq_ID = 849;
+	C2SApplyAddFriend_ID = 837;
+	S2CApplyAddFriend_ID = 838;
+	S2SApplyAddFriendReq_ID = 856;
+	S2SApplyAddFriendRep_ID = 862;
+	C2SApplyOperation_ID = 839;
+	S2CApplyOperation_ID = 840;
+	S2SApplyOperationReq_ID = 864;
+	S2SApplyOperationRep_ID = 865;
+	C2SDelFriend_ID = 841;
+	S2CDelFriend_ID = 842;
+	S2SDelFriendReq_ID = 866;
+	S2SDelFriendRep_ID = 867;
+	S2CAddRelation_ID = 858;
+	C2SFriendGifts_ID = 843;
+	S2CFriendGifts_ID = 844;
+	S2SFriendGiftsReq_ID = 868;
+	S2SFriendGiftsRep_ID = 869;
+	C2SGetFriendGifts_ID = 878;
+	S2CGetFriendGifts_ID = 879;
+	S2SGetFriendGiftsReq_ID = 880;
+	S2SGetFriendGiftsRep_ID = 881;
+	C2SFindPlayerInfo_ID = 845;
+	S2CFindPlayerInfo_ID = 846;
+	S2SFindPlayerInfoReq_ID = 875;
+	C2SRecommendList_ID = 870;
+	S2CRecommendList_ID = 871;
+	S2SRecommendListReq_ID = 872;
+	C2SFriendPrivateChat_ID = 882;
+	S2CFriendPrivateChat_ID = 883;
+	S2SFriendPrivateChat_ID = 884;
+	S2SRelationRedDotReq_ID = 893;
+	S2SRelationRedDotRep_ID = 894;
+	C2SFamilyTaskHelpPartner_ID = 924;
+	S2CFamilyTaskHelpPartner_ID = 927;
+	C2SFamilyTaskInfo_ID = 917;
+	S2CFamilyTaskInfo_ID = 918;
+	C2SFamilyTaskSetPartnerToHelp_ID = 925;
+	S2CFamilyTaskSetPartnerToHelp_ID = 926;
+	C2SFamilyTaskRefresh_ID = 910;
+	S2CFamilyTaskRefresh_ID = 911;
+	C2SFamilyTaskStart_ID = 913;
+	S2CFamilyTaskStart_ID = 914;
+	C2SFamilyTaskGetPrice_ID = 915;
+	S2CFamilyTaskGetPrice_ID = 916;
+	C2SFamilyMemberList_ID = 933;
+	S2SFamilyMemberList_ID = 943;
+	S2CFamilyMemberList_ID = 934;
+	C2SFamilyInfo_ID = 940;
+	S2SFamilyInfo_ID = 941;
+	S2CFamilyInfo_ID = 944;
+	C2SFamilyRoleInfo_ID = 1017;
+	S2CFamilyRoleInfo_ID = 1019;
+	C2SFamilyTaskSpeed_ID = 954;
+	S2CFamilyTaskSpeed_ID = 955;
+	C2SFamilyTaskGetAllCanStart_ID = 965;
+	S2CFamilyTaskGetAllCanStart_ID = 966;
+	C2SFamilyTaskStartOneKey_ID = 968;
+	S2CFamilyTaskStartOneKey_ID = 969;
+	S2CFamilyLevelUp_ID = 974;
+	C2SFamilyTopPlayerData_ID = 977;
+	S2SFamilyTopPlayerData_ID = 979;
+	S2CFamilyTopPlayerData_ID = 978;
+	S2SFamilyTaskSetPartnerToHelp_ID = 929;
+	S2SFamilyTaskSetPartnerToHelpRep_ID = 930;
+	S2SGetFamilyTaskHelpPartner_ID = 931;
+	S2SGetFamilyTaskHelpPartnerRep_ID = 975;
+	S2SFamilyJoin_ID = 932;
+	S2SFamilyJoinRep_ID = 935;
+	S2SFamilyAddExp_ID = 938;
+	S2SFamilyAddExpRep_ID = 939;
+	S2SGetHelpPartnerInfo_ID = 952;
+	S2SGetHelpPartnerInfoRep_ID = 953;
+	S2SSyncFamilyLevelAndPosition_ID = 1051;
+	S2SSyncFamilyLevelAndPositionRep_ID = 1052;
+	S2SSyncFamilyTotem_ID = 1114;
+	S2SSyncFamilyTotemRep_ID = 1215;
+	S2SSyncFamilyLevelRep_ID = 957;
+	S2SSyncFamilyPositionRep_ID = 1053;
+	S2SSendHelpReward_ID = 962;
+	S2STeamDunGetDunIdByTeamId_ID = 993;
+	S2STeamDunGetDunIdByTeamIdRep_ID = 994;
+	C2SFamilyRename_ID = 1001;
+	S2CFamilyRename_ID = 1002;
+	C2SFamilyRenameWord_ID = 1003;
+	S2CFamilyRenameWord_ID = 1004;
+	C2SFamilyWorship_ID = 1005;
+	S2CFamilyWorship_ID = 1006;
+	C2SFamilyDailySalary_ID = 1015;
+	S2CFamilyDailySalary_ID = 1016;
+	S2SFamilyRename_ID = 1009;
+	S2SFamilyRenameRep_ID = 1010;
+	S2SFamilyRenameWord_ID = 1011;
+	S2SFamilyRenameWordRep_ID = 1012;
+	S2SFamilyGetLastRenameWordTime_ID = 1013;
+	S2SFamilyGetLastRenameWordTimeRep_ID = 1014;
+	S2SCheckTagPatri_ID = 1251;
+	S2SCheckTagPatriRep_ID = 1252;
+	C2SFamilyPatriInfo_ID = 1020;
+	S2SFamilyPatriInfo_ID = 1034;
+	S2CFamilyPatriInfo_ID = 1021;
+	C2SFamilyPatriLeaderInfo_ID = 1047;
+	S2SFamilyPatriLeaderInfo_ID = 1048;
+	S2CFamilyPatriLeaderInfo_ID = 1049;
+	C2SFamilyPatriChallengeBoss_ID = 1022;
+	S2CFamilyPatriChallengeBoss_ID = 1023;
+	C2SFamilyPatriChallengeLeader_ID = 1024;
+	S2SFamilyPatriChallengeLeader_ID = 1038;
+	S2CFamilyPatriChallengeLeader_ID = 1025;
+	C2SFamilyPatriWatchVideos_ID = 1028;
+	S2SFamilyPatriWatchVideos_ID = 1050;
+	S2CFamilyPatriWatchVideos_ID = 1029;
+	C2SFamilyPatriGetRank_ID = 1030;
+	S2SFamilyPatriGetRank_ID = 1036;
+	S2CFamilyPatriGetRank_ID = 1031;
+	C2SFamilyPatriGetMyRank_ID = 1032;
+	S2SFamilyPatriGetMyRank_ID = 1037;
+	S2CFamilyPatriGetMyRank_ID = 1033;
+	S2SFamilyPatriHurtToRank_ID = 1035;
+	S2SGetFamilyActInfo_ID = 1043;
+	S2SGetFamilyActInfoRep_ID = 1045;
+	S2SFamilySetPos_ID = 1042;
+	C2STotemInfo_ID = 1106;
+	S2CTotemInfo_ID = 1108;
+	C2STotemBuild_ID = 1109;
+	S2CTotemBuild_ID = 1110;
+	S2STotemAddExp_ID = 1111;
+	S2STotemAddExpRep_ID = 1113;
+	S2SSyncFamilyTotemBuild_ID = 1217;
+	C2SGetDrillGroundInfo_ID = 1067;
+	S2CGetDrillGroundInfo_ID = 1073;
+	C2SDrillGroundResonateLevelUp_ID = 1069;
+	S2CDrillGroundResonateLevelUp_ID = 1074;
+	C2SDrillGroundLevelUp_ID = 1071;
+	S2CDrillGroundLevelUp_ID = 1075;
+	S2SCheckTagTrialCopy_ID = 1248;
+	S2SCheckTagTrialCopyRep_ID = 1247;
+	AreaTrialCopy_ID = 1149;
+	C2STrialCopyInfo_ID = 1125;
+	S2CTrialCopyInfo_ID = 1126;
+	C2STrialCopyBossInfo_ID = 1140;
+	S2STrialCopyBossInfo_ID = 1145;
+	S2CTrialCopyBossInfo_ID = 1141;
+	C2STrialCopyRank_ID = 1127;
+	S2STrialCopyRank_ID = 1148;
+	S2CTrialCopyRank_ID = 1144;
+	C2STrialCopyRedPacketRank_ID = 1165;
+	S2STrialCopyRedPacketRank_ID = 1166;
+	S2CTrialCopyRedPacketRank_ID = 1167;
+	S2STrialCopyRedPacketToRank_ID = 1162;
+	C2STrialCopyChallenge_ID = 1128;
+	S2STrialCopyChallenge_ID = 1146;
+	S2STrialCopyChallengeRep_ID = 1156;
+	S2CTrialCopyChallenge_ID = 1129;
+	C2STrialCopySweep_ID = 1130;
+	S2STrialCopySweep_ID = 1157;
+	S2STrialCopySweepRep_ID = 1158;
+	S2CTrialCopySweep_ID = 1131;
+	C2STrialCopyBuyNum_ID = 1142;
+	S2CTrialCopyBuyNum_ID = 1143;
+	C2STrialCopyReward_ID = 1150;
+	S2CTrialCopyReward_ID = 1151;
+	C2STrialCopyRedPacket_ID = 1152;
+	S2CTrialCopyRedPacket_ID = 1153;
+	S2STrialCopyGetTrialId_ID = 1154;
+	S2STrialCopyGetTrialIdRep_ID = 1155;
+	S2CCollectionBookAllData_ID = 903;
+	S2CCollectionBookUpdate_ID = 904;
+	C2SCollectionBookActive_ID = 905;
+	S2CCollectionBookActive_ID = 906;
+	C2SCollectionBookStarUp_ID = 907;
+	S2CCollectionBookStarUp_ID = 908;
+	C2SCollectionBookTask_ID = 921;
+	S2CCollectionBookTask_ID = 922;
+	C2SCollectionBookLook_ID = 936;
+	S2CCollectionBookLook_ID = 937;
+	C2SSilkRoadInfo_ID = 1220;
+	S2CSilkRoadInfo_ID = 1221;
+	C2SSilkRoadStart_ID = 1222;
+	S2CSilkRoadStart_ID = 1223;
+	C2SSilkRoadFastFinish_ID = 1224;
+	S2CSilkRoadFastFinish_ID = 1225;
+	C2SSilkRoadBuyCount_ID = 1226;
+	S2CSilkRoadBuyCount_ID = 1227;
+	C2SSilkRoadReward_ID = 1228;
+	S2CSilkRoadReward_ID = 1229;
+	C2SExploreFight_ID = 1194;
+	S2CExploreFight_ID = 1195;
+	C2SExploreSweep_ID = 1206;
+	S2CExploreSweep_ID = 1207;
+	C2SDailyTaskInfo_ID = 1234;
+	S2CDailyTaskInfo_ID = 1235;
+	C2SResRecoveredInfo_ID = 1246;
+	S2CResRecoveredInfo_ID = 1245;
+	C2SDailyTaskReward_ID = 1236;
+	S2CDailyTaskReward_ID = 1237;
+	C2SDailyStageReward_ID = 1238;
+	S2CDailyStageReward_ID = 1239;
+	C2SResRecovered_ID = 1240;
+	S2CResRecovered_ID = 1241;
+	C2SAllResRecovered_ID = 1249;
+	S2CAllResRecovered_ID = 1250;
+	S2CAllIncrease_ID = 1256;
+	S2CIncreaseUpdate_ID = 1257;
+	S2CIncreaseDel_ID = 1258;
+	C2SAdventureInfo_ID = 1259;
+	S2CAdventureInfo_ID = 1260;
+	C2SAdventureComDice_ID = 1261;
+	S2CAdventureComDice_ID = 1262;
+	C2SAdventureGoldDice_ID = 1263;
+	S2CAdventureGoldDice_ID = 1264;
+	C2SAdventureEventUse_ID = 1273;
+	S2CAdventureEventUse_ID = 1274;
+	C2SAdviserInfo_ID = 1299;
+	S2CAdviserInfo_ID = 1300;
+	C2SAdviserLevelUp_ID = 1303;
+	S2CAdviserLevelUp_ID = 1304;
+	C2SAdviserLevelUpAuto_ID = 1305;
+	S2CAdviserLevelUpAuto_ID = 1306;
+	C2SAdviserMasteryLevelUp_ID = 1309;
+	S2CAdviserMasteryLevelUp_ID = 1310;
+}
+// 心跳
+message C2SPing {
+}
+// 心跳
+message S2CPing {
+}
+// 错误的Rpc
+message S2CErrorRpc {
+	int32 Tag = 1; //返回结果
+}
+// 通用的，没有额外数据的rep返回
+message S2CRep {
+	int32 Tag = 1; //返回结果
+}
+// 登录
+message C2SLogin {
+	int64 AccountID = 1; //账号id
+	int32 AreaID = 2; //游戏区id
+	string Token = 3; //Token
+}
+// 登录返回
+message S2CLogin {
+	int32 Tag = 1; //返回结果
+	int64 UserId = 2; //用户编号
+}
+// 登录
+message C2SReLogin {
+	int64 UserId = 1; //账号id
+	string Token = 2; //Token
+	uint32 AreaID = 3; //游戏区id
+}
+// 登录返回
+message S2CReLogin {
+	int32 Tag = 1; //返回结果
+}
+// 用户int属性
+message IntAttr {
+	int32 K = 1; //Key
+	int64 V = 2; //value
+}
+// 用户属性
+message UserAttr {
+	uint32 UserId = 1; //用户Id
+	int64 V = 2; //value
+}
+// 用户int属性
+message IntAttr1 {
+	int32 K = 1; //Key
+	int64 V1 = 2; //value
+	int64 V2 = 3; //value
+}
+// 用户int属性
+message IntAttr2 {
+	int32 K = 1; //Key
+	int64 V1 = 2; //value
+	int64 V2 = 3; //value
+	int64 V3 = 4; //value
+}
+// 用户int属性
+message IntAttrList {
+	int32 K = 1; //Key
+	repeated int64 V = 2; //value
+}
+// 用户字符串属性
+message StrAttr {
+	int32 K = 1; //Key
+	string V = 2; //value
+}
+// 通用混合类型数据结构
+message CommonType {
+	int32 A = 1; //v1
+	int32 B = 2; //v2
+}
+// 通用混合类型数据结构
+message CommonType2 {
+	int32 A = 1; //v1
+	int32 B = 2; //v2
+	int32 C = 3; //v3
+}
+// 通知服务器，刷新数据
+message C2SUpdateAttr {
+}
+// 通知服务器，刷新在线时长
+message C2SUpdateOnlineTime {
+}
+// 通知客户端调试信息
+message S2CNoticeDebug {
+	string Str = 1; //消息
+	int32 T = 2; //消息级别:0-debug 1-error
+}
+// 用户角色信息
+message S2CRoleInfo {
+	uint32 UserId = 1; //用户编号
+	repeated IntAttr A = 2; //用户int属性
+	repeated StrAttr B = 3; //用户string属性
+}
+// 获取服务器开服天数
+message C2SGetAreaOpenDay {
+}
+// 获取服务器开服天数
+message S2CGetAreaOpenDay {
+	int32 Tag = 1; //返回结果
+	int32 Days = 2; //开服天数，最小为1
+	int64 ServerTime = 3; //服务器时间-毫秒
+	string Version = 4; //服务器版本
+	string SvnVersion = 5; //svn版本
+}
+// 获取同一身份证下充值额度
+message C2SGetIDCardChargeRMB {
+	int32 Gid = 1; //商品Id
+}
+// 获取同一身份证下充值额度
+message S2CGetIDCardChargeRMB {
+	int32 Tag = 1; //返回结果
+	int32 RMB = 2; //充值额度
+	int32 ChargeTag = 3; //充值返回码
+}
+// 添加已完成新手引导id
+message C2SNewPlayerGuideAdd {
+	int32 NewPlayerGuideId = 1; //已做新手引导id
+}
+// 推送玩家新手引导id
+message S2CNewPlayerGuidePush {
+	repeated int32 NewPlayerGuideIds = 1; //已做新手引导id
+}
+// 服务端日重置完成
+message S2CDayResetPush {
+}
+// 服务端周重置完成
+message S2CWeekResetPush {
+}
+// 服务端月重置完成
+message S2CMonthResetPush {
+}
+// 查看战斗回放
+message C2SFightRecordWatch {
+	string OnlyKey = 1; //Key
+}
+// 可用技能
+message SkillInfo {
+	int32 SkillId = 1; //技能id
+	int32 SkillLv = 2; //技能等级
+	int32 SkillType = 3; //技能类型,1-玩家选择技能
+}
+// 用户提下线
+message S2CKill {
+	int32 Tag = 1; //Tag
+}
+// 用户登录成功
+message C2SLoginEnd {
+	int32 LockStepVer = 1; //战斗服务器的版本
+	string DataVersion = 2; //数值表版本
+}
+// 用户登录成功
+message S2CLoginEnd {
+	int32 Tag = 1; //Tag
+}
+// 保存客户端数据
+message C2SSaveClientData {
+	repeated StrAttr Param = 1; //参数
+}
+// 保存客户端数据
+message S2CSaveClientData {
+	int32 Tag = 1; //Tag
+	repeated StrAttr Param = 2; //参数
+}
+// 下发客户端数据
+message S2CSendClientData {
+	repeated StrAttr Param = 1; //参数
+}
+// 背包通讯道具结构体
+message ItemData {
+	string OnlyId = 1; //唯一id
+	int32 ItemId = 2; //道具id
+	int64 ItemNum = 3; //道具数量
+	int32 Pos = 4; //位置
+	int32 Bind = 5; //是否绑定，1-绑定
+	int64 EndTime = 6; //有效截止时间戳
+	repeated IntAttr ItemAttr = 7; //道具属性
+	repeated IntAttr1 AddAttr = 8; //附加属性
+}
+// 通用道具信息
+message ItemInfo {
+	int32 ItemId = 1; //道具id
+	int64 ItemNum = 2; //道具数量
+	int32 Bind = 3; //是否绑定，0绑定，1不绑定
+	int32 ItemValid = 4; //有效期
+}
+// 物品数量
+message ItemNum {
+	int32 ItemId = 1; //道具id
+	int64 ItemNum = 2; //道具数量
+}
+// 背包物品变化
+message S2CBagChange {
+	repeated ItemData Change = 1; //道具id
+}
+// 上线同步背包信息
+message S2CBagInfo {
+	repeated ItemData Items = 1; //所有道具信息
+	int32 Init = 2; //玩家登录时，第一个此包值为1，表示前端需要初始化背包数据
+	int32 End = 3; //玩家登录时，最后一个此包值为1，表示所有背包数据发送完毕
+	int64 EquipBagEnlargeSize = 4; //玩家装备背包扩展大小
+}
+// 客户端飘字专用包
+message S2CItemFly {
+	repeated ItemNum Items = 1; //所有道具信息
+}
+// 扩展玩家装备背包格子数量
+message C2SExtendEquipBag {
+	int32 BagType = 1; //背包类型
+	uint32 Count = 2; //开启数量
+}
+// 扩展玩家装备背包格子数量
+message S2CExtendEquipBag {
+	int32 Tag = 1; //Tag
+	int32 BagType = 2; //背包类型
+	int64 EnlargeSize = 3; //当前扩展大小
+}
+// 使用道具
+message C2SExchange {
+	string OnlyId = 1; //道具唯一Id
+	uint32 Count = 2; //道具使用数量
+	int32 Param = 3; //道具使用参数(自选宝箱-选择的道具Id)
+}
+// 使用道具
+message S2CExchange {
+	int32 Tag = 1; //Tag
+}
+// 批量使用物品
+message C2SBatchExchange {
+	repeated C2SExchange Exchange = 1; //物品信息
+}
+// 批量使用物品
+message S2CBatchExchange {
+	int32 Tag = 1; //Tag
+}
+// 施放当前等待发放的道具
+message C2SGetBattlePrize {
+}
+// 任务数据
+message Task {
+	int32 Id = 1; //任务Id
+	int64 IC = 2; //任务初始计数
+	int64 C = 3; //任务当前计数
+	int32 S = 4; //任务状态 0:进行中,1:已完成,2:已领奖
+}
+// 任务数据推送
+message S2CTaskDataPush {
+	int32 Tag = 1; //Tag
+	repeated Task Tasks = 2; //任务数据
+}
+// 充值商品
+message GoodsData {
+	int32 Gid = 1; //商品Id
+	string Gn = 2; //商品详情
+	int32 Mt = 3; //商城类型 1:充值商城 2:首充商城
+	int32 S = 4; //排序
+	int32 P = 5; //人民币(分)
+	int32 Pid = 6; //图片id
+	int32 Gt = 7; //商品类型 1:月卡 2:终身卡 3:元宝
+	int32 I = 8; //是否双倍
+}
+// 代币购买商品
+message C2SChargeMallBuyReq {
+	int32 Gid = 1; //商品Id
+}
+// 代币购买商品
+message S2CChargeMallBuyRep {
+	int32 Tag = 1; //返回结果
+	int32 Gid = 2; //商品Id
+}
+// 获取商品列表
+message C2SGetChargeMallList {
+	int32 T = 1; //商场类型
+}
+// 获取商品列表
+message S2CGetChargeMallList {
+	int32 Tag = 1; //返回结果
+	int32 T = 2; //商场类型
+	repeated GoodsData GoodsList = 3; //商品列表
+}
+// 货币兑换
+message C2SCurrencyExchangeReq {
+	int32 ExchangeId = 1; //兑换ID
+}
+// 货币兑换
+message S2CCurrencyExchangeRep {
+	int32 Tag = 1; //返回结果
+	int32 ExchangeId = 2; //兑换ID
+}
+// gm命令
+message C2SGm {
+	string CmdStr = 1; //命令
+	string Data = 2; //@符号隔开的参数
+}
+// gm命令
+message S2CGm {
+	int32 Tag = 1; //
+	string ErrStr = 2; //为空成功，不为空则为错误信息
+}
+// 邮件Db数据
+message DbMailData {
+	int32 MailId = 1; //用户邮件唯一id
+	int32 TplId = 2; //模板id
+	string MailTplParam = 3; //模板参数
+	string Title = 4; //标题
+	string Content = 5; //内容
+	int64 ReceiveTime = 6; //接收邮件时间戳
+	int64 LifeTime = 7; //邮件有效期(秒) 0表示永久
+	int32 IsRead = 8; //读取标志 1-未读，2-已读
+	int32 IsReceive = 9; //附件标识，1-未领取，2-已未领取
+	int32 ItemChangeType = 10; //道具变动类型
+	int32 MailType = 11; //邮件类型
+	repeated ItemInfo AttachInfo = 12; //附件数据
+	repeated ItemData AttachData = 13; //附件数据
+	string TitleParam = 14; //标题参数
+}
+// 邮件数据
+message MailData {
+	int32 MailId = 1; //用户邮件唯一id
+	int32 TplId = 2; //模板id
+	string MailTplParam = 3; //模板参数
+	string Title = 4; //标题
+	string Content = 5; //内容
+	int64 ReceiveTime = 6; //接收邮件时间戳
+	int64 LifeTime = 7; //邮件有效期(秒) 0表示永久
+	int32 IsRead = 8; //读取标志 1-未读，2-已读
+	int32 IsReceive = 9; //附件标识，1-未领取，2-已未领取
+	int32 MailType = 10; //邮件类型
+	repeated ItemInfo AttachInfo = 11; //附件数据
+	repeated ItemData AttachData = 12; //附件数据
+	string TitleParam = 13; //标题参数
+}
+// 获取邮件附件
+message C2SGetMailAttachReq {
+	int32 MailId = 1; //邮件Id(0表示一键领取)
+	int32 MailType = 2; //邮件类型
+}
+// 获取邮件附件
+message S2CGetMailAttachRep {
+	int32 Tag = 1; //返回结果
+	repeated int32 MailIds = 2; //已领取的邮件Id
+}
+// 读取邮件信息
+message C2SReadMailReq {
+	int32 MailId = 1; //邮件Id(0表示阅读所有)
+	int32 MailType = 2; //邮件类型
+}
+// 读取邮件信息
+message S2CReadMailRep {
+	int32 Tag = 1; //返回结果
+	repeated int32 MailIds = 2; //已阅读的邮件Id
+}
+// 删除邮件
+message C2SDelMail {
+	int32 MailId = 1; //邮件Id(0表示删除所有)
+	int32 MailType = 2; //邮件类型
+}
+// 删除邮件
+message S2CDelMail {
+	int32 Tag = 1; //返回结果
+	repeated int32 MailIds = 2; //已删除的邮件Id
+}
+// 增加邮件
+message S2CAddMail {
+	MailData Mail = 1; //邮件列表
+}
+// 请求邮件列表
+message C2SMailList {
+}
+// 登录发送邮件
+message S2CMailList {
+	repeated MailData Mails = 1; //邮件列表
+}
+// 个人boss信息
+message BossPersonalInfo {
+	int32 Id = 1; //个人bossId
+	int32 LeftTimes = 2; //剩余挑战次数
+}
+// 请求个人boss信息
+message C2SBossPersonalInfo {
+}
+// 下发个人boss信息
+message S2CBossPersonalInfo {
+	int32 Tag = 1; //Tag
+	repeated BossPersonalInfo Infos = 2; //个人boss信息
+}
+// 挑战个人boss
+message C2SBossPersonalFight {
+	int32 Id = 1; //个人bossId
+}
+// 挑战个人boss
+message S2CBossPersonalFight {
+	int32 Tag = 1; //Tag
+	int32 Id = 2; //个人bossId
+	int32 LeftTimes = 3; //剩余挑战次数
+}
+// 个人BOSS一键扫荡
+message C2SBossPersonalSweep {
+}
+// 个人BOSS一键扫荡
+message S2CBossPersonalSweep {
+	int32 Tag = 1; //Tag
+	repeated BossPersonalInfo Infos = 2; //个人Boss信息
+}
+// 至尊boss信息
+message BossVipInfo {
+	int32 Id = 1; //至尊bossId
+	int32 LeftTimes = 2; //剩余挑战次数
+}
+// 请求至尊boss信息
+message C2SBossVipInfo {
+}
+// 下发至尊boss信息
+message S2CBossVipInfo {
+	int32 Tag = 1; //Tag
+	repeated BossVipInfo Infos = 2; //至尊boss信息
+}
+// 挑战至尊boss
+message C2SBossVipFight {
+	int32 Id = 1; //至尊bossId
+}
+// 挑战至尊boss
+message S2CBossVipFight {
+	int32 Tag = 1; //Tag
+	int32 Id = 2; //至尊bossId
+	int32 LeftTimes = 3; //剩余挑战次数
+}
+// 至尊BOSS一键扫荡
+message C2SBossVipSweep {
+}
+// 至尊BOSS一键扫荡
+message S2CBossVipSweep {
+	int32 Tag = 1; //Tag
+	repeated BossVipInfo Infos = 2; //至尊Boss信息
+}
+// 多人boss状态
+message MultiBossState {
+	int32 Id = 1; //Id
+	int32 State = 2; //状态
+}
+// 多人boss复活
+message MultiBossRelive {
+	int32 Id = 1; //Id
+	int64 ReliveTime = 2; //复活时间
+	int64 RunAwayTime = 3; //逃跑时间
+}
+// 多人boss排行榜数据
+message MultiBossRankData {
+	uint32 UserId = 1; //玩家Id
+	int32 Rank = 2; //排名
+	int64 MaxDamage = 3; //最高伤害
+	int32 VipLevel = 4; //vip等级
+	uint32 ShowAreaId = 5; //展示区服Id
+	string Nick = 6; //玩家昵称
+	int32 Head = 7; //头像
+	int32 HeadFrame = 8; //头像框
+}
+// 多人boss挑战
+message C2SMultiBossFight {
+	int32 Id = 1; //配置Id
+}
+// 多人boss挑战
+message S2CMultiBossFight {
+	int32 Tag = 1; //Tag
+	int32 Id = 2; //配置Id
+	repeated MultiBossRankData Ranks = 3; //排行榜
+}
+// 多人boss鼓舞
+message C2SMultiBossInspire {
+}
+// 多人boss鼓舞
+message S2CMultiBossInspire {
+	int32 Tag = 1; //Tag
+	int32 InspireTimes = 2; //鼓舞次数
+	int64 InspireLeftTime = 3; //鼓舞剩余时间
+}
+// 多人boss购买挑战次数
+message C2SMultiBossBuyTimes {
+}
+// 多人boss购买挑战次数
+message S2CMultiBossBuyTimes {
+	int32 Tag = 1; //Tag
+}
+// 多人boss获得排行榜数据
+message C2SMultiBossGetRankData {
+	int32 Id = 1; //配置Id
+	int32 Type = 2; //排行类型 1-当前排行 2-上轮排行
+}
+// 多人boss获得排行榜数据
+message S2CMultiBossGetRankData {
+	int32 Tag = 1; //Tag
+	int32 Id = 2; //配置Id
+	int32 Type = 3; //排行类型 1-当前排行 2-上轮排行
+	repeated MultiBossRankData Items = 4; //排行榜项
+	int64 MyDamage = 5; //我的最高伤害
+}
+// 多人boss获得Boss数据
+message C2SGetMultiBossData {
+	int32 Id = 1; //配置Id
+}
+// 多人boss获得Boss数据
+message S2CGetMultiBossData {
+	int32 Tag = 1; //Tag
+	int32 Id = 2; //配置Id
+	int32 State = 3; //Boss状态 0:初始 1:挑战中 2:复活中
+	int64 Hp = 4; //Boss当前血量
+	int64 ReliveTimestamp = 5; //复活时间戳
+	int64 RunAwayTimestamp = 6; //逃跑时间戳
+	string CurrOwnerNick = 7; //当前归属者昵称
+	uint32 CurrOwnerAreaId = 8; //当前归属者区Id
+	string LastOwnerNick = 9; //上轮归属者昵称
+	uint32 LastOwnerAreaId = 10; //上轮归属者区Id
+	int32 Focus = 11; //是否关注 0未关注 1关注
+}
+// 多人boss获得玩家数据
+message C2SMultiBossGetPlayerData {
+}
+// 多人boss获得玩家数据
+message S2CMultiBossGetPlayerData {
+	int32 LeftTimes = 1; //剩余挑战次数
+	int64 NextTime = 2; //挑战次数下次恢复时间
+	int32 InspireTimes = 3; //鼓舞次数
+	int64 InspireLeftTime = 4; //鼓舞剩余时间
+	int32 FightBossId = 5; //当前挑战的BossId
+	int32 Tag = 6; //Tag
+}
+// 多人boss获取Boss血量
+message C2SMultiBossGetHp {
+	int32 Id = 1; //配置Id
+}
+// 多人boss获得玩家数据
+message S2CMultiBossGetHp {
+	int32 Id = 1; //配置Id
+	int64 Hp = 2; //Boss剩余血量
+	int32 State = 3; //Boss状态
+}
+// 关注多人boss
+message C2SMultiBossFocus {
+	int32 Id = 1; //配置Id
+}
+// 关注多人boss
+message S2CMultiBossFocus {
+	int32 Id = 1; //配置Id
+	int32 Focus = 11; //是否关注 0未关注 1关注
+}
+// 获得初始态的Boss
+message C2SMultiBossGetBossList {
+}
+// 更新Boss状态(目前仅复活)
+message S2CMultiBossUpdateState {
+	repeated MultiBossState Data = 1; //配置Id
+}
+// 获得复活中的Boss列表
+message C2SMultiBossGetReliveList {
+}
+// 获得复活中的Boss列表
+message S2CMultiBossGetReliveList {
+	repeated MultiBossRelive List = 1; //配置Id
+}
+// Boss复活
+message C2SMultiBossRelive {
+	int32 Id = 1; //配置Id
+}
+// Boss复活
+message S2CMultiBossRelive {
+	int32 Tag = 1; //Tag
+	int32 Id = 2; //配置Id
+}
+// 给前端发送提示
+message S2CTips {
+	int32 TipsId = 1; //提示Id
+}
+// 发送者信息
+message ChatPlayerInfo {
+	uint32 UserId = 1; //ID
+	string Nick = 2; //昵称
+	int32 Head = 3; //用户头像
+	int32 HeadFrame = 4; //用户头像框
+	int32 VIP = 5; //VIP等级
+	int32 Title = 6; //称号iD
+	uint32 AreaId = 7; //区Id
+	int32 HideVIP = 8; //Vip等级是否屏蔽  0正常显示  1屏蔽
+	int32 OfficeLevel = 9; //官职等级
+	int32 Bubble = 10; //气泡框
+	int32 FamilyPos = 11; //家族职位
+}
+// @信息
+message AtInfo {
+	uint32 UserId = 1; //@的人的id
+	string Nick = 2; //@的人的昵称
+	int32 ShowAreaId = 3; //@的人的区服id
+}
+// 聊天数据
+message ChatData {
+	uint32 ChatType = 1; //聊天类型 1-世界 2系统 3连服
+	repeated IntAttr IntArray = 2; //int类数据
+	repeated StrAttr StrArray = 3; //string类数据
+	int64 SendTime = 4; //发送时间戳(秒)
+	string Content = 5; //内容
+	ChatPlayerInfo SenderInfo = 6; //发送者信息
+	AtInfo AtInfo = 7; //@信息
+	int32 ShowId = 8; //展示Id(物品展示才有)
+	int32 BigIcon = 9; //大表情
+	int32 Index = 10; //标记索引(1秒内消息)
+}
+// 发送聊天消息
+message C2SSendChatMsg {
+	uint32 ChatType = 1; //聊天类型 1本服 2系统 3连服
+	string Content = 2; //内容
+	uint32 AtUserId = 3; //@的玩家id
+	int32 BigIcon = 4; //大表情
+}
+// 发送聊天消息返回
+message S2CSendChatMsg {
+	int32 Tag = 1; //Tag
+}
+// 推送一个聊天信息
+message S2CPushChat {
+	repeated ChatData ChatData = 1; //聊天数据
+	uint32 ChatType = 2; //聊天类型
+}
+// 拉取历史聊天消息
+message C2SGetHistoryChat {
+}
+// 拉取历史聊天消息
+message S2CGetHistoryChat {
+	repeated ChatData Messages = 1; //聊天消息
+}
+// 拉取历史聊天消息
+message S2SGetHistoryChat {
+	repeated uint32 Channels = 1; //通道Id
+	uint32 UserId = 2; //玩家Id
+}
+// 拉黑
+message C2SBlack {
+	int32 Typ = 1; //1:拉黑；2：取消拉黑
+	uint32 UserId = 2; //玩家Id
+}
+// 拉黑
+message S2CBlack {
+	int32 Tag = 1; //Tag
+	int32 Typ = 2; //1:拉黑；2：取消拉黑
+	uint32 UserId = 3; //玩家Id
+}
+// 获取拉黑列表
+message C2SGetBlackList {
+}
+// 获取拉黑列表
+message BlackInfo {
+	uint32 UserId = 1; //玩家Id
+	string Nick = 2; //昵称
+	uint32 AreaId = 3; //区Id
+}
+// 获取拉黑列表
+message S2CGetBlackList {
+	int32 Tag = 1; //Tag
+	repeated BlackInfo BlackList = 2; //拉黑列表
+}
+// 公告道具
+message NoticeItem {
+	int32 ItemId = 1; //道具编号
+	int64 ItemNum = 2; //道具数量
+}
+// 用户数据
+message NoticeUser {
+	uint32 UserId = 1; //用户编号
+	string Nick = 2; //用户昵称
+	uint32 AreaId = 3; //区编号
+}
+// 发送公告到客户端
+message S2CSendNotice {
+	int32 Id = 1; //公告Id
+	repeated NoticeItem Items = 2; //道具信息
+	repeated NoticeUser Users = 3; //用户信息
+	repeated string Params = 4; //普通参数
+	repeated string LinkParam = 5; //普通参数
+	repeated StrAttr ExtParam = 6; //扩展参数
+	int64 SendTime = 7; //发送时间
+}
+// 发送(联区玩法)聊天消息
+message C2SSendPlayWayChatMsg {
+	int32 PlayWayId = 1; //玩法编号
+	string Content = 2; //内容
+	uint32 AtUserId = 3; //@的玩家id
+}
+// 展示物品
+message C2SShowItem {
+	uint32 ChatType = 1; //聊天类型 1本服 2系统 3连服
+	int32 Type = 2; //展示物品类型 1-展示道具(Param2:道具Id)
+	int64 Param1 = 3; //参数1
+	string Param2 = 4; //参数2
+}
+// 展示物品
+message S2CShowItem {
+	int32 Tag = 1; //Tag
+}
+// 获得展示物品详情
+message C2SGetShowInfo {
+	uint32 ChatType = 1; //聊天类型 1本服 2系统 3连服
+	int32 ShowId = 2; //展示Id
+}
+// 获得展示物品详情
+message S2CGetShowInfo {
+	int32 Tag = 1; //Tag
+	int32 ShowId = 2; //展示Id
+	ItemData ItemInfo = 3; //道具信息
+	GeneralData GeneralInfo = 4; //武将信息
+	OfficeSign OfficeInfo1 = 5; //官印信息
+	OfficeSign OfficeInfo2 = 6; //虎符信息
+	TitleData Title = 7; //称号信息
+	Beauty BeautyInfo = 8; //红颜信息
+	EquipPos EquipPos = 9; //装备部位信息
+}
+// 排行第一名玩家数据
+message RankFirstPlayerData {
+	uint32 UserId = 1; //玩家Id
+	string Name = 2; //昵称玩家
+	repeated IntAttr A = 3; //Int属性
+	repeated ItemData Items = 4; //装备数据(装备排行榜拥有)
+	repeated EquipPos EquipPosList = 5; //装备格数据(装备排行榜拥有)
+}
+// 排行玩家基础数据
+message RankPlayerData {
+	uint32 UserId = 1; //玩家Id
+	string Name = 2; //昵称玩家
+	int32 HeadFrame = 3; //头像框ID
+	int32 Head = 4; //头像ID
+	int32 Vip = 5; //vip等级
+	int32 ShowAreaId = 6; //展示区Id
+}
+// 第一名排行数据
+message RankFirstData {
+	int32 R = 1; //排名
+	int64 SortValue = 2; //排序字段
+	RankFirstPlayerData PlayerInfo = 3; //玩家信息
+}
+// 简略排行数据
+message RankSimpleData {
+	int32 R = 1; //排名
+	int64 SortValue = 2; //排序字段
+	RankPlayerData PlayerInfo = 3; //玩家信息
+}
+// 请求排行榜数据
+message C2SGetRankData {
+	uint32 RankType = 1; //排行榜大类Id
+	int32 Param = 2; //排行榜小类，参数
+}
+// 返回排行榜数据
+message S2CGetRankData {
+	int32 Tag = 1; //结果
+	uint32 RankType = 2; //排行榜大类Id
+	int32 Param = 3; //排行榜小类，参数
+	RankSimpleData MyData = 4; //自己的简略数据
+	RankFirstData FirstData = 5; //第一名数据
+	repeated RankSimpleData SimpleData = 6; //简略数据
+}
+// 排行榜膜拜
+message C2SRankWorship {
+	int32 Type = 1; //膜拜类型(1-本服 2-跨服)
+}
+// 排行榜膜拜
+message S2CRankWorship {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //膜拜类型(1-本服 2-跨服)
+	repeated ItemInfo Items = 3; //奖励
+}
+// 材料副本数据推送
+message S2CMaterialListPush {
+	int32 Tag = 1; //结果
+	repeated MaterialData MaterialList = 2; //材料副本列表
+}
+// 材料副本client数据
+message MaterialData {
+	int32 MaterialId = 1; //材料副本Id
+	int32 Num = 2; //剩余挑战次数
+	int32 Exp = 3; //经验值
+	int32 Star = 4; //星级
+	bool CanSweep = 5; //是否可扫荡
+	int32 BuyNum = 6; //今日已购买次数
+}
+// 材料副本挑战
+message C2SMaterialChallenge {
+	int32 MaterialId = 1; //材料副本Id
+}
+// 材料副本扫荡
+message C2SMaterialSweep {
+	int32 MaterialId = 1; //材料副本Id
+}
+// 材料副本一键扫荡
+message C2SMaterialSweepOneKey {
+}
+// 材料副本挑战次数购买
+message C2SMaterialBuyTimes {
+	int32 MaterialId = 1; //材料副本Id
+}
+// 材料副本挑战次数一键购买
+message C2SMaterialBuyTimesOneKey {
+}
+// 进阶玩法client数据
+message GradeData {
+	int32 GradeId = 1; //进阶玩法id
+	GradeLvData GradeLv = 2; //进阶相关
+	GradeSkillData GradeSkill = 3; //进阶技能
+	GradeEquipData GradeEquip = 4; //进阶装备
+	GradeSoulData GradeSoul = 5; //进阶注灵
+	GradeGodData GradeGod = 6; //进阶炼神
+	GradeSkinData GradeSkin = 7; //进阶皮肤
+	GradeBeGoldData GradeBeGold = 8; //进阶化金
+	GradeRefineData GradeRefine = 9; //进阶淬炼
+	GradeChannelingData GradeChanneling = 10; //进阶通灵
+}
+// 进阶相关client数据
+message GradeLvData {
+	int32 BigLv = 1; //阶数
+	int32 SmallLv = 2; //小等级
+	int32 Exp = 3; //经验值
+	repeated int32 UpGift = 4; //进阶豪礼-已领取列表
+	repeated IntAttr1 ThreeGift = 5; //进阶三倍奖励
+}
+// 进阶技能client数据
+message GradeSkillData {
+	repeated IntAttr Skills = 1; //技能等级
+}
+// 进阶装备client数据
+message GradeEquipData {
+	repeated IntAttr PosLv = 1; //部位等级
+}
+// 进阶注灵client数据
+message GradeSoulData {
+	int32 Level = 1; //等级
+	int32 Exp = 2; //经验值
+}
+// 进阶炼神client数据
+message GradeGodData {
+	int32 Num = 1; //已使用炼神丹次数
+}
+// 进阶皮肤client数据
+message GradeSkinData {
+	repeated IntAttr1 SkinLv = 1; //皮肤星级
+}
+// 进阶化金client数据
+message GradeBeGoldData {
+	repeated IntAttr PosLv = 1; //部位等级
+}
+// 进阶淬炼client数据
+message GradeRefineData {
+}
+// 进阶通灵client数据
+message GradeChannelingData {
+}
+// 进阶玩法数据推送
+message S2CGradeListPush {
+	int32 Tag = 1; //结果
+	repeated GradeData GradeList = 2; //进阶玩法列表
+}
+// 进阶玩法升级
+message C2SGradeLevelUp {
+	int32 GradeId = 1; //进阶玩法id
+	bool OneKey = 2; //是否一键升级
+	bool AutoBuy = 3; //是否自动购买
+}
+// 进阶玩法突破
+message C2SGradeLevelBreak {
+	int32 GradeId = 1; //进阶玩法id
+}
+// 进阶豪礼领取
+message C2SGradeGetUpGift {
+	int32 GradeId = 1; //进阶玩法id
+	int32 BigLv = 2; //阶数
+}
+// 进阶三倍奖励领取
+message C2SGradeGetThreeGift {
+	int32 GradeId = 1; //进阶玩法id
+	int32 BigLv = 2; //阶数
+	bool IsThree = 3; //是否三倍领取
+}
+// 进阶技能升级
+message C2SGradeSkillLevelUp {
+	int32 GradeId = 1; //进阶玩法id
+	int32 Part = 2; //技能位置
+}
+// 进阶装备一键穿戴
+message C2SGradeEquipAutoWear {
+	int32 GradeId = 1; //进阶玩法id
+}
+// 进阶装备部位升级
+message C2SGradeEquipPosLevelUp {
+	int32 GradeId = 1; //进阶玩法id
+	repeated int32 PartList = 2; //强化部位列表
+}
+// 进阶装备打造
+message C2SGradeEquipMake {
+	int32 GradeId = 1; //进阶玩法id
+	int32 Part = 2; //装备部位
+	int32 BigLv = 3; //阶数
+}
+// 进阶装备熔炼
+message C2SGradeEquipSmelting {
+	repeated string Items = 1; //熔炼的装备唯一ID数组
+}
+// 进阶装备化金升级
+message C2SGradeBeGoldLevelUp {
+	int32 GradeId = 1; //进阶玩法id
+	int32 Part = 2; //化金位置
+}
+// 进阶注灵
+message C2SGradeSoul {
+	int32 GradeId = 1; //进阶玩法id
+}
+// 进阶炼神
+message C2SGradeGod {
+	int32 GradeId = 1; //进阶玩法id
+}
+// 进阶皮肤激活
+message C2SGradeSkinActive {
+	int32 GradeId = 1; //进阶玩法id
+	int32 SkinId = 2; //进阶皮肤id
+}
+// 进阶皮肤升星
+message C2SGradeSkinLevelUp {
+	int32 GradeId = 1; //进阶玩法id
+	int32 SkinId = 2; //进阶皮肤id
+}
+// 进阶皮肤幻化
+message C2SGradeSkinUse {
+	int32 GradeId = 1; //进阶玩法id
+	int32 SkinId = 2; //进阶皮肤id
+}
+// 进阶皮肤卸下
+message C2SGradeSkinOff {
+	int32 GradeId = 1; //进阶玩法id
+}
+// 称号客户端数据
+message TitleData {
+	int32 TitleId = 1; //称号id
+	int32 Star = 2; //星级
+	int64 EndTime = 3; //失效时间戳
+	int32 RateValue = 4; //稀有度百分比
+}
+// 称号数据推送
+message S2CTitleListPush {
+	int32 Tag = 1; //结果
+	repeated TitleData TitleList = 2; //称号列表
+	repeated int32 DelTitleIds = 3; //删除称号id
+}
+// 称号激活
+message C2STitleActive {
+	int32 TitleId = 1; //称号id
+}
+// 称号升星
+message C2STitleUpGrade {
+	int32 TitleId = 1; //称号id
+}
+// 称号佩戴
+message C2STitleWear {
+	int32 TitleId = 1; //称号id
+}
+// 称号卸下
+message C2STitleOff {
+	int32 TitleId = 1; //称号id
+}
+// 请求称号数据
+message C2STitleInfo {
+	uint32 UserId = 1; //用户编号
+	int32 TitleId = 2; //称号id
+}
+// 请求称号数据 返回
+message S2CTitleInfo {
+	int32 Tag = 1; //结果
+	uint32 UserId = 2; //用户编号
+	TitleData TitleData = 3; //称号数据
+}
+// 模块属性
+message FightAttrData {
+	int64 Key = 1; //模块属性Key
+	repeated IntAttr Attrs = 2; //属性值
+	int64 Fv = 3; //战斗力
+}
+// 更新模块属性
+message S2CUpdateFightAttr {
+	repeated FightAttrData Attrs = 1; //模块属性
+}
+// 上线同步功能开启数据
+message S2CSendFuncOpenData {
+	repeated int32 OpenFuncData = 1; //功能开启数据
+	repeated int32 OpenFuncRedList = 2; //打开功能红点
+	repeated int32 FuncPreviewList = 3; //功能预告奖励
+}
+// 增量更新功能开启数据
+message S2CUpdateFuncOpen {
+	repeated int32 OpenFuncData = 1; //功能开启数据
+}
+// 请求打开功能红点
+message C2SOpenFuncRed {
+	int32 FuncId = 1; //功能Id
+}
+// 请求打开功能红点--回复
+message S2COpenFuncRed {
+	int32 Tag = 1; //tag
+	int32 FuncId = 2; //功能Id
+}
+// 功能预告奖励
+message C2SGetFuncPreviewPrize {
+	int32 FuncId = 1; //功能Id
+}
+// 功能预告奖励
+message S2CGetFuncPreviewPrize {
+	int32 Tag = 1; //tag
+	int32 FuncId = 2; //功能Id
+}
+// 修改用户名
+message C2SChangeNick {
+	string Nick = 1; //昵称
+	int32 Sex = 2; //性别
+}
+// 修改用户名
+message S2CChangeNick {
+	int32 Tag = 1; //tag
+}
+// 通知玩家的属性发生变化
+message S2CNoticeUnitDataChange {
+	repeated BaseUserInfo Users = 1; //用户信息
+	repeated BaseMonsterInfo Monsters = 2; //怪物信息
+}
+// 通知用户开始移动
+message PlayerMoveData {
+	uint32 UserId = 1; //用户编号
+	Point Source = 2; //原点
+	Point Target = 3; //目标点
+	int64 StartTime = 4; //开始移动时间
+	int32 Param = 5; //客户端参数
+}
+// 通知用户被攻击
+message S2CNoticePlayerBeAttack {
+	uint32 AttackId = 1; //攻击者编号
+	int32 Win = 2; //胜利还是失败
+}
+// 通知用户停止移动
+message S2CNoticePlayerStopMove {
+	uint32 UserId = 1; //用户编号
+	Point Point = 2; //
+}
+// 通知怪物离开地图
+message S2CNoticeMonsterLeaveMap {
+	repeated int32 MonsterId = 1; //怪物编号 唯一
+}
+// 通知玩家的地图发生变化
+message S2CNoticeMapDataChange {
+	BaseMapInfo MapData = 1; //地图信息
+}
+// 通知玩家离开地图
+message S2CNoticePlayerLeaveMap {
+	repeated uint32 UserId = 1; //用户信息
+}
+// 通知怪物进入地图
+message S2CNoticeMonsterEnterMap {
+	repeated BaseMonsterInfo Monster = 1; //怪物信息
+}
+// 通知玩家进入地图
+message S2CNoticePlayerEnterMap {
+	repeated BaseUserInfo Users = 1; //用户信息
+}
+// 通知用户开始移动
+message S2CNoticePlayerMove {
+	repeated PlayerMoveData Players = 1; //用户编号
+}
+// 玩家基础数据
+message BaseUserInfo {
+	uint32 UserId = 1; //用户id
+	repeated IntAttr A = 2; //Int属性
+	repeated StrAttr B = 3; //字符串属性
+}
+// 地图基础数据
+message BaseMapInfo {
+	int32 MapId = 1; //用户id
+	repeated IntAttr A = 2; //Int属性
+	repeated StrAttr B = 3; //字符串属性
+}
+// 怪物的基础信息
+message BaseMonsterInfo {
+	int32 Id = 1; //怪物的唯一编号
+	repeated IntAttr A = 2; //Int属性
+	repeated StrAttr B = 3; //字符串属性
+}
+// 玩法的基础信息
+message BasePlayWayInfo {
+	int32 Id = 1; //玩法编号
+	repeated IntAttr A = 2; //Int属性
+	repeated StrAttr B = 3; //字符串属性
+}
+// 小红点数据
+message RedItem {
+	int32 Id = 1; //小红点编号
+	int32 State = 2; //1:亮，0：灭
+}
+// 战斗对象
+message FightUnit {
+	int32 P = 1; //pos
+	uint32 I = 2; //id
+	int32 T = 3; //UnitType
+	repeated IntAttr A = 4; //Int属性
+	repeated StrAttr B = 5; //Str属性
+}
+// 战斗步骤
+message FightStep {
+	int32 AT = 1; //行为类型
+	int32 P = 2; //attack pos
+	int32 TP = 3; //target pos
+	string PARAM = 4; //参数
+	int32 S = 5; //skill
+	int32 R = 6; //round
+	int32 EK = 7; //effect type
+	int64 EV = 8; //effect value
+	int32 ET = 9; //执行类型
+	repeated FightStep FS = 10; //fightstep
+}
+// 剩余血量列表
+message HpList {
+	int32 P = 1; //位置
+	int64 Hp = 2; //血量
+	int32 CampId = 3; //阵营
+	int32 MonsterType = 4; //怪物类型
+}
+// 开场动画
+message SEffect {
+	int32 K = 1; //key
+	string V = 2; //value
+}
+// 战报
+message S2CBattlefieldReport {
+	repeated FightUnit U = 1; //fightunit
+	repeated FightStep FS = 2; //fightstep
+	string Idx = 3; //战斗序号
+	int32 T = 4; //战斗类型(副本类型)
+	int64 P = 5; //战斗参数(副本关卡)
+	int32 Win = 6; //是否战斗胜利：0失败，>0 胜利，并且代表星星
+	int32 M = 7; //最大回合数
+	int32 ORType = 8; //回合结束类型
+	int64 TotalHurt = 9; //攻击者总伤害
+	int32 TotalAtk = 10; //攻击者总攻击次数
+	repeated HpList HL = 11; //剩余血量列表
+	repeated SEffect SE = 12; //开场动画
+	string PARAM = 13; //扩展参数
+	int32 FM = 14; //战斗回合数
+}
+// 奖励广播
+message S2CPrizeReport {
+	repeated ItemData Items = 1; //奖励数据
+	int32 Type = 2; //类型 ：1 战斗胜利，2战斗失败 3扫荡
+	int32 FBType = 3; // 副本类型/战斗类型
+	int32 Star = 4; //星数
+	int32 ORType = 5; //回合结束类型
+	string Idx = 6; //战斗序号
+	repeated int64 IntData = 7; //数据
+	repeated string StrData = 8; //数据
+	string PARAM = 9; //参数(前端使用)
+}
+// 通知战斗状态
+message C2SNoticeFightStateReq {
+	int32 State = 1; //0 结束 1 开始 
+}
+// 通知战斗状态
+message S2CNoticeFightStateRep {
+	int32 Tag = 1; //结果
+}
+// 点
+message Point {
+	int32 X = 1; //x
+	int32 Y = 2; //Y
+}
+// 进入地图
+message C2SEnterMap {
+	int32 MapId = 1; //进图地图
+}
+// 进入地图
+message S2CEnterMap {
+	int32 Tag = 1; //结果
+}
+// 离开地图
+message C2SLeaveMap {
+	int32 MapId = 1; //离开地图
+}
+// 开始移动
+message C2SStartMove {
+	Point Source = 1; //原点
+	Point Target = 2; //目标点
+	int32 Param = 3; //客户端参数
+}
+// 停止移动
+message C2SStopMove {
+	Point P = 1; //原点
+}
+// 通知用户切换地图
+message S2CNoticePlayerChangeMap {
+	int32 MapId = 1; //地图编号
+	Point Point = 2; //
+}
+// 发送招募日志到客户端
+message ZhaoMuLog {
+	string LogString = 1; //日志文本
+	repeated NoticeItem Items = 2; //道具信息
+	repeated NoticeUser Users = 3; //用户信息
+	repeated string Params = 4; //普通参数
+	repeated string LinkParam = 5; //普通参数
+	string LogId = 6; //日志唯一id
+}
+// 活动数据
+message PlayerActData {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 State = 3; //状态
+	int64 ReadyTime = 4; //准备时间戳
+	int64 StartTime = 5; //开始时间戳
+	int64 EndTime = 6; //结束时间戳
+	int64 CloseTime = 7; //关闭时间戳
+	int32 EndDate = 8; //最后一次结束日期
+	int32 Session = 9; //届
+	int32 RewardSession = 10; //最后一次发奖 届
+	int32 Red = 11; //是否有红点
+	string Config = 12; //活动配置，json格式
+}
+// 活动功能模块数据-请求数据
+message C2SPlayerActModelData {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+}
+// 活动功能模块数据
+message S2CPlayerActModelData {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	OnlineAwardByClient OnlineAwardData = 4; //在线奖励数据
+	StageRewardClientData StageRewardClientData = 5; //价段奖励数据
+	GeneralPassClientData GeneralPassClientData = 6; //通行证活动数据
+}
+// 活动红点推送
+message S2CActListRedPush {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	int32 Red = 4; //是否有红点
+}
+// 活动数据推送
+message S2CActListPush {
+	int32 Tag = 1; //结果
+	repeated PlayerActData ActivityList = 2; //活动列表
+	repeated IntAttr DelActIds = 3; //删除的活动id
+}
+// 获取活动配置
+message C2SGetActivityConfig {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 Ver = 3; //版本号
+}
+// 获取活动配置 返回
+message S2CGetActivityConfig {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	int32 Ver = 4; //版本号
+	repeated ActivityConfig ConfigList = 5; //活动配置表
+}
+// 活动配置表
+message ActivityConfig {
+	string TableName = 1; //表名
+	repeated string Data = 2; //活动配置，json格式
+}
+// 每日签到客户端数据
+message DailySignInClientData {
+	int32 CurTurnId = 1; //当前轮id
+	int32 CurDay = 2; //当前天数
+	repeated int32 SignDays = 3; //已签到天列表
+	repeated int32 RemedyDays = 4; //补签天列表
+	repeated int32 ChargeDays = 5; //已充值天列表
+	repeated int32 DoubleDays = 6; //已领取双倍天列表
+	repeated int32 SignNumRewardDays = 7; //已领取累计奖励天数
+}
+// 每日签到-请求数据
+message C2SPlayerSignInUIData {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+}
+// 每日签到-请求数据 返回
+message S2CPlayerSignInUIData {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	DailySignInClientData ActData = 4; //活动数据
+}
+// 每日签到-签到
+message C2SPlayerSignIn {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 Day = 3; //签到天数
+}
+// 每日签到-签到 返回
+message S2CPlayerSignIn {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 SignDays = 4; //已签到天记录列表
+}
+// 每日签到-再签一次
+message C2SPlayerDoubleSignIn {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 Day = 3; //签到天数
+}
+// 每日签到-再签一次 返回
+message S2CPlayerDoubleSignIn {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 DoubleDays = 4; //已领取双倍天列表
+}
+// 每日签到-补签
+message C2SPlayerRemedySignIn {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 Day = 3; //签到天数
+}
+// 每日签到-补签 返回
+message S2CPlayerRemedySignIn {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 RemedyDays = 4; //补签天列表
+	repeated int32 DoubleDays = 5; //已领取双倍天列表
+}
+// 每日签到-领取累计奖励
+message C2SPlayerSignInNumReward {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 Day = 3; //累计天数
+}
+// 每日签到-领取累计奖励 返回
+message S2CPlayerSignInNumReward {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 SignNumRewardDays = 4; //已领取累计奖励天数
+}
+// 兑换激活码奖励
+message C2SGetCDKeyReward {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	string CDKey = 3; //激活码
+}
+// 兑换激活码奖励 返回
+message S2CGetCDKeyReward {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+}
+// 武将招募 客户端数据
+message ZhaoMuClientData {
+	repeated ZhaoMuLog ZhaoMuLog = 1; //招募日志 只发送显示需要的最近 5条
+	int32 BaseRwNeedNum = 2; //明保需要次数
+	int32 FreeNum = 3; //免费次数
+	int32 BuyTimes = 4; //今日剩余购买次数
+	int32 StageRwNum = 5; //阶段奖励次数
+	int32 StageRwGet = 6; //已领取阶段奖励次数
+	repeated int32 Wish = 7; //心愿武将
+	repeated int32 WishGet = 8; //今日已获得-心愿武将
+	int32 TotalNum = 9; //招募总次数
+	int32 BagLen = 10; //当前仓库长度
+}
+// 武将招募 UI数据
+message C2SZhaoMuUIData {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+}
+// 武将招募 UI数据 返回
+message S2CZhaoMuUIData {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	ZhaoMuClientData ActData = 4; //活动数据
+}
+// 武将招募 抽取
+message C2SZhaoMuLuckyDraw {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 Num = 3; //招募次数
+	int32 AutoBuy = 4; //是否自动购买
+}
+// 武将招募 抽取 返回
+message S2CZhaoMuLuckyDraw {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	ZhaoMuClientData ActData = 4; //活动数据
+	repeated ItemData Reward = 5; //获得奖励
+	int32 Score = 6; //当前积分
+	int32 Num = 7; //招募次数
+}
+// 武将招募 领取阶段奖励
+message C2SZhaoMuGetStageRw {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+}
+// 武将招募 领取阶段奖励 返回
+message S2CZhaoMuGetStageRw {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	int32 StageRwGet = 4; //已领取阶段奖励次数
+	int32 StageRwNum = 5; //阶段奖励次数
+}
+// 武将招募 设置心愿武将
+message C2SZhaoMuSetWish {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	repeated int32 WishList = 3; //心愿武将列表
+}
+// 武将招募 设置心愿武将 返回
+message S2CZhaoMuSetWish {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 WishList = 4; //心愿武将列表
+}
+// 武将招募 日志
+message C2SZhaoMuOpenLog {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 Type = 3; //类型：1=个人记录 2=单区记录
+	int32 Num = 4; //请求条数 0=所有
+	int32 ClientFlag = 5; //客户端区分标识
+}
+// 武将招募 日志 返回
+message S2CZhaoMuOpenLog {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	int32 Type = 4; //类型：1=个人记录 2=单区记录
+	repeated ZhaoMuLog ZhaoMuLog = 5; //招募日志
+	int32 ClientFlag = 6; //客户端区分标识
+}
+// 武将招募 仓库数据
+message C2SZhaoMuBagData {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+}
+// 武将招募 仓库数据 返回
+message S2CZhaoMuBagData {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated ItemData TempBagData = 4; //临时背包
+}
+// 武将招募 仓库取出
+message C2SZhaoMuBagTakeOut {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	repeated string OnlyId = 3; //唯一id
+	int32 IsAll = 4; //是否全部取出
+}
+// 武将招募 仓库取出 返回
+message S2CZhaoMuBagTakeOut {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	int32 IsAll = 4; //是否全部取出
+	repeated string OnlyId = 5; //唯一id
+}
+// 在线奖励数据
+message OnlineAwardByClient {
+	int32 OnlineTime = 1; //在线时间
+	int64 LoginTime = 2; //登陆时间
+	repeated int32 Awards = 3; //已领取奖励
+}
+// 请求领取在线奖励
+message C2SGetOnlineAward {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 AwardId = 3; //奖励Id
+}
+// 领取在线奖励返回
+message S2CGetOnlineAward {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	int32 AwardId = 4; //奖励Id
+	repeated int32 Awards = 5; //已领取奖励
+}
+// 请求阶段奖励
+message C2SGetStageReward {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 RewardId = 3; //奖励Id
+}
+// 领取阶段奖励返回
+message S2CGetStageReward {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 Rewards = 4; //已领取奖励
+}
+// 摇钱树 客户端数据
+message CashCowClientData {
+	int32 Level = 1; //等级
+	int32 Exp = 2; //经验值
+	int32 FreeNum = 3; //今日已使用免费次数
+	int32 Coin3Num = 4; //今日已使用元宝次数
+	int32 Coin2Num = 5; //今日已使用玉璧次数
+}
+// 摇钱树 UI数据
+message C2SCashCowUIData {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+}
+// 摇钱树 UI数据 返回
+message S2CCashCowUIData {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	CashCowClientData ActData = 4; //活动数据
+}
+// 价段奖励 客户端数据
+message StageRewardClientData {
+	repeated int32 AwardIds = 1; //奖励Id
+}
+// 通行证活动 客户端数据
+message GeneralPassClientData {
+	repeated int32 ChargeList = 1; //购买将军令列表
+	int32 ChargeNum = 2; //全服充值数量
+	repeated int32 RewardIds = 3; //通行证-已领取
+	repeated int32 ChargeRewardIds = 4; //将军令-已领取
+	repeated int32 WelfareRewardIds = 5; //全民福利-已领取
+}
+// 摇钱树 摇一摇
+message C2SCashCowShake {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 ShakeType = 3; //1=免费 2=元宝 3=玉璧
+	int32 IsOneKey = 4; //是否一键
+	int32 Num = 5; //摇多少次
+}
+// 摇钱树 摇一摇 返回
+message S2CCashCowShake {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	CashCowClientData CashCowClientData = 4; //摇钱树 客户端数据
+	repeated CashCowShakeReward Reward = 5; //获得奖励
+}
+// 摇钱树 客户端数据
+message CashCowShakeReward {
+	int32 Rate = 1; //倍率
+	repeated ItemInfo Items = 2; //获得奖励
+}
+// 请求领取全民福利
+message C2SGetAllServerReward {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 RewardId = 3; //奖励Id
+}
+// 领取全民福利返回
+message S2CGetAllServerReward {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 Rewards = 4; //已领取奖励
+}
+// 请求领取通行证奖励
+message C2SGetGeneralPassReward {
+	int32 FuncId = 1; //活动功能id
+	int32 CycNo = 2; //期号
+	int32 SectionId = 3; //章节Id
+}
+// 领取通行证奖励返回
+message S2CGetGeneralPassReward {
+	int32 Tag = 1; //结果
+	int32 FuncId = 2; //活动功能id
+	int32 CycNo = 3; //期号
+	repeated int32 RewardIds = 4; //通行证-已领取
+	repeated int32 ChargeRewardIds = 5; //领军令-已领取
+}
+// 获取玩法图标
+message S2CPlayWayIcon {
+	int32 Tag = 1; //结果
+	int32 PlayWayId = 2; //玩法编号
+	int32 State = 3; //状态:0关闭 1准备，2进行中，3结束
+	int64 StageTime = 4; //当前状态的结束时间戳
+}
+// 打开世界boss主UI
+message C2SOpenWorldBossUI {
+}
+// 打开世界boss主UI返回
+message S2COpenWorldBossUI {
+	int32 Tag = 1; //结果
+	int32 BossId = 2; //当前bossId
+	int64 ReadyTime = 3; //准备时间戳
+	int64 StartTime = 4; //开始时间戳
+	int64 EndTime = 5; //结束时间戳
+	int64 CloseTime = 6; //关闭时间戳
+}
+// 进入世界boss
+message C2SEnterWorldBoss {
+}
+// 进入世界boss返回
+message S2CEnterWorldBoss {
+	int32 Tag = 1; //结果
+	int32 ChallengeTimes = 2; //已挑战次数
+	int64 ChallengeCD = 3; //挑战冷却时间戳
+	int32 ChallengePrizeTimes = 4; //已挑战奖励次数
+	int32 GrabTimes = 5; //已抢夺次数
+	int64 GrabCD = 6; //抢夺冷却时间戳
+	int32 BuffNum = 7; //购买buff次数
+	int32 BossId = 8; //当前bossId
+	int64 ReadyTime = 9; //准备时间戳
+	int64 StartTime = 10; //开始时间戳
+	int64 EndTime = 11; //结束时间戳
+	int32 MyRank = 12; //我的排名
+	int64 MyScore = 13; //我的积分
+	int32 AreaRank = 14; //势力排名
+	int64 AreaScore = 15; //势力积分
+	int32 MyDiceNum = 16; //我的骰子点数
+	int32 AreaShieldNum = 17; //boss护盾剩余次数
+	int64 AreaShieldBreakEndTime = 18; //boss破盾结束时间戳
+}
+// 获取世界boss排行榜数据
+message C2SGetWorldBossRank {
+	int32 RankType = 1; //排行榜类型：1个人 2势力
+	int32 Start = 2; //开始名次
+	int32 End = 3; //结束名次
+}
+// 获取世界boss排行榜数据返回
+message S2CGetWorldBossRank {
+	int32 Tag = 1; //结果
+	int32 RankType = 2; //排行榜类型：1个人 2势力
+	repeated WorldBossUserRankData UserRankList = 3; //玩家详细数据
+	repeated WorldBossAreaRankData AreaRankList = 4; //势力详细数据
+	int32 MyRank = 5; //我的排名
+	int64 MyScore = 6; //我的积分
+}
+// 世界boss玩家排行数据
+message WorldBossUserRankData {
+	uint32 UserId = 1; //玩家Id
+	int32 R = 2; //排名
+	string Name = 3; //昵称
+	uint32 HeadFrame = 4; //头像框ID
+	uint32 Head = 5; //头像ID
+	uint32 Vip = 6; //vip等级
+	string FamilyName = 7; //家族名称
+	int64 FightValue = 8; //战力
+	int64 Score = 9; //玩家积分
+}
+// 世界boss玩家排行数据
+message WorldBossAreaRankData {
+	uint32 AreaId = 1; //势力Id
+	int32 R = 2; //排名
+	string Name = 3; //昵称
+	int32 FightNum = 8; //参与人数
+	int64 Score = 9; //势力积分
+}
+// 挑战世界boss(PVE)
+message C2SChallengeWorldBossPVE {
+}
+// 挑战世界boss(PVE)返回
+message S2CChallengeWorldBossPVE {
+	int32 Tag = 1; //结果
+	int32 ChallengeTimes = 2; //已挑战次数
+	int64 ChallengeCD = 3; //挑战冷却时间戳
+	int32 ChallengePrizeTimes = 4; //已挑战奖励次数
+	int32 MyRank = 5; //我的排名
+	int64 MyScore = 6; //我的积分
+	int32 AreaRank = 7; //势力排名
+	int64 AreaScore = 8; //势力积分
+}
+// 世界boss盾通知
+message S2CWorldBossShieldNotice {
+	int32 Tag = 1; //结果
+	int32 AreaShieldNum = 2; //boss护盾剩余次数
+	int64 AreaShieldBreakEndTime = 3; //boss破盾结束时间戳
+}
+// 世界boss盾开关通知
+message S2CWorldBossShieldOpenNotice {
+	int32 Tag = 1; //结果
+	bool IsOpen = 2; //boss护盾是否开启
+	int64 EndTime = 3; //boss护盾结束时间戳
+}
+// 挑战世界boss(PVP)
+message C2SChallengeWorldBossPVP {
+	uint32 TargetId = 1; //抢夺玩家id
+}
+// 挑战世界boss(PVP)返回
+message S2CChallengeWorldBossPVP {
+	int32 Tag = 1; //结果
+	int32 GrabTimes = 2; //已抢夺次数
+	int64 GrabCD = 3; //抢夺冷却时间戳
+	int32 MyRank = 4; //我的排名
+	int64 MyScore = 5; //我的积分
+	int32 AreaRank = 6; //势力排名
+	int64 AreaScore = 7; //势力积分
+	int32 Score = 8; //本次获得积分
+}
+// 世界boss购买鼓舞
+message C2SWorldBossBuyBuff {
+}
+// 世界boss购买鼓舞返回
+message S2CWorldBossBuyBuff {
+	int32 Tag = 1; //结果
+	int32 BuyBuffTimes = 2; //已购买buff次数
+}
+// 世界boss拼点
+message C2SWorldBossRandomDice {
+}
+// 世界boss拼点返回
+message S2CWorldBossRandomDice {
+	int32 Tag = 1; //结果
+	int32 Points = 2; //点数
+}
+// 世界boss拼点最大值通知
+message S2CWorldBossCurMaxDiceNumNotice {
+	int32 Tag = 1; //结果
+	uint32 UserId = 2; //玩家id
+	string Name = 3; //玩家名字
+	int32 MaxNum = 4; //拼点最大值
+	uint32 LoginAreaId = 5; //区id
+}
+// 世界boss拼点开关通知
+message S2CWorldBossRandomDiceOpenNotice {
+	int32 Tag = 1; //结果
+	bool IsOpen = 2; //boss拼点是否开启
+	int64 EndTime = 3; //boss拼点结束时间戳
+}
+// 退出世界boss
+message C2SExitWorldBoss {
+}
+// 进入世界boss返回
+message S2CExitWorldBoss {
+	int32 Tag = 1; //结果
+}
+// 打开boss之家（烽火连城）主UI
+message C2SOpenBossHomeUI {
+}
+// 打开boss之家（烽火连城）主UI返回
+message S2COpenBossHomeUI {
+	int32 Tag = 1; //结果
+	repeated BossHomeData Data = 2; //boss之家数据
+	repeated ItemData TempBagData = 3; //临时背包
+}
+// boss之家数据
+message BossHomeData {
+	int32 BossHomeId = 1; //层id
+	repeated BossHomeBossData BossData = 2; //boss数据
+	int32 UserNum = 3; //当前场景玩家人数
+}
+// boss之家boss数据
+message BossHomeBossData {
+	int32 BossId = 1; //地图明怪id
+	int32 State = 2; //状态 0,死亡，1复活
+	int64 ReliveTime = 3; //复活时间戳
+	uint32 UserId = 4; //归属玩家id
+}
+// 进入boss之家（烽火连城）
+message C2SEnterBossHome {
+	int32 BossHomeId = 1; //层id
+}
+// 进入boss之家（烽火连城）返回
+message S2CEnterBossHome {
+	int32 Tag = 1; //结果
+	int32 BossHomeId = 2; //层id
+	int32 BuffNum = 3; //鼓舞buff次数
+	int64 BuffEndTime = 4; //鼓舞buff结束时间戳
+}
+// 退出 boss之家
+message C2SExitBossHome {
+}
+// 退出 boss之家 返回
+message S2CExitBossHome {
+	int32 Tag = 1; //结果
+}
+// boss之家（烽火连城）排行榜数据
+message C2SGetBossHomeRankData {
+	int32 BossHomeId = 1; //层id
+	int32 BossId = 2; //地图明怪id
+}
+// boss之家（烽火连城）排行榜数据返回
+message S2CGetBossHomeRankData {
+	int32 Tag = 1; //结果
+	int32 BossHomeId = 2; //层id
+	int32 BossId = 3; //地图明怪id
+	repeated BossHomeRankData RankData = 4; //伤害排行数据
+	repeated uint32 RankDel = 5; //排行榜删除玩家id
+}
+// boss之家 伤害排行数据
+message BossHomeRankData {
+	uint32 UserId = 1; //玩家id
+	int64 Damage = 2; //造成伤害
+}
+// boss之家（烽火连城） PVE
+message C2SBossHomePVE {
+	int32 BossHomeId = 1; //层id
+	int32 BossId = 2; //地图明怪id
+}
+// boss之家（烽火连城） PVE返回
+message S2CBossHomePVE {
+	int32 Tag = 1; //结果
+}
+// boss之家（烽火连城） 获取目标玩家坐标
+message C2SGetBossHomePlayerPos {
+	int32 BossHomeId = 1; //层id
+	uint32 UserId = 2; //玩家id
+}
+// boss之家（烽火连城） 获取目标玩家坐标返回
+message S2CGetBossHomePlayerPos {
+	int32 Tag = 1; //结果
+	int32 BossHomeId = 2; //层id
+	uint32 UserId = 3; //玩家id
+	int32 X = 4; //目标X坐标
+	int32 Y = 5; //目标Y坐标
+}
+// boss之家（烽火连城） PVP
+message C2SBossHomePVP {
+	int32 BossHomeId = 1; //层id
+	uint32 UserId = 2; //玩家id
+}
+// boss之家（烽火连城） PVP返回
+message S2CBossHomePVP {
+	int32 Tag = 1; //结果
+}
+// boss之家（烽火连城）打开背包界面
+message C2SBossHomeOpenBagUI {
+}
+// boss之家（烽火连城）打开背包界面 返回
+message S2CBossHomeOpenBagUI {
+	int32 Tag = 1; //结果
+	repeated ItemData TempBagData = 2; //临时背包
+}
+// boss之家（烽火连城）新获得奖励
+message S2CBossHomeBagNew {
+	int32 Tag = 1; //结果
+	repeated ItemData TempBagData = 2; //临时背包
+}
+// boss之家（烽火连城）背包一键领取
+message C2SBossHomeBagOneKeyGet {
+}
+// boss之家（烽火连城）背包一键领取 返回
+message S2CBossHomeBagOneKeyGet {
+	int32 Tag = 1; //结果
+}
+// boss之家（烽火连城）购买鼓舞
+message C2SBossHomeBuyBuff {
+}
+// boss之家（烽火连城）购买鼓舞 返回
+message S2CBossHomeBuyBuff {
+	int32 Tag = 1; //结果
+	int32 BuffNum = 2; //鼓舞buff次数
+	int64 BuffEndTime = 3; //鼓舞buff结束时间戳
+}
+// boss之家（烽火连城）复活
+message C2SBossHomeRelive {
+}
+// boss之家（烽火连城）复活 返回
+message S2CBossHomeRelive {
+	int32 Tag = 1; //结果
+}
+// boss之家（烽火连城）购买体力
+message C2SBossHomeBuyEnergy {
+	int32 AutoBuy = 1; //是否自动购买
+}
+// boss之家（烽火连城）购买体力 返回
+message S2CBossHomeBuyEnergy {
+	int32 Tag = 1; //结果
+	int32 Add = 2; //增加体力
+}
+// boss之家（烽火连城）治疗
+message C2SBossHomeTreat {
+}
+// boss之家（烽火连城）治疗 返回
+message S2CBossHomeTreat {
+	int32 Tag = 1; //结果
+}
+// boss之家（烽火连城）获取玩家当前血量
+message C2SBossHomeGetPlayerHpList {
+	int32 BossHomeId = 1; //层id
+	uint32 UserId = 2; //玩家id
+}
+// boss之家（烽火连城）获取玩家当前血量 返回
+message S2CBossHomeGetPlayerHpList {
+	int32 Tag = 1; //结果
+	repeated HpList HL = 2; //剩余血量列表
+}
+// 镖车数据
+message CarData {
+	uint32 UserId = 1; //玩家id
+	uint32 LoginAreaId = 2; //区id
+	int32 Level = 3; //玩家等级
+	BaseUserInfo UserShowInfo = 4; //玩家外显数据
+	int32 QualityId = 5; //镖车品质
+	int32 UseAmulet = 6; //是否使用护送令
+	int64 EndTime = 7; //镖车结束时间戳
+	repeated CarRobLog RobLog = 8; //被劫记录
+	repeated ItemInfo RewardInfo = 9; //奖励数据
+	int32 IsDoubleReward = 10; //是否双倍时间内
+}
+// 被劫记录
+message CarRobLog {
+	uint32 UserId = 1; //玩家id
+	BaseUserInfo UserShowInfo = 2; //玩家外显数据
+	repeated ItemInfo LostRewardInfo = 3; //损失奖励数据
+	int64 RobTime = 4; //被劫时间戳
+	int32 IsDefeSucc = 5; //是否防守胜利
+}
+// 打开押送粮草主UI
+message C2SOpenEscortUI {
+}
+// 打开押送粮草主UI返回
+message S2COpenEscortUI {
+	int32 Tag = 1; //结果
+	repeated CarData CarData = 2; //镖车数据
+	int32 EscortNum = 3; //押镖次数
+	int32 RobNum = 4; //劫镖次数
+	int32 QualityId = 5; //当前刷新品质Id
+}
+// 押送粮草 定时刷新UI
+message C2SEscortRefreshUIData {
+	repeated uint32 UserIds = 1; //玩家id
+}
+// 押送粮草 定时刷新UI返回
+message S2CEscortRefreshUIData {
+	int32 Tag = 1; //结果
+	repeated CarData CarData = 2; //镖车数据
+}
+// 押送粮草镖车刷新
+message C2SEscortRefreshCar {
+	int32 Refresh = 1; //刷新类型 1=元宝 2=玉璧
+}
+// 押送粮草镖车刷新
+message S2CEscortRefreshCar {
+	int32 Tag = 1; //结果
+	int32 QualityId = 2; //当前刷新品质Id
+}
+// 押送粮草 开始押送
+message C2SEscortCarStart {
+	int32 UseAmulet = 1; //是否使用护送令
+	int32 AutoBuy = 2; //是否自动购买
+}
+// 押送粮草 开始押送返回
+message S2CEscortCarStart {
+	int32 Tag = 1; //结果
+	CarData CarData = 2; //镖车数据
+	int32 EscortNum = 3; //押镖次数
+	int32 QualityId = 4; //当前刷新品质Id
+}
+// 押送粮草 快速完成
+message C2SEscortQuickFinish {
+}
+// 押送粮草 快速完成返回
+message S2CEscortQuickFinish {
+	int32 Tag = 1; //结果
+	CarData CarData = 2; //镖车数据
+}
+// 押送粮草 领取押运完成奖励
+message C2SEscortGetFinishReward {
+}
+// 押送粮草 领取押运完成奖励返回
+message S2CEscortGetFinishReward {
+	int32 Tag = 1; //结果
+	CarData CarData = 2; //镖车数据
+}
+// S2S押送粮草 押送奖励图标
+message S2CEscortFinishRewardNotice {
+	int32 Tag = 1; //结果
+}
+// 押送粮草 打开拦截窗口
+message C2SEscortGetCarData {
+	repeated uint32 UserIds = 1; //玩家id
+}
+// 押送粮草 打开拦截窗口返回
+message S2CEscortGetCarData {
+	int32 Tag = 1; //结果
+	repeated CarData CarData = 2; //镖车数据
+}
+// 押送粮草 拦截
+message C2SEscortCarRob {
+	uint32 UserId = 1; //玩家id
+}
+// 押送粮草 拦截返回
+message S2CEscortCarRob {
+	int32 Tag = 1; //结果
+	CarData CarData = 2; //镖车数据
+}
+// 押送粮草 被拦截通知
+message S2CEscortCarRobNotice {
+	int32 Tag = 1; //结果
+}
+// 押送粮草 打开被劫UI
+message C2SEscortOpenRobLog {
+}
+// 押送粮草 打开被劫UI返回
+message S2CEscortOpenRobLog {
+	int32 Tag = 1; //结果
+	repeated EscortRobLog RobLog = 2; //被劫记录
+}
+// 被劫记录
+message EscortRobLog {
+	uint32 UserId = 1; //玩家id
+	BaseUserInfo UserShowInfo = 2; //玩家外显数据
+	repeated ItemInfo RewardInfo = 3; //奖励数据
+	int32 IsRevenge = 4; //是否已复仇
+	int64 RobTime = 5; //被劫时间戳
+	int32 IsRead = 6; //是否已读
+}
+// 押送粮草 复仇
+message C2SEscortRevenge {
+	uint32 UserId = 1; //玩家id
+	int64 RobTime = 2; //被劫时间戳
+}
+// 押送粮草 复仇返回
+message S2CEscortRevenge {
+	int32 Tag = 1; //结果
+	repeated EscortRobLog RobLog = 2; //被劫记录
+}
+// 批量获取玩家外显数据
+message C2SGetUserShowInfo {
+	repeated uint32 UserIdList = 1; //玩家id列表
+}
+// 批量获取玩家外显数据 返回
+message S2CGetUserShowInfo {
+	int32 Tag = 1; //结果
+	repeated BaseUserInfo UserShowInfo = 2; //玩家外显数据
+}
+// 获取世界等级
+message C2SGetWorldLevel {
+}
+// 获取世界等级
+message S2CGetWorldLevel {
+	int32 Tag = 1; //结果
+	int32 WorldLevel = 2; //世界等级
+}
+// 排位赛 战报数据
+message RankMatchFightLog {
+	int64 Time = 1; //战斗时间戳
+	int32 State = 2; //状态 0,失败，1胜利
+	int32 ScoreChange = 3; //积分变化
+	BaseUserInfo UserInfo = 4; //挑战玩家信息
+	S2CBattlefieldReport Report = 5; //战报
+}
+// 打开排位赛UI
+message C2SOpenRankMatchUI {
+}
+// 打开排位赛UI返回
+message S2COpenRankMatchUI {
+	int32 Tag = 1; //结果
+	int64 EndTime = 2; //结束时间戳
+	repeated BaseUserInfo TopPlayers = 3; //前三玩家信息
+	int32 MyScore = 4; //我的积分
+	int32 MyRank = 5; //我的名次
+	int32 ChallengeNum = 6; //当前剩余挑战次数
+	int32 DayBuyNum = 7; //每日购买次数
+	int32 DayWinNum = 8; //每日总胜场
+	bool IsGetDayWin = 9; //是否领取每日首胜奖励
+	int32 SessionWinNum = 10; //赛季总胜场
+	repeated int32 SessionGetRwList = 11; //已领取总胜场奖励
+	repeated int32 LevelGetRwList = 12; //已领取段位奖励
+	bool IsChangeSession = 13; //是否赛季更换
+	int32 LastSessionScore = 14; //上赛季积分
+	int64 NextRefreshTime = 15; //下一次恢复时间戳
+}
+// 排位赛开始匹配
+message C2SRankMatchStartMatch {
+}
+// 排位赛开始匹配返回
+message S2CRankMatchStartMatch {
+	int32 Tag = 1; //结果
+	repeated BaseUserInfo Players = 2; //匹配玩家信息
+}
+// 排位赛挑战
+message C2SRankMatchChallenge {
+	uint32 UserId = 1; //玩家id
+}
+// 排位赛挑战返回
+message S2CRankMatchChallenge {
+	int32 Tag = 1; //结果
+	repeated BaseUserInfo TopPlayers = 2; //前三玩家信息
+	int32 MyScore = 3; //我的积分
+	int32 MyRank = 4; //我的名次
+	int32 ChallengeNum = 5; //当前剩余挑战次数
+	int32 DayWinNum = 6; //每日总胜场
+	int32 SessionWinNum = 7; //赛季总胜场
+	int64 NextRefreshTime = 8; //下一次恢复时间戳
+}
+// 排位赛购买挑战次数
+message C2SRankMatchBuyChallengeNum {
+	bool IsAutoMatch = 1; //是否自动匹配
+}
+// 排位赛购买挑战次数返回
+message S2CRankMatchBuyChallengeNum {
+	int32 Tag = 1; //结果
+	bool IsAutoMatch = 2; //是否自动匹配
+	int32 ChallengeNum = 3; //当前剩余挑战次数
+	int32 DayBuyNum = 4; //每日购买次数
+	int64 NextRefreshTime = 5; //下一次恢复时间戳
+}
+// 排位赛打开战报UI
+message C2SRankMatchOpenFightLogUI {
+}
+// 排位赛打开战报UI返回
+message S2CRankMatchOpenFightLogUI {
+	int32 Tag = 1; //结果
+	repeated RankMatchFightLog FightLog = 2; //战报数据
+}
+// 排位赛播放战报
+message C2SRankMatchPlayFightLog {
+	int64 Time = 1; //战斗时间戳
+}
+// 排位赛播放战报返回
+message S2CRankMatchPlayFightLog {
+	int32 Tag = 1; //结果
+	RankMatchFightLog Report = 2; //战报
+}
+// 排位赛领取每日首胜奖励
+message C2SRankMatchGetDayWinReward {
+}
+// 排位赛领取每日首胜奖励返回
+message S2CRankMatchGetDayWinReward {
+	int32 Tag = 1; //结果
+	bool IsGetDayWin = 2; //是否领取每日首胜奖励
+}
+// 排位赛领取赛季胜场奖励
+message C2SRankMatchGetSessionWinReward {
+	int32 RewardId = 1; //胜场奖励Id
+}
+// 排位赛领取赛季胜场奖励返回
+message S2CRankMatchGetSessionWinReward {
+	int32 Tag = 1; //结果
+	repeated int32 SessionGetRwList = 2; //已领取总胜场奖励
+}
+// 排位赛领取段位奖励
+message C2SRankMatchGetLevelReward {
+	int32 LevelId = 1; //段位Id
+}
+// 排位赛领取赛季胜场奖励返回
+message S2CRankMatchGetLevelReward {
+	int32 Tag = 1; //结果
+	repeated int32 LevelGetRwList = 2; //已领取段位奖励
+}
+// 获取排位赛排行榜数据
+message C2SGetRankMatchRank {
+	int32 Start = 1; //开始名次
+	int32 End = 2; //结束名次
+}
+// 获取排位赛排行榜数据返回
+message S2CGetRankMatchRank {
+	int32 Tag = 1; //结果
+	repeated BaseUserInfo RankList = 2; //排行数据
+	int32 MyScore = 3; //我的积分
+	int32 MyRank = 4; //我的名次
+}
+// 镶嵌宝石信息
+message GemInfo {
+	int32 Pos = 1; //位置
+	int32 ItemId = 2; //镶嵌的宝石模板id
+}
+// 装备格数据
+message EquipPos {
+	int32 Pos = 1; //位置
+	int32 StrengthLevel = 2; //强化等级
+	repeated GemInfo Gems = 3; //镶嵌的宝石
+	string OnlyId = 4; //穿戴装备的唯一Id
+}
+// 熔炼
+message C2SMeltEquip {
+	repeated string Items = 1; //熔炼的装备ID数组
+}
+// 熔炼
+message S2CMeltEquip {
+	int32 Tag = 1; //结果
+	repeated ItemInfo NewData = 2; //熔炼后是否掉落新装备
+}
+// 装备一键穿戴
+message C2SAutoWearEquip {
+	int32 Type = 1; //穿戴类型
+}
+// 装备一键穿戴
+message S2CAutoWearEquip {
+	int32 Tag = 1; //结果
+}
+// 装备穿戴或卸下
+message C2SWearOrRemoveEquip {
+	repeated string OnlyIds = 1; //穿戴装备的OnlyId列表
+}
+// 装备穿戴或卸下
+message S2CWearOrRemoveEquip {
+	int32 Tag = 1; //结果
+	repeated string OnlyIds = 2; //穿戴装备的OnlyId列表
+}
+// 装备格信息
+message C2SEquipPosInfo {
+}
+// 装备格信息
+message S2CEquipPosInfo {
+	int32 Tag = 1; //结果
+	repeated EquipPos EquipPosList = 2; //装备格数据
+	int32 ResonateLev = 3; //装备格共鸣等级
+}
+// 装备格强化
+message C2SStrengthEquipPos {
+	int32 Pos = 1; //装备格位置
+}
+// 装备格强化
+message S2CStrengthEquipPos {
+	int32 Tag = 1; //结果
+	EquipPos EquipPos = 2; //装备格数据
+}
+// 装备格一键强化
+message C2SAutoStrengthEquipPos {
+}
+// 装备格一键强化
+message S2CAutoStrengthEquipPos {
+	int32 Tag = 1; //结果
+	repeated EquipPos EquipPosList = 2; //装备格数据
+}
+// 装备格共鸣
+message C2SResonateEquipPos {
+}
+// 装备格共鸣
+message S2CResonateEquipPos {
+	int32 Tag = 1; //结果
+	int32 Level = 2; //装备格共鸣等级
+}
+// 装备打造
+message C2SBuildEquip {
+	int32 EquipPart = 1; //装备部位
+	int32 UseStone = 2; //是否使用石头, 1:使用, 其他:不使用
+}
+// 装备打造
+message S2CBuildEquip {
+	int32 Tag = 1; //结果
+}
+// 装备升星
+message C2SRiseStarEquip {
+	int32 EquipPart = 1; //打造装备的部位
+	string CostOId1 = 2; //消耗装备1的onlyId
+	string CostOId2 = 3; //消耗装备2的onlyId
+	string CostOId3 = 4; //消耗装备3的onlyId
+}
+// 装备升星
+message S2CRiseStarEquip {
+	int32 Tag = 1; //结果
+}
+// 宝石镶嵌
+message C2SEquipGemInlay {
+	int32 EquipPart = 1; //装备部位
+	int32 Pos = 2; //镶嵌的宝石部位
+	int32 ItemId = 3; //镶嵌的宝石Id
+}
+// 宝石镶嵌
+message S2CEquipGemInlay {
+	int32 Tag = 1; //结果
+	int32 EquipPart = 2; //装备部位
+	GemInfo GemInfo = 3; //宝石信息
+}
+// 宝石一键镶嵌
+message C2SEquipGemOneKeyInlay {
+}
+// 宝石一键镶嵌
+message S2CEquipGemOneKeyInlay {
+	int32 Tag = 1; //结果
+	repeated EquipPos EquipPosList = 2; //装备部位信息(仅返回变化部位)
+}
+// 宝石一键升级
+message C2SEquipGemOneKeyLevelUp {
+}
+// 宝石一键升级
+message S2CEquipGemOneKeyLevelUp {
+	int32 Tag = 1; //结果
+	repeated EquipPos EquipPosList = 2; //装备部位信息(仅返回变化部位)
+}
+// 套装信息
+message Suit {
+	int32 Id = 1; //套装id
+	repeated int32 ActiveNum = 2; //激活条数
+	int32 Grade = 3; //阶级
+}
+// 套装激活
+message C2SSuitActive {
+	int32 Id = 1; //套装id
+	int32 Num = 2; //套装激活数量
+}
+// 套装激活
+message S2CSuitActive {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //套装id
+	int32 Num = 3; //套装激活数量
+}
+// 套装升阶
+message C2SSuitGradeUp {
+	int32 Id = 1; //套装id
+}
+// 套装升阶
+message S2CSuitGradeUp {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //套装id
+	int32 GradeLevel = 3; //阶级
+}
+// 套装信息
+message C2SSuitInfo {
+}
+// 套装信息
+message S2CSuitInfo {
+	int32 Tag = 1; //结果
+	repeated Suit Data = 2; //套装信息
+}
+// 套装穿戴(幻化)或者卸下
+message C2SSuitWearOrRemove {
+	int32 Id = 1; //套装id
+}
+// 套装穿戴（幻化）或者卸下
+message S2CSuitWearOrRemove {
+	int32 Tag = 1; //结果
+}
+// 角色皮肤信息
+message RoleSkin {
+	int32 Id = 1; //皮肤id
+	int32 Star = 2; //皮肤星级
+}
+// 角色皮肤信息协议
+message C2SRoleSkinInfo {
+}
+// 角色皮肤信息协议
+message S2CRoleSkinInfo {
+	int32 SoulLevel = 1; //注灵等级
+	int32 SoulValue = 2; //注灵值
+	int32 GodNum = 3; //炼神次数
+	repeated RoleSkin Data = 4; //激活皮肤列表
+	int32 Tag = 5; //结果
+}
+// 角色皮肤激活
+message C2SRoleSkinActive {
+	int32 SkinId = 1; //皮肤id
+}
+// 角色皮肤激活
+message S2CRoleSkinActive {
+	int32 Tag = 1; //结果
+	int32 SkinId = 2; //皮肤id
+}
+// 角色皮肤升星
+message C2SRoleSkinRiseStar {
+	int32 SkinId = 1; //皮肤id
+}
+// 角色皮肤升星
+message S2CRoleSkinRiseStar {
+	int32 Tag = 1; //结果
+	int32 SkinId = 2; //皮肤id
+	int32 Star = 3; //皮肤星級
+}
+// 角色皮肤幻化或脱下
+message C2SRoleSkinWearOrRemove {
+	int32 WearOrRemoveId = 1; //皮肤id
+}
+// 角色皮肤幻化或脱下
+message S2CRoleSkinWearOrRemove {
+	int32 Tag = 1; //结果
+	int32 WearOrRemoveId = 2; //皮肤id
+}
+// 注灵
+message C2SRoleSkinSoulLevel {
+}
+// 注灵
+message S2CRoleSkinSoulLevel {
+	int32 Tag = 1; //结果
+	int32 SoulLevel = 2; //注灵等级
+	int32 SoulValue = 3; //注灵值
+}
+// 炼神
+message C2SRoleSkinGodNum {
+}
+// 炼神
+message S2CRoleSkinGodNum {
+	int32 Tag = 1; //结果
+	int32 GodNum = 2; //炼神次数
+}
+// 通用物品弹窗
+message S2CItemPop {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //弹窗类型
+	repeated ItemData ItemData = 3; //物品信息
+}
+// 通用物品弹窗
+message S2CItemInfoPop {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //弹窗类型
+	repeated ItemInfo ItemInfo = 3; //物品信息
+}
+// 通用飘字
+message S2CNotice {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //id对应_提示信息后端表
+	repeated ItemNum Items1 = 3; //道具信息1
+	repeated ItemNum Items2 = 4; //道具信息2
+}
+// 上线下发角色技能列表
+message S2CRoleSkillList {
+	repeated SkillInfo Skills = 1; //技能列表
+}
+// 角色技能升级
+message C2SRoleSkillUp {
+	int32 SkillId = 1; //技能Id 0表示一键升级
+}
+// 角色技能升级
+message S2CRoleSkillUp {
+	int32 Tag = 1; //结果
+	repeated SkillInfo Skills = 2; //升级的技能
+}
+// 角色武艺信息
+message RoleMartialInfo {
+	int32 Id = 1; //武艺id
+	int32 Level = 2; //等级
+	int32 Point = 3; //点位
+}
+// 上线下发角色武艺列表
+message C2SRoleMartialList {
+}
+// 上线下发角色武艺列表
+message S2CRoleMartialList {
+	int32 Tag = 1; //结果
+	repeated RoleMartialInfo MartialList = 2; //武艺列表
+}
+// 角色武艺升级
+message C2SRoleMartialLevelUp {
+	int32 Id = 1; //武艺Id
+}
+// 角色武艺升级
+message S2CRoleMartialLevelUp {
+	int32 Tag = 1; //结果
+	RoleMartialInfo Martial = 2; //武艺信息
+}
+// 军衔信息
+message C2SArmyInfo {
+}
+// 军衔信息
+message S2CArmyInfo {
+	int32 Tag = 1; //结果
+	int32 IsUseItem = 2; //是否一键晋升
+	repeated int32 SkillIds = 3; //激活技能id
+}
+// 军衔晋升
+message C2SArmyUp {
+}
+// 军衔晋升
+message S2CArmyUp {
+	int32 Tag = 1; //结果
+}
+// 军衔一键晋升
+message C2SArmyUseItem {
+}
+// 军衔一键晋升
+message S2CArmyUseItem {
+	int32 Tag = 1; //结果
+}
+// 军衔任务领取
+message C2SArmyReward {
+	int32 Id = 1; //任务id
+}
+// 军衔任务领取
+message S2CArmyReward {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //任务id
+}
+// 军衔激活技能
+message C2SArmySkillActive {
+	int32 SkillId = 1; //技能id
+}
+// 军衔激活技能
+message S2CArmySkillActive {
+	int32 Tag = 1; //结果
+	int32 SkillId = 2; //技能id
+}
+// 竞技场玩家
+message ArenaRole {
+	uint32 UserId = 1; //玩家或机器人ID
+	int32 Rank = 2; //排名
+	repeated IntAttr IntAttr = 3; //玩家或机器人ID
+	repeated StrAttr StrAttr = 4; //玩家或机器人ID
+	int32 Kill = 5; //是否直接秒杀，0否，1是
+	int32 Robot = 6; //是否是机器人，0否，1是
+}
+// 竞技场排名数据
+message ArenaRankData {
+	int32 Rank = 1; //排名
+	uint32 AreaId = 2; //区Id
+	string Nick = 3; //昵称
+	int64 FightValue = 4; //战力
+}
+// 获取竞技场敌人信息
+message C2SArenaList {
+}
+// 获取竞技场敌人信息
+message S2CArenaList {
+	int32 Tag = 1; //结果
+	repeated ArenaRole Roles = 2; //需要显示的竞技场敌人
+}
+// 竞技场挑战
+message C2SArenaFight {
+	uint32 TargetId = 1; //要挑战的玩家ID
+	int32 TargetRank = 2; //要挑战的排名
+	int32 Kill = 3; //是否秒杀，0否，1是
+}
+// 竞技场挑战
+message S2CArenaFight {
+	int32 Tag = 1; //结果
+}
+// 竞技场一键扫荡
+message C2SArenaSweep {
+}
+// 竞技场一键扫荡
+message S2CArenaSweep {
+	int32 Tag = 1; //结果
+}
+// 购买竞技场挑战次数
+message C2SArenaBuyTimes {
+}
+// 购买竞技场挑战次数
+message S2CArenaBuyTimes {
+	int32 Tag = 1; //结果
+}
+// 获取竞技场排名列表
+message C2SGetArenaRankList {
+}
+// 获取竞技场排名列表
+message S2CGetArenaRankList {
+	int32 Tag = 1; //结果
+	repeated ArenaRankData Ranks = 2; //结果
+	int32 MyRank = 3; //我的排名
+}
+// 出站阵容单位
+message LineupUnit {
+	int32 Type = 1; //出战单位类型 2-宠物
+	int32 Pos = 2; //出战位置
+	string OnlyId = 3; //出战单位唯一Id
+}
+// 设置出战阵容
+message C2SChangeLineup {
+	int32 Type = 1; //出战单位类型 2-宠物
+	int32 Pos = 2; //出战位置
+	string OnlyId = 3; //出战单位唯一Id
+}
+// 设置出战阵容
+message S2CChangeLineup {
+	int32 Tag = 1; //Tag
+	int32 Type = 2; //出战单位类型 2-宠物
+	int32 Pos = 3; //出战位置
+	string OnlyId = 4; //出战单位唯一Id
+	string OldOnlyId = 5; //原出战单位Id
+}
+// 上线下发出战阵容信息
+message S2CLineupInfo {
+	repeated LineupUnit Lineup = 1; //出战阵容信息
+}
+// 武将技能
+message GeneralSkill {
+	int32 SkillId = 1; //技能id
+	int32 SkillLv = 2; //技能等级
+	int32 SkillType = 3; //武将技能类型 1-专属 2-公共
+	bool Lock = 4; //是否锁定
+}
+// 武将皮肤
+message GeneralSkin {
+	int32 SkinId = 1; //皮肤Id
+	int32 SkinLv = 2; //皮肤等级
+}
+// 武将装备
+message GeneralEquipData {
+	repeated int32 WearEquips = 1; //穿戴的部位
+	int32 Level = 2; //当前阶数
+	int32 Star = 3; //当前星数
+}
+// 武将数据
+message GeneralData {
+	string OnlyId = 1; //唯一Id
+	int32 IId = 2; //武将Id
+	int32 Level = 3; //等级
+	int64 Exp = 4; //经验
+	int32 AtkTalent = 5; //当前攻击资质
+	int32 DefTalent = 6; //当前防御资质
+	int32 HpTalent = 7; //当前血量资质
+	int32 MaxAtkTalent = 8; //当前最大攻击资质
+	int32 MaxDefTalent = 9; //当前最大防御资质
+	int32 MaxHpTalent = 10; //当前最大血量资质
+	int32 Grow = 11; //当前成长值(万倍)
+	int32 MaxGrow = 12; //当前最大成长值(万倍)
+	int64 Fv = 13; //战力
+	int64 Atk = 14; //攻击
+	int64 Def = 15; //防御
+	int64 Hp = 16; //血量
+	int32 Title = 17; //头衔
+	int32 Grade = 18; //阶级
+	int32 Quality = 19; //品质
+	int64 TimeStamp = 20; //获得的时间戳
+	int32 Lock = 21; //是否锁定 0-未锁 1-锁定
+	repeated GeneralSkill Skills = 22; //技能
+	int32 SkinId = 24; //当前穿戴皮肤
+	repeated ItemInfo AwakenItem = 25; //武将觉醒消耗
+	int32 MutationBaseCount = 26; //变异保底次数
+	int32 MutationTargetCount = 27; //变异目标保底次数
+	GeneralEquipData EquipData = 28; //武将装备
+}
+// 上线推送所有武将信息
+message S2CAllGeneral {
+	repeated GeneralData List = 1; //所有武将
+	repeated GeneralSkin Skins = 2; //所有武将皮肤
+}
+// 添加武将
+message S2CAddGeneral {
+	GeneralData General = 1; //武将
+}
+// 删除武将
+message S2CDelGeneral {
+	repeated string OnlyIds = 1; //武将唯一Id
+}
+// 武将升级
+message C2SGeneralLevelUp {
+	string OnlyId = 1; //武将唯一Id
+	int32 ItemId = 2; //升级消耗的物品Id
+	uint32 ItemNum = 3; //升级消耗的物品数量
+}
+// 武将升级
+message S2CGeneralLevelUp {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	int32 Level = 3; //武将等级
+	int64 Exp = 4; //武将经验
+}
+// 武将提品
+message C2SGeneralQualityUp {
+	string OnlyId = 1; //主武将唯一Id
+	repeated string CostList = 2; //提品消耗的武将列表
+	int32 ItemId = 3; //神兽提品丹道具Id
+}
+// 武将提品
+message S2CGeneralQualityUp {
+	int32 Tag = 1; //结果
+	GeneralData General = 2; //提品后的武将
+}
+// 更新单个武将属性
+message S2CGeneralUpdateAttr {
+	string OnlyId = 1; //武将唯一Id
+	int64 Fv = 2; //战力
+	int64 Atk = 3; //攻击
+	int64 Def = 4; //防御
+	int64 Hp = 5; //血量
+}
+// 更新多个武将属性
+message S2CGeneralListUpdateAttr {
+	repeated S2CGeneralUpdateAttr List = 1; //武将属性列表
+}
+// 武将锁定
+message C2SGeneralLock {
+	string OnlyId = 1; //主武将唯一Id
+	int32 Lock = 2; //0-解锁 1-锁定
+}
+// 武将锁定
+message S2CGeneralLock {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //主武将唯一Id
+	int32 Lock = 3; //0-解锁 1-锁定
+}
+// 武将升品参数
+message GeneralQualityUpParam {
+	string MainId = 1; //主武将Id
+	repeated string CostList = 2; //副宠Id
+}
+// 武将一键提品
+message C2SGeneralOneKeyQualityUp {
+	repeated GeneralQualityUpParam Params = 1; //提品参数
+}
+// 武将一键提品
+message S2CGeneralOneKeyQualityUp {
+	int32 Tag = 1; //结果
+	repeated GeneralData Generals = 2; //提品的武将信息
+}
+// 武将觉醒
+message C2SGeneralAwaken {
+	string OnlyId = 1; //武将唯一Id
+	int32 Type = 2; //觉醒类型 1-普通觉醒 2-高级觉醒
+	int32 AutoBuy = 3; //自动购买 1-自动购买
+}
+// 武将觉醒
+message S2CGeneralAwaken {
+	int32 Tag = 1; //结果
+	GeneralData General = 2; //武将
+}
+// 武将激活觉醒技能
+message C2SGeneralAwakenSkill {
+	string OnlyId = 1; //武将唯一Id
+}
+// 武将激活觉醒技能
+message S2CGeneralAwakenSkill {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	repeated GeneralSkill Skills = 3; //武将技能
+}
+// 武将升阶
+message C2SGeneralGradeUp {
+	string OnlyId = 1; //武将唯一Id
+	repeated string CostList = 2; //消耗副将Id
+}
+// 武将升阶
+message S2CGeneralGradeUp {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	int32 GradeLv = 3; //当前阶级
+	GeneralSkill Skill = 4; //觉醒技能(有变动就有数据)
+}
+// 武将皮肤升星
+message C2SGeneralSkinLevelUp {
+	int32 SkinId = 1; //皮肤Id
+}
+// 武将皮肤升星
+message S2CGeneralSkinLevelUp {
+	int32 Tag = 1; //结果
+}
+// 更新武将皮肤
+message S2CGeneralSkinUpdate {
+	int32 SkinId = 1; //皮肤Id
+	int32 SkinLv = 2; //皮肤当前等级 ==1 表示刚刚激活
+}
+// 穿戴武将皮肤
+message C2SGeneralWearSkin {
+	string OnlyId = 1; //武将唯一Id
+	int32 SkinId = 2; //皮肤Id
+}
+// 穿戴武将皮肤
+message S2CGeneralWearSkin {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	int32 SkinId = 3; //皮肤Id
+}
+// 穿戴武将装备
+message C2SGeneralEquipWear {
+	string OnlyId = 1; //武将唯一Id
+	int32 Part = 2; //部位
+}
+// 穿戴武将装备
+message S2CGeneralEquipWear {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	GeneralEquipData EquipData = 3; //武将装备
+}
+// 一键穿戴武将装备
+message C2SGeneralEquipOneKeyWear {
+	string OnlyId = 1; //武将唯一Id
+}
+// 一键穿戴武将装备
+message S2CGeneralEquipOneKeyWear {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	GeneralEquipData EquipData = 3; //武将装备
+}
+// 武将装备升星
+message C2SGeneralEquipStarUp {
+	string OnlyId = 1; //武将唯一Id
+	repeated string CostList = 2; //消耗的武将Id
+}
+// 武将装备升星
+message S2CGeneralEquipStarUp {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	GeneralEquipData EquipData = 3; //武将装备
+	int32 MaxGrow = 4; //最大养成资质
+	int32 Grow = 5; //当前养成资质
+}
+// 武将学习技能
+message C2SGeneralStudySkill {
+	string OnlyId = 1; //武将唯一Id
+	int32 ItemId = 2; //技能书ID
+}
+// 武将学习技能
+message S2CGeneralStudySkill {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	repeated GeneralSkill Skills = 3; //武将技能列表
+	int32 SkillId = 4; //新技能Id
+}
+// 武将技能锁定
+message C2SGeneralSkillLock {
+	string OnlyId = 1; //武将唯一Id
+	int32 SkillId = 2; //技能ID
+}
+// 武将技能锁定
+message S2CGeneralSkillLock {
+	int32 Tag = 1; //结果
+	string OnlyId = 2; //武将唯一Id
+	GeneralSkill Skill = 3; //武将技能
+}
+// 武将技能回收
+message C2SGeneralSkillRecycle {
+	repeated ItemInfo Items = 1; //回收的技能书
+}
+// 武将技能回收
+message S2CGeneralSkillRecycle {
+	int32 Tag = 1; //结果
+	repeated ItemInfo Items = 2; //奖励
+	repeated int32 ItemIds = 3; //回收的道具Id
+}
+// 武将重生返还
+message C2SGeneralReturn {
+	string OnlyId = 1; //武将唯一Id
+}
+// 武将重生返还
+message S2CGeneralReturn {
+	int32 Tag = 1; //结果
+	repeated ItemInfo Items = 2; //返还奖励
+}
+// 武将重生
+message C2SGeneralReborn {
+	string OnlyId = 1; //武将唯一Id
+}
+// 武将重生
+message S2CGeneralReborn {
+	int32 Tag = 1; //结果
+	repeated ItemInfo Items = 2; //返还奖励
+	GeneralData General = 3; //重生后的武将信息
+}
+// 武将遣散
+message C2SGeneralRelease {
+	repeated string OnlyIds = 1; //武将唯一Id
+}
+// 武将遣散
+message S2CGeneralRelease {
+	int32 Tag = 1; //结果
+	repeated ItemInfo Items = 2; //遣散奖励
+}
+// 武将合成
+message C2SGeneralStick {
+	int32 ItemId = 1; //合成武将Id
+	int64 ItemNum = 2; //合成武将数量
+}
+// 武将合成
+message S2CGeneralStick {
+	int32 Tag = 1; //结果
+}
+// 合成材料
+message C2SComMaterial {
+	int32 Id = 1; //材料id
+	int32 Num = 2; //材料数量
+}
+// 合成材料结果
+message S2CComMaterial {
+	int32 Tag = 1; //结果
+}
+// 红点状态
+message S2CRedDotStateList {
+	repeated RedDotState RedDotStateList = 1; //红点状态列表
+}
+// 红点
+message RedDotState {
+	int32 RedDotId = 1; //红点id
+	int32 State = 2; //状态
+}
+// vip信息
+message C2SVipInfo {
+}
+// vip信息
+message S2CVipInfo {
+	int32 Tag = 1; //结果
+	repeated int32 LevelReward = 2; //vip奖励领取列表
+	int32 DailyReward = 3; //vip今日奖励是否领取
+}
+// 领取vip奖励
+message C2SVipLevelReward {
+	int32 VipLevel = 1; //vip等级
+}
+// 领取vip奖励
+message S2CVipLevelReward {
+	int32 Tag = 1; //结果
+	int32 VipLevel = 2; //vip等级
+}
+// 领取vip每日奖励
+message C2SVipDailyReward {
+}
+// 领取vip每日奖励
+message S2CVipDailyReward {
+	int32 Tag = 1; //结果
+	int32 State = 2; //状态
+}
+// 神秘商店信息
+message S2CSecretMallInfo {
+	int32 Tag = 1; //结果
+	repeated SecretMall SecretMallList = 2; //神秘商品信息列表
+	int64 NextRefreshUnix = 3; //下次刷新时间戳
+	int32 RefreshTimes = 4; //刷新次数
+}
+// 神秘商店信息
+message SecretMall {
+	int32 Id = 1; //
+	int32 State = 2; //购买状态，1：已购买
+}
+// 神秘商店购买
+message C2SSecretMallBuy {
+	int32 Id = 1; //
+}
+// 神秘商店购买
+message S2CSecretMallBuy {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //
+	int32 State = 3; //购买状态，1：已购买
+}
+// 神秘商店刷新
+message C2SSecretMallRefresh {
+}
+// 神秘商店刷新
+message S2CSecretMallRefresh {
+	int32 Tag = 1; //结果
+}
+// 商城信息
+message C2SShoppingMallInfo {
+}
+// 商城信息
+message S2CShoppingMallInfo {
+	int32 Tag = 1; //结果
+	repeated ShoppingMall ShoppingMallList = 2; //商品id
+}
+// 商城信息
+message ShoppingMall {
+	int32 Id = 1; //
+	int32 BuyTimes = 2; //购买次数
+}
+// 商城购买
+message C2SShoppingMallBuy {
+	int32 Id = 1; //商品id
+	int32 Num = 2; //商品数量
+}
+// 商城购买
+message S2CShoppingMallBuy {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //
+	int32 BuyTimes = 3; //购买次数
+}
+// 主线任务信息
+message C2SMainTaskInfo {
+}
+// 主线任务信息
+message S2CMainTaskInfo {
+	int32 Tag = 1; //结果
+	int32 CurTaskId = 2; //当前主线任务Id
+	int32 StageTarget = 3; //当前关卡任务目标
+	int32 CurStage = 4; //已通关关卡
+	int32 LastTaskId = 5; //主线任务记录
+}
+// 领取主线任务奖励
+message C2SMainTaskReward {
+}
+// 领取主线任务奖励
+message S2CMainTaskReward {
+	int32 Tag = 1; //结果
+}
+// 挂机信息
+message C2SAFKInfo {
+}
+// 挂机信息返回
+message S2CAFKInfo {
+	int32 Tag = 1; //结果
+	int32 AFKTime = 2; //挂机时长
+	repeated ItemInfo Items = 3; //挂机收益
+	repeated ItemInfo AFKEta = 4; //挂机效率
+	int32 RemainQuickTimes = 5; //今日剩余快速挂机次数
+	int32 MoneyCost = 6; //当前快速挂机消耗玉璧,为0表示免费
+	repeated ItemInfo NextAFKEta = 7; //下一关挂机收益
+}
+// 领取挂机奖励
+message C2SAFKReward {
+}
+// 领取挂机奖励返回
+message S2CAFKReward {
+	int32 Tag = 1; //结果
+}
+// 快速挂机
+message C2SQuickAFK {
+}
+// 快速挂机返回
+message S2CQuickAFK {
+	int32 Tag = 1; //结果
+	int32 RemainQuickTimes = 2; //今日剩余快速挂机次数
+	int32 MoneyCost = 3; //当前快速挂机消耗玉璧,为0表示免费
+}
+// 挂机增加效果
+message C2SAFKRewardAdd {
+}
+// 挂机增加效果
+message S2CAFKRewardAdd {
+	int32 Tag = 1; //结果
+	repeated RewardAdd RewardAddList = 2; //挂机效果列表
+}
+// 挂机效果
+message RewardAdd {
+	int32 Type = 1; //类型
+	repeated IntAttr IntAttrList = 2; //挂机增加效果列表，k：类型，v：百分比
+}
+// 创角欢迎界面
+message C2SWelcome {
+}
+// 关卡挑战
+message C2SStageFight {
+}
+// 关卡挑战
+message S2CStageFight {
+	int32 Tag = 1; //结果
+	int32 Win = 2; //战斗结果：0:失败，>0:胜利
+}
+// 关卡通行证
+message C2SStagePassInfo {
+}
+// 关卡通行证
+message S2CStagePassInfo {
+	int32 Tag = 1; //结果
+	repeated int32 PassIdBuyList = 2; //购买通行证通行证id
+	repeated int32 ComRewardList = 3; //普通奖励id列表
+	repeated int32 BuyRewardList = 4; //付费奖励id列表
+}
+// 关卡通行证奖励一键领取
+message C2SStagePassReward {
+	int32 PassId = 1; //通行证id
+}
+// 关卡通行证奖励一键领取
+message S2CStagePassReward {
+	int32 Tag = 1; //结果
+}
+// 官职目标奖励信息
+message OfficeTargetReward {
+	int32 Level = 1; //官职等级
+	int32 State = 2; //普通奖励状态
+	int32 LimitState = 3; //限时奖励状态
+	int64 LimitExpireTimestamp = 4; //限时奖励过期时间
+}
+// 官职官印虎符
+message OfficeSign {
+	int32 Type = 1; //类型
+	int32 Level = 2; //等级
+	int32 LevelExp = 3; //等级经验
+	int32 Star = 4; //星级
+	int32 StarPos = 5; //星孔位
+	int32 StarExp = 6; //星经验
+	int32 RefineLv = 7; //淬炼阶段
+	int32 RefineValue = 8; //淬炼孔位
+}
+// 官职信息
+message C2SOfficeInfo {
+}
+// 官职信息
+message S2COfficeInfo {
+	int32 Tag = 1; //结果
+	repeated OfficeTargetReward TargetRewardList = 2; //官职目标奖励列表
+	int32 DailyReward = 3; //每日奖励
+	repeated int32 TaskIds = 4; //当前任务id
+	repeated OfficeSign SignList = 5; //虎符官印信息
+	int32 DailyOfficeLevel = 6; //今天的官职等级
+}
+// 官职目标奖励领取
+message C2SOfficeTargetReward {
+	int32 Level = 1; //官职等级
+}
+// 官职目标奖励领取
+message S2COfficeTargetReward {
+	int32 Tag = 1; //结果
+	int32 Level = 2; //官职等级
+}
+// 官职每日奖励领取
+message C2SOfficeDailyReward {
+}
+// 官职每日奖励领取
+message S2COfficeDailyReward {
+	int32 Tag = 1; //结果
+	int32 State = 2; //每日奖励状态
+}
+// 官职任务奖励领取
+message C2SOfficeTaskReward {
+	int32 TaskId = 1; //任务id
+}
+// 官职任务奖励领取
+message S2COfficeTaskReward {
+	int32 Tag = 1; //结果
+	int32 TaskId = 2; //旧任务id
+	int32 NewTaskId = 3; //新任务id
+}
+// 官职升级
+message C2SOfficeUp {
+}
+// 官职升级
+message S2COfficeUp {
+	int32 Tag = 1; //结果
+	int32 Level = 2; //官职等级
+}
+// 官印虎符升级
+message C2SOfficeSignUp {
+	int32 Type = 1; //类型
+	bool AutoBuy = 2; //是否自动购买
+}
+// 官印虎符升级
+message S2COfficeSignUp {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //类型
+	int32 Exp = 3; //官印虎符经验
+	int32 Level = 4; //官印虎符等级
+}
+// 官印虎符一键升级
+message C2SOfficeSignAutoUp {
+	int32 Type = 1; //类型
+	bool AutoBuy = 2; //是否自动购买
+}
+// 官印虎符升级
+message S2COfficeSignAutoUp {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //类型
+	int32 Exp = 3; //官印虎符经验
+	int32 Level = 4; //官印虎符等级
+}
+// 官印虎符升星
+message C2SOfficeSignStar {
+	int32 Type = 1; //类型
+	bool AutoBuy = 2; //是否自动购买
+}
+// 官印虎符升级
+message S2COfficeSignStar {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //类型
+	int32 Pos = 3; //孔位
+	int32 Exp = 4; //经验
+}
+// 官印虎符一键升星
+message C2SOfficeSignAutoStar {
+	int32 Type = 1; //类型
+	bool AutoBuy = 2; //是否自动购买
+}
+// 官印虎符一键升星
+message S2COfficeSignAutoStar {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //类型
+	int32 Pos = 3; //孔位
+	int32 Exp = 4; //经验
+}
+// 官印虎符星突破
+message C2SOfficeSignBreakStar {
+	int32 Type = 1; //类型
+}
+// 官印虎符星突破
+message S2COfficeSignBreakStar {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //类型
+	int32 Star = 3; //星级
+	int32 Pos = 4; //孔位
+	int32 Exp = 5; //经验
+}
+// 官印虎符淬炼
+message C2SOfficeSignRefine {
+	int32 Type = 1; //类型
+	int32 IsUseItem = 2; //是否使用物品
+}
+// 官印虎符淬炼
+message S2COfficeSignRefine {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //类型
+	int32 RefineValue = 3; //淬炼度
+	bool IsOk = 4; //淬炼是否成功
+}
+// 官印虎符淬炼突破
+message C2SOfficeSignRefineBreak {
+	int32 Type = 1; //类型
+	int32 IsUseItem = 2; //是否使用物品
+}
+// 官印虎符淬炼突破
+message S2COfficeSignRefineBreak {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //类型
+	int32 RefineLv = 3; //淬炼等级
+	int32 RefineValue = 4; //淬炼度
+}
+// 红颜
+message Beauty {
+	int32 BeautyId = 1; //红颜id
+	int32 Level = 2; //等级
+	int32 LevelExp = 3; //等级经验
+	int32 Star = 4; //星级
+}
+// 红颜信息
+message C2SBeautyInfo {
+}
+// 红颜信息
+message S2CBeautyInfo {
+	int32 Tag = 1; //结果
+	repeated Beauty BeautyList = 2; //红颜列表
+}
+// 红颜激活
+message C2SBeautyActive {
+	int32 BeautyId = 1; //红颜ID
+}
+// 红颜激活
+message S2CBeautyActive {
+	int32 Tag = 1; //结果
+	int32 BeautyId = 2; //红颜ID
+}
+// 红颜升级
+message C2SBeautyLevelUp {
+	int32 BeautyId = 1; //红颜ID
+	bool AutoBuy = 2; //是否自动购买
+}
+// 红颜升级
+message S2CBeautyLevelUp {
+	int32 Tag = 1; //结果
+	Beauty Beauty = 2; //红颜信息(仅返回红颜id\等级\经验)
+}
+// 红颜一键升级
+message C2SBeautyLevelUpAuto {
+	int32 BeautyId = 1; //红颜ID
+	bool AutoBuy = 2; //是否自动购买
+}
+// 红颜一键升级
+message S2CBeautyLevelUpAuto {
+	int32 Tag = 1; //结果
+	Beauty Beauty = 2; //红颜信息(仅返回红颜id\等级\经验)
+}
+// 红颜升星
+message C2SBeautyStarUp {
+	int32 BeautyId = 1; //红颜ID
+}
+// 红颜升星
+message S2CBeautyStarUp {
+	int32 Tag = 1; //结果
+	Beauty Beauty = 2; //红颜信息(仅返回红颜id\星级)
+}
+// 副本信息
+message DunType {
+	int32 DunType = 1; //副本类型
+	int32 PassTime = 2; //剩余挑战次数
+	int32 BuyTime = 3; //购买次数
+	int32 HelpPassTime = 4; //剩余协助次数
+}
+// 副本id信息
+message DunId {
+	int32 DunId = 1; //副本id
+	bool IsPass = 2; //是否通关
+}
+// 组队副本个人信息
+message C2STeamDunInfo {
+}
+// 组队副本个人信息
+message S2CTeamDunInfo {
+	int32 Tag = 1; //结果
+	repeated DunType DunTypeList = 2; //副本类型信息(次数等)
+	repeated DunId DunIdList = 3; //副本id信息(通过等)
+	int32 TeamId = 4; //我的队伍id, 0表示没有
+}
+// 我的队伍信息
+message C2SMyTeamInfo {
+}
+// 我的队伍信息
+message S2CMyTeamInfo {
+	int32 Tag = 1; //结果
+	int32 TeamId = 2; //队伍id
+	int32 DunId = 3; //副本id
+	int64 PowerLimit = 4; //队伍战力
+	repeated TeamMember TeamMemberList = 5; //队伍成员列表
+}
+// 队伍成员
+message TeamMember {
+	uint32 UserId = 1; //玩家ID
+	int32 Pos = 2; //玩家位置
+	repeated IntAttr IntAttr = 3; //IntAttr列表
+	repeated StrAttr StrAttr = 4; //StrAttr列表
+	bool IsReal = 5; //是否真人
+}
+// 购买次数
+message C2STeamDunBuyPassTime {
+	int32 DunType = 1; //副本类型
+}
+// 购买次数
+message S2CTeamDunBuyPassTime {
+	int32 Tag = 1; //结果
+	int32 DunType = 2; //副本类型
+	int32 PassTime = 3; //剩余挑战次数
+	int32 BuyTime = 4; //已购买次数
+}
+// 扫荡
+message C2STeamDunSweep {
+	int32 DunId = 1; //副本id
+}
+// 扫荡
+message S2CTeamDunSweep {
+	int32 Tag = 1; //结果
+	int32 DunId = 2; //副本id
+}
+// 队伍列表
+message C2STeamDunViewList {
+	int32 DunId = 1; //副本id
+}
+// 队伍列表
+message S2CTeamDunViewList {
+	int32 Tag = 1; //结果
+	repeated TeamView TeamViewList = 2; //队伍信息列表
+}
+// 队伍信息
+message TeamView {
+	int32 TeamId = 1; //队伍id
+	repeated TeamViewPlayer TeamViewPlayerList = 2; //队伍信息列表
+	int64 PowerLimit = 3; //队伍战力
+}
+// 队伍成员信息
+message TeamViewPlayer {
+	uint32 UserId = 1; //玩家id
+	string Nick = 2; //玩家名字
+	int64 Fight = 3; //玩家战力
+	int64 AreaId = 4; //玩家areaId
+	int64 HeadIcon = 5; //玩家头像
+	int64 HeadFrame = 6; //头像框id
+	int32 State = 7; //是否是组队状态
+}
+// 队伍信息
+message Team {
+	int32 TeamId = 1; //队伍id
+	uint32 LeaderUserId = 2; //队长id
+	int32 DunId = 3; //副本id
+	int64 PowerLimit = 4; //房间限制战力
+	repeated TeamMember TeamMemberList = 5; //队伍成员信息
+}
+// 创建队伍，返回S2CTeamDunList
+message C2STeamDunCreate {
+	int32 DunId = 1; //副本id
+}
+// 创建队伍
+message S2CTeamDunCreate {
+	int32 Tag = 1; //结果
+	int32 DunId = 2; //副本id
+	int32 TeamId = 3; //队伍id
+}
+// 加入队伍，返回S2CTeamDunList
+message C2STeamDunJoin {
+	int32 TeamId = 1; //队伍id
+}
+// 加入队伍
+message S2CTeamDunJoin {
+	int32 Tag = 1; //结果
+	int32 TeamId = 2; //队伍id
+	int32 DunId = 3; //副本id
+}
+// 离开/解散队伍
+message C2STeamDunLeaveOrCancel {
+}
+// 离开/解散队伍
+message S2CTeamDunLeaveOrCancel {
+	int32 Tag = 1; //结果
+	int32 LeaveType = 2; //离开类型 0主动解散或离开 1被解散 2被踢
+	int32 TeamId = 3; //队伍id
+}
+// 踢出队伍
+message C2STeamDunKick {
+	uint32 KickUserId = 2; //t玩家id
+}
+// 踢出队伍
+message S2CTeamDunKick {
+	int32 Tag = 1; //结果
+	uint32 KickUserId = 2; //t玩家id
+}
+// 开始副本
+message C2STeamDunStart {
+}
+// 开始副本
+message S2CTeamDunStart {
+	int32 Tag = 1; //结果
+}
+// 匹配玩家（队长
+message C2STeamDunMatchPlayer {
+}
+// 匹配玩家(队长)返回新队伍信息
+message S2CTeamDunMatchPlayer {
+	int32 Tag = 1; //结果
+}
+// 组队副本阵容信息
+message C2STeamDunLineupInfo {
+}
+// 组队副本阵容信息
+message S2CTeamDunLineupInfo {
+	int32 Tag = 1; //结果
+	repeated LineupUnit Lineup = 2; //出战阵容信息
+}
+// 设置组队副本出战阵容
+message C2STeamDunChangeLineup {
+	int32 Pos = 1; //出战位置, 1,2,3
+	string OnlyId = 2; //出战单位唯一Id
+}
+// 设置组队副本出战阵容
+message S2CTeamDunChangeLineup {
+	int32 Tag = 1; //Tag
+	int32 Type = 2; //出战单位类型 2-宠物
+	int32 Pos = 3; //出战位置
+	string OnlyId = 4; //出战单位唯一Id
+	string OldOnlyId = 5; //原出战单位Id
+	int32 Type2 = 6; //出战单位类型 2-宠物
+	int32 Pos2 = 7; //出战位置
+	string OnlyId2 = 8; //出战单位唯一Id
+	string OldOnlyId2 = 9; //原出战单位Id
+}
+// 设置默认接受
+message C2STeamDunSetAccept {
+	int32 IsAccept = 1; //1:默认接受
+}
+// 设置房间自动开始
+message S2CTeamDunSetAccept {
+	int32 Tag = 1; //结果
+	int32 IsAccept = 2; //1:默认接受
+}
+// 设置房间战力限制
+message C2STeamDunSetPowerLimit {
+	int64 PowerLimit = 1; //战力限制
+}
+// 设置房间战力限制
+message S2CTeamDunSetPowerLimit {
+	int32 Tag = 1; //结果
+	int64 PowerLimit = 2; //战力限制
+}
+// 邀请玩家(房主)
+message C2STeamDunInvite {
+	uint32 InviteUserId = 1; //被邀请玩家id
+	int32 DunId = 2; //副本id
+}
+// 邀请玩家(房主)返回
+message S2CTeamDunInvite {
+	int32 Tag = 1; //结果
+	uint32 InviteUserId = 2; //被邀请玩家id
+}
+// 一键邀请玩家(房主)
+message C2STeamDunInviteAuto {
+	int32 DunId = 1; //副本id
+	int32 Type = 2; //本服(1)/连服(3)/军团(待)
+}
+// 一键邀请玩家(房主)返回
+message S2CTeamDunInviteAuto {
+	int32 Tag = 1; //结果
+	int32 Type = 2; //本服(1)/连服(3)/军团(待)
+}
+// 收到邀请
+message S2CTeamDunReceiveInvite {
+	int32 TeamId = 1; //队伍id
+	string LeaderName = 2; //队长名称
+	int32 DunId = 3; //副本id
+	uint32 AreaId = 4; //玩家areaId
+	uint32 InviteUserId = 5; //邀请着id, 用于发送拒绝
+}
+// 检查副本是否开启
+message S2STeamDunCheckOpen {
+	int32 DunId = 1; //副本id
+}
+// 检查副本是否开启
+message S2STeamDunCheckOpenRep {
+	int32 Tag = 1; //结果
+	int32 state = 2; //状态 0：ok 1：组队中 2：未开启
+}
+// 获取战报,返回S2CBattlefieldReport
+message C2STeamDunGetReport {
+}
+// 匹配列表
+message C2STeamDunMatchList {
+	int32 Type = 1; //本服(1)/连服(3)/军团(待)
+}
+// 匹配列表
+message S2CTeamDunMatchList {
+	int32 Tag = 1; //结果
+	repeated TeamViewPlayer MatchList = 2; //匹配列表
+	int32 Type = 3; //本服(1)/连服(3)/军团(待)
+}
+// 拒绝加入
+message C2STeamDunReject {
+	uint32 InviteUserId = 1; //邀请者的id
+}
+// 拒绝加入，邀请者收到
+message S2CTeamDunReject {
+	int32 Tag = 1; //结果
+	uint32 RejectUserId = 2; //拒绝的玩家id
+	uint32 RejectAreaId = 3; //拒绝的区id
+	string RejectName = 4; //拒绝的玩家名字
+}
+// 防沉迷下线通知
+message S2CRealNameTimeLimit {
+	int32 Tag = 1; //结果
+}
+// 通知系统设置变更
+message C2SSysSettingsInfo {
+	string SysSettingsInfo = 1; //系统设置信息
+}
+// 系统设置返回
+message S2CSysSettingsInfo {
+	int32 Tag = 1; //结果
+}
+// 头像信息
+message HeadInfo {
+	int32 HeadId = 1; //头像Id
+	int32 Star = 2; //星级
+	int32 Status = 3; //使用状态
+}
+// 请求头像信息
+message C2SHeadInfo {
+	int32 HeadType = 1; //头像类型
+}
+// 头像信息返回
+message S2CHeadInfo {
+	int32 Tag = 1; //结果
+	int32 HeadType = 2; //头像类型
+	repeated HeadInfo HeadList = 3; //头像列表
+}
+// 请求头像激活
+message C2SHeadActivate {
+	int32 HeadType = 1; //头像类型
+	int32 HeadId = 2; //头像Id
+}
+// 请求头像升星
+message C2SHeadUpStar {
+	int32 HeadType = 1; //头像类型
+	int32 HeadId = 2; //头像Id
+}
+// 请求头像使用
+message C2SHeadUse {
+	int32 HeadType = 1; //头像类型
+	int32 HeadId = 2; //头像Id
+}
+// 头像变更
+message S2CHeadUpdate {
+	int32 Tag = 1; //结果
+	int32 HeadType = 2; //头像类型
+	repeated HeadInfo UpdateList = 3; //头像变更列表
+}
+// 关系玩家基础数据
+message RelationPlayerData {
+	uint32 UserId = 1; //玩家Id
+	string Name = 2; //昵称玩家
+	int32 HeadFrame = 3; //头像框ID
+	int32 Head = 4; //头像ID
+	int32 Level = 5; //等级
+	int32 Online = 6; //是否在线
+	int64 FightValue = 7; //战力
+	uint32 Status = 8; //状态
+	repeated FriendPrivateChatInfo PrivateChatList = 9; //私聊
+}
+// 好友私聊信
+message FriendPrivateChatInfo {
+	uint32 SendUserId = 1; //发送者Id
+	uint32 ReceiveUserId = 2; //接收者ID
+	int64 Time = 3; //时间
+	string Content = 4; //内容
+}
+// 请求关系数据
+message C2SRelationInfo {
+	int32 Relationype = 1; //关系类型
+}
+// 回复关系数据
+message S2CRelationInfo {
+	int32 Tag = 1; //结果
+	int32 Relationype = 2; //关系类型
+	int32 FetchGiftCount = 3; //领取赠礼次数
+	repeated RelationPlayerData PlayerInfoList = 4; //关系数据列表
+}
+// 申请加好友
+message C2SApplyAddFriend {
+	uint32 UserId = 1; //好友Id
+}
+// 回复申请加好友
+message S2CApplyAddFriend {
+	int32 Tag = 1; //结果
+}
+// 好友申请结果处理
+message C2SApplyOperation {
+	uint32 UserId = 1; //好友Id
+	int32 Opt = 2; //操作结果
+}
+// 回复好友申请结果处理
+message S2CApplyOperation {
+	int32 Tag = 1; //结果
+}
+// 请求删除好友
+message C2SDelFriend {
+	uint32 UserId = 1; //好友Id
+}
+// 回复删除关系
+message S2CDelFriend {
+	int32 Tag = 1; //结果
+	uint32 UserId = 2; //好友Id
+}
+// 回复添加关系数据
+message S2CAddRelation {
+	int32 Tag = 1; //结果
+	int32 Relationype = 2; //关系类型
+	RelationPlayerData PlayerData = 3; //好友数据
+}
+// 请求好友赠礼
+message C2SFriendGifts {
+	uint32 UserId = 1; //好友Id
+}
+// 回复好友赠礼
+message S2CFriendGifts {
+	int32 Tag = 1; //结果
+	RelationPlayerData PlayerData = 2; //玩家数据
+}
+// 请求获取好友赠礼
+message C2SGetFriendGifts {
+	uint32 UserId = 1; //好友Id
+}
+// 回复获取好友赠礼
+message S2CGetFriendGifts {
+	int32 Tag = 1; //结果
+	uint32 UserId = 2; //好友Id
+}
+// 请求查找玩家
+message C2SFindPlayerInfo {
+	string FindInfo = 1; //查找信息
+}
+// 回复查找玩家
+message S2CFindPlayerInfo {
+	int32 Tag = 1; //结果
+	repeated RelationPlayerData PlayerData = 2; //玩家数据
+}
+// 请求推荐好友列表
+message C2SRecommendList {
+}
+// 回复推荐好友列表
+message S2CRecommendList {
+	int32 Tag = 1; //结果
+	repeated RelationPlayerData PlayerDataList = 2; //推荐列表
+}
+// 请求好友私聊
+message C2SFriendPrivateChat {
+	uint32 FriendUserId = 1; //好友Id
+	string Content = 2; //内容
+}
+// 回复好友私聊
+message S2CFriendPrivateChat {
+	int32 Tag = 1; //结果
+	FriendPrivateChatInfo ChatData = 2; //聊天内容
+}
+// 世家事务
+message FamilyTask {
+	int32 TaskId = 1; //任务Id
+	int32 Quality = 2; //品质
+	int32 NameId = 3; //任务名称
+	int64 TaskTimestamp = 4; //完成时间
+	int32 PriceId = 5; //奖励id
+	repeated int32 TaskConditionIds = 6; //条件id
+	int32 TaskState = 7; //状态
+	int32 TaskFateId = 8; //缘分id
+	int32 PartnerNum = 9; //伙伴数量
+	int32 FateOk = 10; //是否满足缘分
+	repeated ItemInfo DropItem = 11; //宝箱里面的物品
+}
+// 协助伙伴
+message HelpPartner {
+	string Id = 1; //协助伙伴唯一id
+	int32 IId = 2; //伙伴类型id(对于配置表)
+	int32 PartnerType = 3; //伙伴类型
+	string UserNick = 4; //所属的玩家名字
+	uint32 UserId = 5; //所属的玩家Id
+	int32 Quality = 6; //伙伴品质
+	int32 Rarity = 7; //稀有度(武将)
+	int32 Camp = 8; //阵营(武将)
+	int32 Title = 9; //头衔(武将)
+}
+// 协助伙伴
+message SetPartner {
+	string Id = 1; //伙伴id，对应玩家身上或者协助列表上
+	int32 PartnerType = 2; //伙伴类型
+}
+// 世家成员信息
+message FamilyMember {
+	uint32 UserId = 1; //玩家Id
+	string Name = 2; //昵称玩家
+	int32 HeadFrame = 3; //头像框ID
+	int32 Head = 4; //头像ID
+	int32 VIP = 5; //VIP等级
+	int64 FightValue = 6; //战力
+	int64 LastLogout = 7; //上次下线时间, 特殊值9999999999为在线
+	int32 Rank = 8; //排名
+	int32 Position = 9; //职位 1:族长 2:副族长 3:长老
+}
+// 世家争霸赛伤害排行榜
+message FamilyPatriHurtRank {
+	uint32 UserId = 1; //玩家Id
+	string Name = 2; //昵称玩家
+	uint32 AreaId = 3; //区id
+	int32 HeadFrame = 4; //头像框ID
+	int32 Head = 5; //头像ID
+	int64 FightValue = 6; //战力
+	int64 Hurt = 7; //伤害
+	int32 Rank = 8; //排名
+}
+// 可派遣任务信息
+message CanStartTask {
+	int32 TaskId = 1; //任务Id
+	repeated SetPartner SetPartnerL = 2; //上阵伙伴列表
+}
+// 请求协助伙伴列表
+message C2SFamilyTaskHelpPartner {
+}
+// 请求协助伙伴列表
+message S2CFamilyTaskHelpPartner {
+	int32 Tag = 1; //结果
+	repeated HelpPartner HelpPartnerL = 2; //协助伙伴列表
+}
+// 请求世家事务信息
+message C2SFamilyTaskInfo {
+}
+// 回复世家事务信息
+message S2CFamilyTaskInfo {
+	int32 Tag = 1; //结果
+	repeated FamilyTask FamilyTaskList = 2; //世家事务列表
+	int32 RefreshNum = 3; //刷新次数
+	repeated string UsePartnerId = 4; //派遣中的伙伴id, 对应协助列表和自身伙伴id
+	repeated SetPartner HelpPartnerList = 5; //协助的伙伴id
+	int64 SetPartnerToHelpTime = 6; //设置协助时间
+	int32 HelpNum = 7; //协助次数
+	int32 StartNum = 8; //今日事务开始次数
+}
+// 设置伙伴成协助状态
+message C2SFamilyTaskSetPartnerToHelp {
+	repeated SetPartner SetPartnerList = 1; //协助伙伴列表
+}
+// 回复设置伙伴成协助状态
+message S2CFamilyTaskSetPartnerToHelp {
+	int32 Tag = 1; //结果
+	int64 SetPartnerToHelpTime = 2; //设置协助时间
+}
+// 请求世家事务刷新
+message C2SFamilyTaskRefresh {
+}
+// 回复世家事务刷新
+message S2CFamilyTaskRefresh {
+	int32 Tag = 1; //结果
+	repeated FamilyTask FamilyTaskList = 2; //世家事务列表
+	int32 RefreshNum = 3; //刷新次数
+}
+// 请求世家事务派遣
+message C2SFamilyTaskStart {
+	int32 TaskId = 1; //任务Id
+	repeated SetPartner SetPartnerL = 2; //伙伴
+}
+// 回复世家事务派遣
+message S2CFamilyTaskStart {
+	int32 Tag = 1; //结果
+	FamilyTask FamilyTask = 2; //派遣任务
+	repeated string UsePartnerId = 3; //派遣中的伙伴id, 对应协助列表和自身伙伴id
+	int32 TaskId = 4; //任务Id
+	int32 StartNum = 5; //今日事务开始次数
+}
+// 请求世家事务领取奖励
+message C2SFamilyTaskGetPrice {
+}
+// 回复世家事务领取奖励
+message S2CFamilyTaskGetPrice {
+	int32 Tag = 1; //结果
+	repeated int32 TaskIds = 2; //领取的任务id列表
+	repeated string UsePartnerId = 3; //派遣中的伙伴id, 对应协助列表和自身伙伴id
+}
+// 获取世家成员列表
+message C2SFamilyMemberList {
+	int32 Start = 1; //开始名次
+	int32 End = 2; //结束名次
+}
+// 回复世家成员列表
+message S2CFamilyMemberList {
+	int32 Tag = 1; //结果
+	repeated FamilyMember FamilyMemberList = 2; //成员列表
+}
+// 获取世家信息
+message C2SFamilyInfo {
+}
+// 世家信息
+message S2CFamilyInfo {
+	int32 Tag = 1; //结果
+	string Name = 2; //世家名字
+	string Word = 3; //世家宣言
+	int32 Lv = 4; //世家等级
+	int32 Exp = 5; //世家经验
+	int32 OnlineNum = 6; //在线人数
+	int32 AllNum = 7; //总人数
+}
+// 获取世家玩家信息
+message C2SFamilyRoleInfo {
+}
+// 获取世家玩家信息
+message S2CFamilyRoleInfo {
+	int32 Tag = 1; //结果
+	int32 DailySalary = 2; //每日俸禄
+	int32 Worship = 3; //每日膜拜次数
+	int32 Position = 4; //世家职位
+	int32 RenameNum = 5; //族长改名次数
+	int64 RenameTime = 6; //族长改名时间戳
+	int64 RenameWordTime = 7; //宣言修改时间戳
+}
+// 任务加速
+message C2SFamilyTaskSpeed {
+	int32 TaskId = 1; //任务Id
+}
+// 回复任务加速
+message S2CFamilyTaskSpeed {
+	int32 Tag = 1; //结果
+	int32 TaskId = 2; //任务Id
+}
+// 获取所有派遣任务
+message C2SFamilyTaskGetAllCanStart {
+}
+// 回复获取所有派遣任务
+message S2CFamilyTaskGetAllCanStart {
+	int32 Tag = 1; //结果
+	repeated CanStartTask CanStartTaskL = 2; //可派遣任务信息列表
+}
+// 一键派遣
+message C2SFamilyTaskStartOneKey {
+	repeated CanStartTask CanStartTaskL = 1; //一键派遣列表
+}
+// 回复一键派遣，返回info
+message S2CFamilyTaskStartOneKey {
+	int32 Tag = 1; //结果
+	repeated FamilyTask FamilyTaskList = 2; //世家事务列表
+	repeated string UsePartnerId = 3; //派遣中的伙伴id, 对应协助列表和自身伙伴id
+	repeated int32 TaskIdL = 4; //派遣出去的任务列表
+	int32 StartNum = 5; //今日事务开始次数
+}
+// 世家等级提升
+message S2CFamilyLevelUp {
+	int32 NewLevel = 1; //新等级
+}
+// 世家玩家展示
+message C2SFamilyTopPlayerData {
+}
+// 回复世家玩家展示
+message S2CFamilyTopPlayerData {
+	int32 Tag = 1; //结果
+	repeated BaseUserInfo UserShowInfo = 2; //玩家外显数据
+	int32 TermNum = 3; //连任届数
+	int64 TermTime = 4; //上任时间戳，需要转成天数
+}
+// 世家改名
+message C2SFamilyRename {
+	string Name = 1; //世家名字
+}
+// 世家改名
+message S2CFamilyRename {
+	int32 Tag = 1; //结果
+	int32 RenameNum = 2; //次数
+	int64 RenameTime = 3; //次数
+}
+// 世家宣言改名
+message C2SFamilyRenameWord {
+	string Word = 1; //世家宣言
+}
+// 世家宣言改名
+message S2CFamilyRenameWord {
+	int32 Tag = 1; //结果
+	int64 RenameWordTime = 2; //宣言修改时间戳
+}
+// 膜拜族长
+message C2SFamilyWorship {
+}
+// 膜拜族长
+message S2CFamilyWorship {
+	int32 Tag = 1; //结果
+	int32 Worship = 2; //膜拜次数
+}
+// 每日俸禄
+message C2SFamilyDailySalary {
+}
+// 每日俸禄
+message S2CFamilyDailySalary {
+	int32 Tag = 1; //结果
+	int32 DailySalary = 2; //每日俸禄
+}
+// 获取世家族长争霸赛信息
+message C2SFamilyPatriInfo {
+}
+// 获取世家族长争霸赛信息
+message S2CFamilyPatriInfo {
+	int32 Tag = 1; //结果
+	int32 ActId = 2; //活动id
+	int32 FirstType = 3; //1:新服第一届 2:合服第一届 和其他
+	int64 StartTime = 4; //开始时间
+	int64 EndTime = 5; //结束时间
+	int64 NextOpenTime = 6; //boss赛下次开启时间
+	int64 LastEndTime = 7; //boss赛下次结束的时间(用于判断活动是否是结束当天)
+	int32 NextTerm = 8; //下一次争霸赛届数(文本显示)
+}
+// 获取世家族长争霸赛信息第二阶段信息
+message C2SFamilyPatriLeaderInfo {
+}
+// 获取世家族长争霸赛信息第二阶段信息
+message S2CFamilyPatriLeaderInfo {
+	int32 Tag = 1; //结果
+	repeated BaseUserInfo CandidateShowInfo = 2; //玩家外显数据
+	repeated BaseUserInfo LeaderShowInfo = 3; //玩家外显数据
+	repeated ReportIdx ReportIdxList = 4; //战斗列表
+}
+// 战报id
+message ReportIdx {
+	int32 Win = 1; //战斗结果：0:失败，>0:胜利
+	string Idx = 2; //战报idx
+}
+// 族长争霸挑战boss
+message C2SFamilyPatriChallengeBoss {
+}
+// 族长争霸挑战boss
+message S2CFamilyPatriChallengeBoss {
+	int32 Tag = 1; //结果
+}
+// 候选人争霸挑战族长
+message C2SFamilyPatriChallengeLeader {
+}
+// 族长争霸挑战族长
+message S2CFamilyPatriChallengeLeader {
+	int32 Tag = 1; //结果
+}
+// 观看战报回放，暂定返回S2CBattlefieldReport
+message C2SFamilyPatriWatchVideos {
+	string Index = 1; //战报索引
+}
+// 观看战报回放，暂定返回S2CBattlefieldReport
+message S2CFamilyPatriWatchVideos {
+	int32 Tag = 1; //结果
+}
+// 获取排行榜
+message C2SFamilyPatriGetRank {
+	int32 Start = 1; //开始
+	int32 End = 2; //结束
+}
+// 获取排行榜
+message S2CFamilyPatriGetRank {
+	int32 Tag = 1; //结果
+	repeated FamilyPatriHurtRank FamilyPatriHurtRankList = 2; //伤害排名
+}
+// 获取我的排名
+message C2SFamilyPatriGetMyRank {
+}
+// 获取我的排名
+message S2CFamilyPatriGetMyRank {
+	int32 Tag = 1; //结果
+	int32 Rank = 2; //排名
+	int64 Val = 3; //我的最高伤害
+	int64 MaxVal = 4; //排行榜最高伤害
+}
+// 世家图腾
+message Totem {
+	int32 Id = 1; //图腾id
+	int32 Level = 2; //图腾等级
+	int64 Exp = 3; //图腾经验
+}
+// 图腾信息
+message C2STotemInfo {
+}
+// 图腾信息
+message S2CTotemInfo {
+	int32 Tag = 1; //结果
+	repeated Totem TotemList = 2; //图腾列表
+}
+// 图腾铸造，返回S2CTotemInfo
+message C2STotemBuild {
+	int32 Id = 1; //图腾id
+}
+// 图腾铸造，返回S2CTotemInfo
+message S2CTotemBuild {
+	int32 Tag = 1; //结果
+}
+// 世家校场
+message DrillGround {
+	int32 Id = 1; //id
+	int32 Lv = 2; //等级
+}
+// 获取世家校场信息
+message C2SGetDrillGroundInfo {
+}
+// 获取世家校场信息
+message S2CGetDrillGroundInfo {
+	int32 Tag = 1; //结果
+	int32 ResonateLv = 2; //共鸣等级
+	repeated DrillGround DrillGroundA = 3; //世家校场
+}
+// 校场共鸣升阶
+message C2SDrillGroundResonateLevelUp {
+}
+// 校场共鸣升阶
+message S2CDrillGroundResonateLevelUp {
+	int32 Tag = 1; //结果
+	int32 ResonateLv = 2; //共鸣等级
+}
+// 校场升级
+message C2SDrillGroundLevelUp {
+	int32 Id = 1; //id
+}
+// 校场升级
+message S2CDrillGroundLevelUp {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //id
+	int32 Lv = 3; //等级
+}
+// 试炼信息
+message C2STrialCopyInfo {
+}
+// 试炼副本
+message S2CTrialCopyInfo {
+	int32 Tag = 1; //结果
+	int32 CanNum = 2; //剩余挑战次数
+	int32 BuyNum = 3; //购买次数
+	repeated CommonType RewardList = 4; //领取状态
+	repeated CommonType2 RedPacketList = 5; //红包信息
+	repeated IntAttr HurtList = 6; //伤害记录 用于判断是否可以扫荡
+}
+// 试炼副本boss信息
+message C2STrialCopyBossInfo {
+}
+// 试炼副本boss信息
+message S2CTrialCopyBossInfo {
+	int32 Tag = 1; //结果
+	int32 TrialId = 2; //试炼关数id, 对应试炼副本怪物表的关数
+	int64 Hp = 3; //boss当前血量
+}
+// 获取世家试炼排行榜
+message C2STrialCopyRank {
+}
+// 获取世家试炼排行榜
+message S2CTrialCopyRank {
+	int32 Tag = 1; //结果
+	repeated TrialCopyRank TrialCopyRankList = 2; //排行榜
+}
+// 试炼副本排行榜数据
+message TrialCopyRank {
+	uint32 AreaId = 1; //服id
+	int32 TrialId = 2; //关数id
+	int64 Time = 3; //通过时间
+	int32 Rank = 4; //排名
+}
+// 获取红包排行榜
+message C2STrialCopyRedPacketRank {
+}
+// 获取红包排行榜
+message S2CTrialCopyRedPacketRank {
+	int32 Tag = 1; //结果
+	repeated RedPacketRank RedPacketRankList = 2; //排行榜
+}
+// 红包排行榜数据
+message RedPacketRank {
+	int32 TrialId = 1; //关数id
+	int32 Rank = 2; //排名
+	int32 RedNum = 3; //红包金额
+	BaseUserInfo BaseUserInfo = 4; //玩家信息
+}
+// 挑战试炼副本
+message C2STrialCopyChallenge {
+	int32 TrialId = 1; //关数id
+}
+// 挑战试炼副本
+message S2CTrialCopyChallenge {
+	int32 Tag = 1; //结果
+	int32 CanNum = 2; //可通关次数
+}
+// 扫荡试炼副本
+message C2STrialCopySweep {
+	int32 TrialId = 1; //关数id
+}
+// 扫荡试炼副本
+message S2STrialCopySweepRep {
+	int32 Tag = 1; //结果
+}
+// 扫荡试炼副本
+message S2CTrialCopySweep {
+	int32 Tag = 1; //结果
+	int32 CanNum = 2; //可通关次数
+}
+// 购买试炼副本次数
+message C2STrialCopyBuyNum {
+}
+// 购买试炼副本次数
+message S2CTrialCopyBuyNum {
+	int32 Tag = 1; //结果
+	int32 BuyNum = 2; //购买次数
+	int32 CanNum = 3; //可通关次数
+}
+// 领取试炼副本奖励
+message C2STrialCopyReward {
+	int32 TrialId = 1; //试炼关数id, 对应试炼副本怪物表的关数
+}
+// 领取试炼副本奖励
+message S2CTrialCopyReward {
+	int32 Tag = 1; //结果
+	int32 TrialId = 2; //试炼关数id, 对应试炼副本怪物表的关数
+}
+// 试炼副本开红包
+message C2STrialCopyRedPacket {
+	int32 TrialId = 1; //试炼关数id, 对应试炼副本怪物表的关数
+}
+// 试炼副本开红包
+message S2CTrialCopyRedPacket {
+	int32 Tag = 1; //结果
+	int32 TrialId = 2; //试炼关数id, 对应试炼副本怪物表的关数
+	int32 RedPacketNum = 3; //红包金额
+}
+// 博物志结构
+message CollectionBookSt {
+	int32 Id = 1; //配置Id
+	int32 Star = 2; //星级
+	bool New = 3; //新获得
+	bool Share = 4; //已分享
+}
+// 博物志-下发数据
+message S2CCollectionBookAllData {
+	repeated CollectionBookSt Items = 1; //博物志列表
+	int32 Level = 2; //见闻等级
+	int32 Exp = 3; //见闻经验
+	repeated int32 TaskIds = 4; //当前进行的任务Id
+}
+// 博物志-数据更新
+message S2CCollectionBookUpdate {
+	CollectionBookSt Item = 1; //博物志
+	int32 Level = 2; //见闻等级
+	int32 Exp = 3; //见闻经验
+}
+// 博物志-激活
+message C2SCollectionBookActive {
+	int32 Id = 1; //配置Id
+}
+// 博物志-激活
+message S2CCollectionBookActive {
+	int32 Tag = 1; //Tag
+}
+// 博物志-升星
+message C2SCollectionBookStarUp {
+	int32 Id = 1; //配置Id
+}
+// 博物志-升星
+message S2CCollectionBookStarUp {
+	int32 Tag = 1; //Tag
+}
+// 博物志-任务奖励
+message C2SCollectionBookTask {
+	int32 TaskId = 1; //任务id
+}
+// 博物志-任务奖励
+message S2CCollectionBookTask {
+	int32 Tag = 1; //结果
+	int32 TaskId = 2; //旧任务id
+	int32 NewTaskId = 3; //新任务id
+}
+// 博物志-查看图鉴
+message C2SCollectionBookLook {
+	int32 Id = 1; //配置Id
+}
+// 博物志-查看图鉴
+message S2CCollectionBookLook {
+	int32 Tag = 1; //结果
+}
+// 日常阶段奖励信息
+message DailyStageReward {
+	int32 Id = 1; //配置表Id
+	int32 Status = 2; //状态
+	int64 LastTime = 3; //上次领取时间
+	int32 IsDouble = 4; //是否双倍, 0:否 1:是
+}
+// 丝绸之路-城镇信息
+message SilkRoadCityInfo {
+	int32 EventId = 1; //事件Id
+	int32 CityId = 2; //城镇Id
+	repeated ItemInfo ItemInfos = 3; //事件奖励信息
+}
+// 丝绸之路-信息
+message SilkRoadInfo {
+	int32 Id = 1; //配置Id
+	int32 Count = 2; //行商次数
+	int32 BuyCount = 3; //已购买次数
+	int64 StartTime = 4; //开始时间
+	int64 FinishTime = 5; //结束时间
+	int32 Status = 6; //状态
+	repeated SilkRoadCityInfo CityInfos = 7; //城镇信息
+	repeated ItemInfo BaseItemInfos = 8; //基础奖励信息
+}
+// 请求丝绸之路-信息
+message C2SSilkRoadInfo {
+}
+// 丝绸之路-信息
+message S2CSilkRoadInfo {
+	int32 Tag = 1; //Tag
+	SilkRoadInfo SilkRoadInfo = 2; //丝绸之路信息
+}
+// 请求丝绸之路-行商
+message C2SSilkRoadStart {
+	int32 Id = 1; //配置Id
+}
+// 丝绸之路-行商
+message S2CSilkRoadStart {
+	int32 Tag = 1; //Tag
+	SilkRoadInfo SilkRoadInfo = 2; //丝绸之路信息
+}
+// 请求丝绸之路-快速完成
+message C2SSilkRoadFastFinish {
+	int32 Id = 1; //配置Id
+}
+// 丝绸之路-快速完成
+message S2CSilkRoadFastFinish {
+	int32 Tag = 1; //Tag
+	SilkRoadInfo SilkRoadInfo = 2; //丝绸之路信息
+}
+// 请求丝绸之路-购买次数
+message C2SSilkRoadBuyCount {
+}
+// 丝绸之路-购买次数
+message S2CSilkRoadBuyCount {
+	int32 Tag = 1; //Tag
+	int32 BuyCount = 2; //已购买次数
+}
+// 请求丝绸之路-奖励领取
+message C2SSilkRoadReward {
+}
+// 丝绸之路-奖励
+message S2CSilkRoadReward {
+	int32 Tag = 1; //Tag
+	SilkRoadInfo SilkRoadInfo = 2; //丝绸之路信息
+}
+// 三国探险副本-挑战
+message C2SExploreFight {
+	int32 ExploreType = 1; //探险类型
+}
+// 三国探险副本-挑战
+message S2CExploreFight {
+	int32 Tag = 1; //Tag
+	int32 ExploreType = 2; //探险类型
+}
+// 三国探险副本-一键挑战(扫荡)
+message C2SExploreSweep {
+	int32 ExploreType = 1; //探险类型
+}
+// 三国探险副本-一键挑战(扫荡)
+message S2CExploreSweep {
+	int32 Tag = 1; //Tag
+	int32 ExploreType = 2; //探险类型
+	int32 BStage = 3; //起始关卡
+	int32 EStage = 4; //结束关卡
+}
+// 资源找回奖励
+message ResRecoveredReward {
+	int32 Id = 1; //配置Id
+	int32 Count = 2; //剩余次数
+	int64 LastTime = 3; //最后参与时间
+	int32 IsDouble = 4; //是否双倍
+	repeated ItemInfo ItemInfos = 5; //道具信息
+}
+// 资源找回信息
+message ResRecoveredInfo {
+	int32 RecoveredType = 1; //回收类型 1:资源收回 2:玩法收回
+	repeated ResRecoveredReward ResRecovereds = 2; //资源找回
+}
+// 日常任务信息
+message DailyTaskInfo {
+	int32 DailyType = 1; //日常类型 1:日常 2:周常
+	repeated DailyStageReward DailyStageInfo = 2; //阶段奖励
+}
+// 日常任务-信息
+message C2SDailyTaskInfo {
+	int32 DailyType = 1; //日常类型 1:日常 2:周常
+}
+// 日常任务-信息
+message S2CDailyTaskInfo {
+	int32 Tag = 1; //结果
+	DailyTaskInfo DailyTask = 2; //日常任务信息
+}
+// 资源找回-信息
+message C2SResRecoveredInfo {
+	int32 RecoveredType = 1; //回收类型 1:资源收回 2:玩法收回
+}
+// 资源找回-信息
+message S2CResRecoveredInfo {
+	int32 Tag = 1; //结果
+	ResRecoveredInfo ResRecovered = 2; //资源找回信息
+}
+// 日常-任务奖励
+message C2SDailyTaskReward {
+	int32 TaskId = 1; //任务id
+}
+// 日常-任务奖励
+message S2CDailyTaskReward {
+	int32 Tag = 1; //结果
+	int32 TaskId = 2; //任务id
+}
+// 日常-阶段奖励
+message C2SDailyStageReward {
+	int32 Id = 1; //配置Id
+}
+// 日常-阶段奖励
+message S2CDailyStageReward {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //配置Id
+}
+// 资源找回
+message C2SResRecovered {
+	int32 RecoveredType = 1; //回收类型 1:资源收回 2:玩法收回
+	int32 Id = 2; //配置Id
+	int32 Num = 3; //数量
+}
+// 资源找回
+message S2CResRecovered {
+	int32 Tag = 1; //结果
+	int32 Id = 2; //配置Id
+	int32 Count = 3; //数量
+}
+// 资源找回-一键找回
+message C2SAllResRecovered {
+	int32 RecoveredType = 1; //回收类型 1:资源收回 2:玩法收回
+}
+// 资源找回-一键找回
+message S2CAllResRecovered {
+	int32 Tag = 1; //结果
+	repeated int32 Ids = 2; //配置Id
+}
+// 增益技能
+message IncreaseSkill {
+	int32 SkillId = 1; //技能Id
+	int64 LifeTime = 2; //有效时间(0-永久)
+	int64 GetTime = 3; //获得的时间
+}
+// 下发所有增益技能
+message S2CAllIncrease {
+	repeated IncreaseSkill Skills = 1; //技能
+}
+// 更新增益技能(不存在则添加)
+message S2CIncreaseUpdate {
+	IncreaseSkill Skill = 1; //技能
+}
+// 删除增益技能
+message S2CIncreaseDel {
+	int32 SkillId = 1; //技能Id
+}
+// 事件
+message AdventureEvent {
+	int32 OnlyId = 1; //事件唯一id
+	int32 EventId = 2; //事件id 对应配置表
+	int64 OverTime = 3; //结束时间
+	int32 State = 4; //状态 0 未完成  1 已完成
+	EventWish EventWish = 5; //许愿(城隍庙)数据
+	repeated EventBuy EventBuyList = 6; //购买(流浪商店)数据
+	EventGoldBuy EventGoldBuy = 7; //购买(千金台商店)数据
+	EventQuestion EventQuestion = 8; //(百晓堂)数据
+}
+// (百晓堂)数据
+message EventQuestion {
+	int32 Id = 1; //对应配置表
+	string Param = 2; //题目参数
+	string OptionParam1 = 3; //选项参数1
+	string OptionParam2 = 4; //选项参数2
+	int32 Value = 5; //玩家选择
+	int32 RightValue = 6; //正确选择
+}
+// 购买(千金台商店)数据
+message EventGoldBuy {
+	int32 Id = 1; //对应配置表
+	int32 BuyNum = 2; //购买次数
+}
+// 购买(流浪商店)数据
+message EventBuy {
+	int32 Id = 1; //对应配置表
+	int32 BuyNum = 2; //购买次数
+}
+// 许愿(城隍庙)数据
+message EventWish {
+	int32 WishState = 1; //许愿状态 0未许愿 1已许愿 2已领取(完成)
+	int64 CanGetTime = 2; //许愿可以领取的时间
+	repeated int32 IdList = 3; //许愿的id列表, 生成事件的时候生成
+}
+// 云游天下-地图信息
+message AdventurePos {
+	int32 Pos = 1; //格子id，从1开始
+	int32 Type = 2; //类型
+	repeated ItemInfo ItemInfo = 3; //物品信息
+	int32 EventId = 4; //事件id
+}
+// 云游天下info
+message C2SAdventureInfo {
+}
+// 云游天下info
+message S2CAdventureInfo {
+	int32 Tag = 1; //Tag
+	repeated AdventurePos AdventurePosList = 2; //地图信息
+	int32 Pos = 3; //当前位置
+	int32 LevelNum = 4; //总通过层数
+	repeated AdventureEvent AdventureEventList = 5; //购买次数
+}
+// 普通骰子
+message C2SAdventureComDice {
+}
+// 普通骰子
+message S2CAdventureComDice {
+	int32 Tag = 1; //Tag
+	int32 Pos = 2; //当前位置
+	int32 DiceNum = 3; //骰子数
+	AdventureEvent AdventureEvent = 4; //事件信息
+	int32 LevelNum = 5; //总通过层数
+}
+// 黄金骰子
+message C2SAdventureGoldDice {
+	int32 DiceNum = 1; //骰子数
+}
+// 黄金骰子
+message S2CAdventureGoldDice {
+	int32 Tag = 1; //Tag
+	int32 Pos = 2; //当前位置
+	AdventureEvent AdventureEvent = 3; //事件信息
+	int32 Level = 4; //当前层数
+}
+// 事件使用
+message C2SAdventureEventUse {
+	int32 OnlyId = 1; //事件唯一id
+	int32 Value = 2; //值
+}
+// 事件使用
+message S2CAdventureEventUse {
+	int32 Tag = 1; //Tag
+	AdventureEvent AdventureEvent = 2; //事件信息
+}
+// 军师
+message Adviser {
+	int32 Level = 1; //等级
+	int64 Exp = 2; //等级经验
+	repeated IntAttr MasteryList = 3; //专精信息
+}
+// 军师信息
+message C2SAdviserInfo {
+}
+// 军师信息
+message S2CAdviserInfo {
+	int32 Tag = 1; //结果
+	Adviser Adviser = 2; //军师信息
+}
+// 军师升级
+message C2SAdviserLevelUp {
+	bool AutoBuy = 1; //是否自动购买
+}
+// 军师升级
+message S2CAdviserLevelUp {
+	int32 Tag = 1; //结果
+	Adviser Adviser = 2; //军师信息(返回等级和经验)
+}
+// 军师一键升级
+message C2SAdviserLevelUpAuto {
+	bool AutoBuy = 1; //是否自动购买
+}
+// 军师一键升级
+message S2CAdviserLevelUpAuto {
+	int32 Tag = 1; //结果
+	Adviser Adviser = 2; //军师信息(返回等级和经验)
+}
+// 军师专精升级
+message C2SAdviserMasteryLevelUp {
+	int32 MasteryId = 1; //专精id
+}
+// 军师升星
+message S2CAdviserMasteryLevelUp {
+	int32 Tag = 1; //结果
+	IntAttr MasteryInfo = 2; //专精信息
+}
